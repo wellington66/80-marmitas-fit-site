@@ -796,7 +796,7 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
           <li class="x">✖ Guia de Congelamento</li>
           <li class="x">✖ Suporte Prioritário VIP</li>
         </ul>
-        <a href="https://pay.cakto.com.br/6s5zk69_1053120" class="btn btn-wide" style="background:#4b6358;">QUERO SÓ O GUIA POR R$ 19,90</a>
+        <a href="https://pay.cakto.com.br/6s5zk69_1053120" id="btn-guia-19" class="btn btn-wide" style="background:#4b6358;">QUERO SÓ O GUIA POR R$ 19,90</a>
       </div>
 
       <div class="plan-card popular">
@@ -982,6 +982,109 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
     var mm = String(d.getMonth()+1).padStart(2,'0');
     document.getElementById('deadline-date').textContent = dd + '/' + mm;
     document.getElementById('footer-year').textContent = d.getFullYear();
+  })();
+</script>
+
+<!-- Pop-up Oferta Upgrade R$24,90 -->
+<div id="upsell-overlay" class="upsell-overlay">
+  <div class="upsell-box">
+    <button type="button" id="upsell-close" class="upsell-close" aria-label="Fechar">✕</button>
+    <div class="upsell-badge">ESPERA! OFERTA ÚNICA</div>
+    <img src="assets/20-plano-completo-guia-bonus.webp" alt="Plano Completo - marmitas fit + bônus" class="upsell-img">
+    <h3>Leve o KIT COMPLETO por só mais R$5</h3>
+    <p class="upsell-sub">Guia com 80 Marmitas + <b>todos os 5 bônus exclusivos</b> (guia de congelamento, suporte VIP e muito mais) — só agora, por um valor especial.</p>
+    <div class="upsell-price">
+      <span class="old">De R$ 29,90</span>
+      <div class="new">R$ 24,90</div>
+    </div>
+    <a href="https://pay.cakto.com.br/bgiemed_1053121" class="btn btn-wide btn-terracota">SIM, QUERO O COMBO POR R$ 24,90 →</a>
+    <a href="https://pay.cakto.com.br/6s5zk69_1053120" id="upsell-decline" class="upsell-decline">Não, quero só o guia por R$ 19,90</a>
+  </div>
+</div>
+
+<style>
+  .upsell-overlay{
+    display:none;position:fixed;inset:0;z-index:999;background:rgba(30,20,10,.6);
+    padding:16px;align-items:center;justify-content:center;
+  }
+  .upsell-overlay.show{display:flex;}
+  .upsell-box{
+    position:relative;background:#fff8ee;border-radius:18px;max-width:380px;width:100%;
+    padding:24px 20px 20px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.3);
+    max-height:92vh;overflow-y:auto;
+  }
+  .upsell-close{
+    position:absolute;top:10px;right:10px;width:32px;height:32px;border-radius:50%;
+    background:#fff;border:1px solid #eee;font-size:16px;color:#666;cursor:pointer;
+  }
+  .upsell-badge{
+    display:inline-block;background:#e0703a;color:#fff;font-size:12px;font-weight:800;
+    padding:6px 14px;border-radius:20px;letter-spacing:.5px;margin-bottom:12px;
+  }
+  .upsell-img{width:100%;max-width:220px;height:auto;margin:0 auto 14px;display:block;}
+  .upsell-box h3{font-size:19px;color:var(--green-dark);margin-bottom:8px;line-height:1.25;}
+  .upsell-sub{font-size:13.5px;color:var(--muted);margin-bottom:14px;line-height:1.5;}
+  .upsell-price{margin-bottom:16px;}
+  .upsell-price .old{text-decoration:line-through;color:#999;font-size:13px;}
+  .upsell-price .new{font-size:30px;font-weight:800;color:var(--terracota);}
+  .upsell-decline{
+    display:block;margin-top:14px;font-size:12.5px;color:var(--muted);
+    text-decoration:underline;
+  }
+</style>
+
+<script>
+  (function(){
+    var overlay = document.getElementById('upsell-overlay');
+    var closeBtn = document.getElementById('upsell-close');
+    var btn19 = document.getElementById('btn-guia-19');
+    var shown = false;
+    var pendingHref = null;
+
+    function openUpsell(){
+      if(shown) return false;
+      shown = true;
+      overlay.classList.add('show');
+      return true;
+    }
+    function closeUpsell(){
+      overlay.classList.remove('show');
+    }
+
+    if(btn19){
+      btn19.addEventListener('click', function(e){
+        if(!shown){
+          e.preventDefault();
+          pendingHref = btn19.getAttribute('href');
+          openUpsell();
+        }
+      });
+    }
+
+    closeBtn.addEventListener('click', function(){
+      closeUpsell();
+      if(pendingHref){ window.location.href = pendingHref; pendingHref = null; }
+    });
+    overlay.addEventListener('click', function(e){
+      if(e.target === overlay){
+        closeUpsell();
+        if(pendingHref){ window.location.href = pendingHref; pendingHref = null; }
+      }
+    });
+
+    // Exit intent - desktop (mouse leaving pelo topo da janela)
+    document.addEventListener('mouseleave', function(e){
+      if(e.clientY <= 0){ openUpsell(); }
+    });
+
+    // Exit intent - mobile (botão voltar do navegador)
+    history.pushState({upsell:true}, '');
+    window.addEventListener('popstate', function(){
+      if(!shown){
+        openUpsell();
+        history.pushState({upsell:true}, '');
+      }
+    });
   })();
 </script>
 
