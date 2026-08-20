@@ -313,27 +313,57 @@
   .freeze-step p{font-size:12px;color:var(--muted);}
 
   /* BONUS SECTION */
-  .bonus{background:var(--green-dark);color:#fff;border-radius:24px;padding:50px 40px;}
-  .bonus-header{text-align:center;margin-bottom:34px;}
+  .bonus{
+    position:relative;overflow:hidden;color:#fff;border-radius:24px;padding:50px 40px;
+    background:
+      radial-gradient(ellipse 60% 50% at 15% 0%, rgba(224,168,58,.25), transparent 60%),
+      radial-gradient(ellipse 55% 45% at 100% 100%, rgba(224,112,58,.3), transparent 60%),
+      linear-gradient(160deg,var(--green-dark) 0%, #4a2c11 100%);
+    box-shadow:0 25px 60px rgba(0,0,0,.25);
+  }
+  .bonus-header{position:relative;text-align:center;margin-bottom:34px;}
   .bonus-header .eyebrow{background:var(--gold);color:var(--green-dark);}
   .bonus-header h2{font-size:26px;color:#fff;}
   .bonus-header p{color:#f0dcc7;font-size:14px;margin-top:8px;}
-  .bonus-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+  .bonus-grid{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
   .bonus-card{
-    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
-    border-radius:14px;padding:16px;text-align:center;
+    position:relative;
+    background:linear-gradient(160deg, rgba(255,255,255,.1), rgba(255,255,255,.03));
+    border:1px solid rgba(255,255,255,.16);
+    border-radius:16px;padding:14px;text-align:center;
+    box-shadow:0 10px 26px rgba(0,0,0,.18);
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
   }
-  .bonus-card img{border-radius:8px;margin-bottom:10px;height:100px;object-fit:cover;width:100%;}
+  .bonus-card:hover{
+    transform:translateY(-4px);
+    border-color:rgba(224,168,58,.5);
+    box-shadow:0 16px 34px rgba(0,0,0,.28);
+  }
+  .bonus-card .bonus-img-frame{position:relative;border-radius:10px;overflow:hidden;margin-bottom:12px;box-shadow:0 8px 18px rgba(0,0,0,.3);}
+  .bonus-card img{border-radius:10px;height:100px;object-fit:cover;width:100%;display:block;transition:transform .35s ease;}
+  .bonus-card:hover img{transform:scale(1.07);}
+  .bonus-img-frame::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,transparent 55%,rgba(20,10,4,.55) 100%);
+    pointer-events:none;
+  }
+  .bonus-free-tag{
+    position:absolute;top:8px;left:8px;background:var(--terracota);color:#fff;
+    font-size:9.5px;font-weight:800;letter-spacing:.4px;padding:3px 8px;border-radius:20px;
+    box-shadow:0 4px 10px rgba(0,0,0,.3);z-index:1;
+  }
   .bonus-card h4{font-size:12.5px;color:#fff;margin-bottom:8px;min-height:32px;}
   .bonus-price{font-size:11px;}
   .bonus-price .old{text-decoration:line-through;color:#d9ab8b;}
   .bonus-price .new{color:var(--gold);font-weight:800;}
   .bonus-total{
-    text-align:center;margin-top:34px;background:rgba(255,255,255,.08);
-    border-radius:14px;padding:20px;
+    position:relative;text-align:center;margin-top:34px;
+    background:linear-gradient(135deg, rgba(224,168,58,.16), rgba(255,255,255,.06));
+    border:1px solid rgba(224,168,58,.3);
+    border-radius:16px;padding:22px;
   }
   .bonus-total .label{font-size:12px;color:#f0dcc7;text-transform:uppercase;letter-spacing:1px;}
-  .bonus-total .value{font-size:30px;font-weight:800;color:var(--gold);font-family:Georgia,serif;}
+  .bonus-total .value{font-size:32px;font-weight:800;color:var(--gold);font-family:Georgia,serif;text-shadow:0 2px 12px rgba(224,168,58,.35);}
   .bonus-total .sub{font-size:12px;color:#f0dcc7;margin-top:4px;}
 
   /* PLANS */
@@ -764,27 +794,42 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
       </div>
       <div class="bonus-grid">
         <div class="bonus-card">
-          <img src="assets/11-bonus-guia-congelamento.webp" alt="Guia de Congelamento de Marmitas" loading="lazy" decoding="async">
+          <div class="bonus-img-frame">
+            <span class="bonus-free-tag">🎁 GRÁTIS</span>
+            <img src="assets/11-bonus-guia-congelamento.webp" alt="Guia de Congelamento de Marmitas" loading="lazy" decoding="async">
+          </div>
           <h4>Guia de Congelamento de Marmitas</h4>
           <div class="bonus-price"><span class="old">R$ 47,00</span> → <span class="new">R$ 0,00</span></div>
         </div>
         <div class="bonus-card">
-          <img src="assets/12-bonus-cardapio-semanal.webp" alt="Cardápio Semanal Pronto" loading="lazy" decoding="async">
+          <div class="bonus-img-frame">
+            <span class="bonus-free-tag">🎁 GRÁTIS</span>
+            <img src="assets/12-bonus-cardapio-semanal.webp" alt="Cardápio Semanal Pronto" loading="lazy" decoding="async">
+          </div>
           <h4>Cardápio Semanal Pronto</h4>
           <div class="bonus-price"><span class="old">R$ 37,00</span> → <span class="new">R$ 0,00</span></div>
         </div>
         <div class="bonus-card">
-          <img src="assets/13-bonus-lista-compras.webp" alt="Lista de Compras Econômica" loading="lazy" decoding="async">
+          <div class="bonus-img-frame">
+            <span class="bonus-free-tag">🎁 GRÁTIS</span>
+            <img src="assets/13-bonus-lista-compras.webp" alt="Lista de Compras Econômica" loading="lazy" decoding="async">
+          </div>
           <h4>Lista de Compras Econômica</h4>
           <div class="bonus-price"><span class="old">R$ 29,00</span> → <span class="new">R$ 0,00</span></div>
         </div>
         <div class="bonus-card">
-          <img src="assets/14-bonus-tabela-substituicoes.webp" alt="Tabela de Substituições Inteligentes" loading="lazy" decoding="async">
+          <div class="bonus-img-frame">
+            <span class="bonus-free-tag">🎁 GRÁTIS</span>
+            <img src="assets/14-bonus-tabela-substituicoes.webp" alt="Tabela de Substituições Inteligentes" loading="lazy" decoding="async">
+          </div>
           <h4>Tabela de Substituições Inteligentes</h4>
           <div class="bonus-price"><span class="old">R$ 27,00</span> → <span class="new">R$ 0,00</span></div>
         </div>
         <div class="bonus-card">
-          <img src="assets/15-bonus-molhos-temperos.webp" alt="Molhos e Temperos Caseiros" loading="lazy" decoding="async">
+          <div class="bonus-img-frame">
+            <span class="bonus-free-tag">🎁 GRÁTIS</span>
+            <img src="assets/15-bonus-molhos-temperos.webp" alt="Molhos e Temperos Caseiros" loading="lazy" decoding="async">
+          </div>
           <h4>Molhos e Temperos Caseiros</h4>
           <div class="bonus-price"><span class="old">R$ 25,00</span> → <span class="new">R$ 0,00</span></div>
         </div>
