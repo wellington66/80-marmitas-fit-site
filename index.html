@@ -1141,9 +1141,11 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
     });
 
     // Exit intent - mobile (botão voltar do navegador)
+    // Obs: cliques em links "#âncora" também disparam popstate, então só reage
+    // quando o estado é o marcador que nós mesmos empilhamos (voltar de verdade).
     history.pushState({upsell:true}, '');
-    window.addEventListener('popstate', function(){
-      if(!shown2){
+    window.addEventListener('popstate', function(e){
+      if(e.state && e.state.upsell && !shown2){
         openUpsell();
         history.pushState({upsell:true}, '');
       }
