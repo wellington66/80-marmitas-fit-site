@@ -1002,6 +1002,23 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
   </div>
 </div>
 
+<!-- Pop-up Última Chance R$19,90 pelo Kit Completo -->
+<div id="upsell-overlay-2" class="upsell-overlay">
+  <div class="upsell-box">
+    <button type="button" id="upsell-close-2" class="upsell-close" aria-label="Fechar">✕</button>
+    <div class="upsell-badge" style="background:#4b6358;">TÁ BOM, VOCÊ GANHOU 🏳️</div>
+    <img src="assets/20-plano-completo-guia-bonus.webp" alt="Plano Completo - marmitas fit + bônus" class="upsell-img">
+    <h3>Tudo bem, você ganhou! Leve o KIT COMPLETO pelo preço do guia avulso</h3>
+    <p class="upsell-sub">Ok, você foi insistente 😄 Última chance mesmo: o Guia + <b>todos os 5 bônus exclusivos</b> pelo mesmo precinho de R$19,90. Depois que sair, essa oferta não volta.</p>
+    <div class="upsell-price">
+      <span class="old">De R$ 29,90</span>
+      <div class="new">R$ 19,90</div>
+    </div>
+    <a href="https://pay.cakto.com.br/323uukd_1053135" class="btn btn-wide btn-terracota">SIM, QUERO O COMBO POR R$ 19,90 →</a>
+    <a href="#" id="upsell-decline-2" class="upsell-decline">Não, obrigado(a)</a>
+  </div>
+</div>
+
 <style>
   .upsell-overlay{
     display:none;position:fixed;inset:0;z-index:999;background:rgba(30,20,10,.6);
@@ -1038,17 +1055,29 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
     var overlay = document.getElementById('upsell-overlay');
     var closeBtn = document.getElementById('upsell-close');
     var btn19 = document.getElementById('btn-guia-19');
+    var overlay2 = document.getElementById('upsell-overlay-2');
+    var closeBtn2 = document.getElementById('upsell-close-2');
+    var declineBtn2 = document.getElementById('upsell-decline-2');
     var shown = false;
+    var shown2 = false;
     var pendingHref = null;
 
     function openUpsell(){
-      if(shown) return false;
-      shown = true;
-      overlay.classList.add('show');
+      if(shown2 || overlay.classList.contains('show') || overlay2.classList.contains('show')) return false;
+      if(!shown){
+        shown = true;
+        overlay.classList.add('show');
+        return true;
+      }
+      shown2 = true;
+      overlay2.classList.add('show');
       return true;
     }
     function closeUpsell(){
       overlay.classList.remove('show');
+    }
+    function closeUpsell2(){
+      overlay2.classList.remove('show');
     }
 
     if(btn19){
@@ -1072,6 +1101,12 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
       }
     });
 
+    closeBtn2.addEventListener('click', closeUpsell2);
+    declineBtn2.addEventListener('click', function(e){ e.preventDefault(); closeUpsell2(); });
+    overlay2.addEventListener('click', function(e){
+      if(e.target === overlay2){ closeUpsell2(); }
+    });
+
     // Exit intent - desktop (mouse leaving pelo topo da janela)
     document.addEventListener('mouseleave', function(e){
       if(e.clientY <= 0){ openUpsell(); }
@@ -1080,7 +1115,7 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
     // Exit intent - mobile (botão voltar do navegador)
     history.pushState({upsell:true}, '');
     window.addEventListener('popstate', function(){
-      if(!shown){
+      if(!shown2){
         openUpsell();
         history.pushState({upsell:true}, '');
       }
