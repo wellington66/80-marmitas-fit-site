@@ -1098,6 +1098,7 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
     padding:16px;align-items:center;justify-content:center;
   }
   .upsell-overlay.show{display:flex;}
+  .upsell-overlay.opening{pointer-events:none;}
   .upsell-box{
     position:relative;background:#fff8ee;border-radius:18px;max-width:380px;width:100%;
     padding:24px 20px 20px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.3);
@@ -1139,14 +1140,23 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
     function isAnyOpen(){
       return overlay.classList.contains('show') || overlay2.classList.contains('show');
     }
+    // Bloqueia cliques por um instante ao abrir, pra evitar que o "clique fantasma"
+    // (delay de ~300ms do navegador mobile) caia sem querer em cima do botão do
+    // pop-up, que abre bem na posição onde o dedo tocou.
+    function armOpening(el){
+      el.classList.add('opening');
+      setTimeout(function(){ el.classList.remove('opening'); }, 500);
+    }
     function openOverlay1(){
       if(isAnyOpen()) return;
       overlay.classList.add('show');
+      armOpening(overlay);
       if(stage < 1) stage = 1;
     }
     function openOverlay2(){
       if(isAnyOpen()) return;
       overlay2.classList.add('show');
+      armOpening(overlay2);
       stage = 2;
     }
     function closeUpsell(){
