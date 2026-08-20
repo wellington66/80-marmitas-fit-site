@@ -1131,20 +1131,23 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
     var overlay2 = document.getElementById('upsell-overlay-2');
     var closeBtn2 = document.getElementById('upsell-close-2');
     var declineBtn2 = document.getElementById('upsell-decline-2');
-    var shown = false;
-    var shown2 = false;
-    var pendingHref = null;
 
-    function openUpsell(){
-      if(shown2 || overlay.classList.contains('show') || overlay2.classList.contains('show')) return false;
-      if(!shown){
-        shown = true;
-        overlay.classList.add('show');
-        return true;
-      }
-      shown2 = true;
+    // stage controla a progressão do pop-up de SAÍDA (mouse/voltar):
+    // 0 = nada mostrado ainda -> 1 = já mostrou o pop-up do combo -> 2 = já mostrou o de última chance
+    var stage = 0;
+
+    function isAnyOpen(){
+      return overlay.classList.contains('show') || overlay2.classList.contains('show');
+    }
+    function openOverlay1(){
+      if(isAnyOpen()) return;
+      overlay.classList.add('show');
+      if(stage < 1) stage = 1;
+    }
+    function openOverlay2(){
+      if(isAnyOpen()) return;
       overlay2.classList.add('show');
-      return true;
+      stage = 2;
     }
     function closeUpsell(){
       overlay.classList.remove('show');
@@ -1153,25 +1156,19 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
       overlay2.classList.remove('show');
     }
 
+    // Clicar no botão de R$19,90 SEMPRE abre o pop-up do combo primeiro.
+    // Só vai pro checkout de R$19,90 se o lead escolher isso dentro do pop-up.
     if(btn19){
       btn19.addEventListener('click', function(e){
-        if(!shown){
-          e.preventDefault();
-          pendingHref = btn19.getAttribute('href');
-          openUpsell();
-        }
+        e.preventDefault();
+        openOverlay1();
       });
     }
 
-    closeBtn.addEventListener('click', function(){
-      closeUpsell();
-      if(pendingHref){ window.location.href = pendingHref; pendingHref = null; }
-    });
+    // Fechar (X) ou clicar fora NUNCA navega — só fecha o pop-up.
+    closeBtn.addEventListener('click', closeUpsell);
     overlay.addEventListener('click', function(e){
-      if(e.target === overlay){
-        closeUpsell();
-        if(pendingHref){ window.location.href = pendingHref; pendingHref = null; }
-      }
+      if(e.target === overlay){ closeUpsell(); }
     });
 
     closeBtn2.addEventListener('click', closeUpsell2);
@@ -1180,9 +1177,17 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
       if(e.target === overlay2){ closeUpsell2(); }
     });
 
-    // Exit intent - desktop (mouse leaving pelo topo da janela)
+    // Exit intent: primeira tentativa mostra o pop-up do combo (R$24,90),
+    // segunda tentativa mostra o de última chance (R$19,90 pelo combo).
+    function exitIntentTrigger(){
+      if(isAnyOpen()) return;
+      if(stage === 0){ openOverlay1(); }
+      else if(stage === 1){ openOverlay2(); }
+    }
+
+    // Exit intent - desktop (mouse saindo pelo topo da janela)
     document.addEventListener('mouseleave', function(e){
-      if(e.clientY <= 0){ openUpsell(); }
+      if(e.clientY <= 0){ exitIntentTrigger(); }
     });
 
     // Exit intent - mobile (botão voltar do navegador)
@@ -1190,8 +1195,8 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
     // quando o estado é o marcador que nós mesmos empilhamos (voltar de verdade).
     history.pushState({upsell:true}, '');
     window.addEventListener('popstate', function(e){
-      if(e.state && e.state.upsell && !shown2){
-        openUpsell();
+      if(e.state && e.state.upsell && stage < 2){
+        exitIntentTrigger();
         history.pushState({upsell:true}, '');
       }
     });
