@@ -1014,7 +1014,7 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
     <div class="final-cta">
       <h3>ÚLTIMA CHANCE: GARANTA O COMBO COMPLETO</h3>
       <p>Leve o guia 80 Marmitas Fit + 5 bônus exclusivos por apenas R$ 29,90 enquanto a oferta ainda está disponível.</p>
-      <a href="#ofertas" class="btn btn-terracota">QUERO O COMBO + 5 BÔNUS POR R$ 29,90 →</a>
+      <a href="https://pay.cakto.com.br/324gn44_1053106" class="btn btn-terracota">QUERO O COMBO + 5 BÔNUS POR R$ 29,90 →</a>
       <div class="final-badges">
         <span>✅ Acesso Imediato</span>
         <span>🔒 Compra Segura</span>
@@ -1044,7 +1044,7 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
 </footer>
 
 <div class="mobile-cta">
-  <a href="#ofertas" class="btn btn-terracota btn-wide">QUERO MINHAS MARMITAS →</a>
+  <a href="#ofertas" id="mobile-cta-link" class="btn btn-terracota btn-wide">QUERO MINHAS MARMITAS →</a>
 </div>
 
 <style>
@@ -1063,6 +1063,29 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
     var mm = String(d.getMonth()+1).padStart(2,'0');
     document.getElementById('deadline-date').textContent = dd + '/' + mm;
     document.getElementById('footer-year').textContent = d.getFullYear();
+  })();
+
+  // Depois que o lead rola a página e passa pela seção de ofertas (#ofertas),
+  // o CTA fixo (mobile-cta) passa a levar direto pro checkout do Combo R$29,90,
+  // em vez de rolar de volta pra seção de ofertas.
+  (function(){
+    var ofertas = document.getElementById('ofertas');
+    var ctaLink = document.getElementById('mobile-cta-link');
+    if(!ofertas || !ctaLink) return;
+    var checkoutUrl = 'https://pay.cakto.com.br/324gn44_1053106';
+    var switched = false;
+
+    function checkScroll(){
+      if(switched) return;
+      var rect = ofertas.getBoundingClientRect();
+      if(rect.bottom <= 0){
+        switched = true;
+        ctaLink.href = checkoutUrl;
+        ctaLink.textContent = 'QUERO O COMBO POR R$ 29,90 →';
+      }
+    }
+    window.addEventListener('scroll', checkScroll, {passive:true});
+    checkScroll();
   })();
 </script>
 
