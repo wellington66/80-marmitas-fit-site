@@ -419,40 +419,20 @@
   .rating-score{font-size:38px;font-weight:800;color:var(--green-dark);font-family:Georgia,serif;}
   .rating-stars{color:var(--gold);font-size:18px;}
   .rating-count{font-size:13px;color:var(--muted);}
-
-  /* Facebook-style comment thread */
-  .fb-thread{
-    max-width:640px;margin:0 auto;background:#fff;border-radius:14px;
-    padding:18px 22px 6px;box-shadow:0 6px 20px rgba(0,0,0,.05);
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .testi-card{
+    background:#fff;border-radius:14px;padding:20px;box-shadow:0 6px 20px rgba(0,0,0,.05);
   }
-  .fb-comment{display:flex;gap:10px;padding:14px 0;border-bottom:1px solid #eef1ec;}
-  .fb-comment:last-child{border-bottom:none;}
-  .fb-comment img{width:38px;height:38px;border-radius:50%;flex:0 0 auto;}
-  .fb-body{flex:1;min-width:0;}
-  .fb-bubble{
-    background:#f0f2ef;border-radius:16px;padding:9px 14px;display:inline-block;max-width:100%;
+  .testi-top{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+  .testi-top img{width:42px;height:42px;border-radius:50%;}
+  .testi-name{font-size:13.5px;font-weight:700;color:var(--text);}
+  .testi-meta{font-size:11px;color:var(--muted);}
+  .testi-stars{color:var(--gold);font-size:12px;margin-bottom:8px;}
+  .testi-text{font-size:13px;color:var(--text);margin-bottom:10px;}
+  .testi-verified{font-size:11px;color:var(--green);font-weight:700;}
+  .testi-reply{
+    margin-top:10px;background:var(--green-light);border-radius:8px;padding:10px 12px;font-size:12px;color:var(--green-dark);
   }
-  .fb-name{font-size:13px;font-weight:700;color:var(--text);}
-  .fb-name .fb-verified{color:var(--green);font-weight:700;font-size:11px;margin-left:4px;}
-  .fb-text{font-size:13.5px;color:var(--text);margin-top:2px;line-height:1.4;}
-  .fb-meta{display:flex;align-items:center;gap:14px;margin-top:5px;padding-left:14px;font-size:11.5px;color:var(--muted);font-weight:600;}
-  .fb-meta b{cursor:default;}
-  .fb-likes{
-    display:inline-flex;align-items:center;gap:3px;margin-left:auto;background:#fff;
-    border-radius:10px;padding:1px 8px 1px 3px;box-shadow:0 1px 4px rgba(0,0,0,.08);font-weight:600;
-  }
-  .fb-likes .icons{display:inline-flex;}
-  .fb-likes .icons span{
-    width:15px;height:15px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-    font-size:9px;color:#fff;margin-left:-4px;border:1.5px solid #fff;
-  }
-  .fb-likes .icons span:first-child{margin-left:0;background:#1877f2;}
-  .fb-likes .icons span:nth-child(2){background:#f33e58;}
-  .fb-reply{display:flex;gap:8px;margin:10px 0 4px 30px;}
-  .fb-reply img{width:28px;height:28px;border-radius:50%;flex:0 0 auto;}
-  .fb-reply .fb-bubble{background:var(--green-light);}
-  .fb-reply .fb-name{color:var(--green-dark);}
-  .fb-reply .fb-meta{padding-left:14px;}
   .testi-cta{text-align:center;margin-top:34px;}
 
   /* FAQ */
@@ -529,8 +509,7 @@
     .bonus{padding:36px 20px;}
     .bonus-grid{grid-template-columns:repeat(2,1fr);}
     .plans-grid{grid-template-columns:1fr;}
-    .fb-thread{padding:14px 14px 4px;}
-    .fb-reply{margin-left:14px;}
+    .testi-grid{grid-template-columns:1fr;}
     .stats-strip{margin-top:-24px;gap:6px;}
     .hero h1{font-size:24px;}
     .final-cta{padding:32px 22px;}
@@ -954,112 +933,78 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
       <div><div class="rating-stars">★★★★★</div><div class="rating-count">2.640 avaliações</div></div>
     </div>
 
-    <div class="fb-thread">
-      <div class="fb-comment">
-        <img src="https://i.pravatar.cc/150?img=5" alt="Fernanda Rocha">
-        <div class="fb-body">
-          <div class="fb-bubble">
-            <div class="fb-name">Fernanda Rocha <span class="fb-verified">✓ compra verificada</span></div>
-            <div class="fb-text">Passei a cozinhar só aos domingos. De segunda a sexta é só tirar do freezer e esquentar. Mudou minha rotina.</div>
-          </div>
-          <div class="fb-meta"><b>Curtir</b><b>Responder</b><span>2 sem · Campinas, SP</span><span class="fb-likes"><span class="icons"><span>👍</span><span>❤️</span></span>47</span></div>
-          <div class="fb-reply">
-            <img src="https://i.pravatar.cc/150?img=68" alt="80 Marmitas Fit">
-            <div class="fb-body">
-              <div class="fb-bubble">
-                <div class="fb-name">80 Marmitas Fit</div>
-                <div class="fb-text">Isso, Fernanda! Cozinhar em lote é o segredo pra ganhar tempo na semana 💪</div>
-              </div>
-              <div class="fb-meta"><b>Curtir</b><span>2 sem</span></div>
-            </div>
-          </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-top">
+          <img src="https://i.pravatar.cc/150?img=5" alt="Fernanda Rocha">
+          <div><div class="testi-name">Fernanda Rocha</div><div class="testi-meta">Campinas, SP</div></div>
         </div>
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"Passei a cozinhar só aos domingos. De segunda a sexta é só tirar do freezer e esquentar. Mudou minha rotina."</div>
+        <div class="testi-verified">✓ Compra verificada</div>
+        <div class="testi-reply">💬 Isso, Fernanda! Cozinhar em lote é o segredo pra ganhar tempo na semana 💪</div>
       </div>
 
-      <div class="fb-comment">
-        <img src="https://i.pravatar.cc/150?img=8" alt="Diego Nascimento">
-        <div class="fb-body">
-          <div class="fb-bubble">
-            <div class="fb-name">Diego Nascimento <span class="fb-verified">✓ compra verificada</span></div>
-            <div class="fb-text">Achei que marmita fit ia ser sem graça. Errei feio, tem receita que fica melhor do que restaurante.</div>
-          </div>
-          <div class="fb-meta"><b>Curtir</b><b>Responder</b><span>3 sem · Belo Horizonte, MG</span><span class="fb-likes"><span class="icons"><span>👍</span><span>❤️</span></span>32</span></div>
+      <div class="testi-card">
+        <div class="testi-top">
+          <img src="https://i.pravatar.cc/150?img=8" alt="Diego Nascimento">
+          <div><div class="testi-name">Diego Nascimento</div><div class="testi-meta">Belo Horizonte, MG</div></div>
         </div>
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"Achei que marmita fit ia ser sem graça. Errei feio, tem receita que fica melhor do que restaurante."</div>
+        <div class="testi-verified">✓ Compra verificada</div>
       </div>
 
-      <div class="fb-comment">
-        <img src="https://i.pravatar.cc/150?img=9" alt="Carla Menezes">
-        <div class="fb-body">
-          <div class="fb-bubble">
-            <div class="fb-name">Carla Menezes <span class="fb-verified">✓ compra verificada</span></div>
-            <div class="fb-text">Parei de pedir delivery quase todo dia. Só isso já pagou o guia várias vezes no fim do mês.</div>
-          </div>
-          <div class="fb-meta"><b>Curtir</b><b>Responder</b><span>1 sem · Porto Alegre, RS</span><span class="fb-likes"><span class="icons"><span>👍</span><span>❤️</span></span>61</span></div>
+      <div class="testi-card">
+        <div class="testi-top">
+          <img src="https://i.pravatar.cc/150?img=9" alt="Carla Menezes">
+          <div><div class="testi-name">Carla Menezes</div><div class="testi-meta">Porto Alegre, RS</div></div>
         </div>
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"Parei de pedir delivery quase todo dia. Só isso já pagou o guia várias vezes no fim do mês."</div>
+        <div class="testi-verified">✓ Compra verificada</div>
       </div>
 
-      <div class="fb-comment">
-        <img src="https://i.pravatar.cc/150?img=10" alt="Juliana Alves">
-        <div class="fb-body">
-          <div class="fb-bubble">
-            <div class="fb-name">Juliana Alves <span class="fb-verified">✓ compra verificada</span></div>
-            <div class="fb-text">O guia de congelamento sozinho já vale o preço. Minhas marmitas paravam de ficar aguadas e agora saem perfeitas.</div>
-          </div>
-          <div class="fb-meta"><b>Curtir</b><b>Responder</b><span>4 sem · Curitiba, PR</span><span class="fb-likes"><span class="icons"><span>👍</span><span>❤️</span></span>29</span></div>
-          <div class="fb-reply">
-            <img src="https://i.pravatar.cc/150?img=68" alt="80 Marmitas Fit">
-            <div class="fb-body">
-              <div class="fb-bubble">
-                <div class="fb-name">80 Marmitas Fit</div>
-                <div class="fb-text">Que ótimo, Juliana! O segredo é esfriar bem antes de guardar 🙌</div>
-              </div>
-              <div class="fb-meta"><b>Curtir</b><span>4 sem</span></div>
-            </div>
-          </div>
+      <div class="testi-card">
+        <div class="testi-top">
+          <img src="https://i.pravatar.cc/150?img=10" alt="Juliana Alves">
+          <div><div class="testi-name">Juliana Alves</div><div class="testi-meta">Curitiba, PR</div></div>
         </div>
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"O guia de congelamento sozinho já vale o preço. Minhas marmitas paravam de ficar aguadas e agora saem perfeitas."</div>
+        <div class="testi-verified">✓ Compra verificada</div>
+        <div class="testi-reply">💬 Que ótimo, Juliana! O segredo é esfriar bem antes de guardar 🙌</div>
       </div>
 
-      <div class="fb-comment">
-        <img src="https://i.pravatar.cc/150?img=11" alt="Rafael Torres">
-        <div class="fb-body">
-          <div class="fb-bubble">
-            <div class="fb-name">Rafael Torres <span class="fb-verified">✓ compra verificada</span></div>
-            <div class="fb-text">Malho de manhã e não tinha tempo pra cozinhar. Agora domingo à noite já deixo tudo pronto pra semana toda.</div>
-          </div>
-          <div class="fb-meta"><b>Curtir</b><b>Responder</b><span>5 dias · São Paulo, SP</span><span class="fb-likes"><span class="icons"><span>👍</span><span>❤️</span></span>18</span></div>
+      <div class="testi-card">
+        <div class="testi-top">
+          <img src="https://i.pravatar.cc/150?img=11" alt="Rafael Torres">
+          <div><div class="testi-name">Rafael Torres</div><div class="testi-meta">São Paulo, SP</div></div>
         </div>
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"Malho de manhã e não tinha tempo pra cozinhar. Agora domingo à noite já deixo tudo pronto pra semana toda."</div>
+        <div class="testi-verified">✓ Compra verificada</div>
       </div>
 
-      <div class="fb-comment">
-        <img src="https://i.pravatar.cc/150?img=16" alt="Patrícia Gomes">
-        <div class="fb-body">
-          <div class="fb-bubble">
-            <div class="fb-name">Patrícia Gomes <span class="fb-verified">✓ compra verificada</span></div>
-            <div class="fb-text">Comprei desconfiada, achando que era mais um PDF genérico. Me surpreendi, as receitas tradicionais ficaram incríveis.</div>
-          </div>
-          <div class="fb-meta"><b>Curtir</b><b>Responder</b><span>2 sem · Salvador, BA</span><span class="fb-likes"><span class="icons"><span>👍</span><span>❤️</span></span>24</span></div>
-          <div class="fb-reply">
-            <img src="https://i.pravatar.cc/150?img=68" alt="80 Marmitas Fit">
-            <div class="fb-body">
-              <div class="fb-bubble">
-                <div class="fb-name">80 Marmitas Fit</div>
-                <div class="fb-text">Amamos ouvir isso, Patrícia! Bom apetite 🍽️</div>
-              </div>
-              <div class="fb-meta"><b>Curtir</b><span>2 sem</span></div>
-            </div>
-          </div>
+      <div class="testi-card">
+        <div class="testi-top">
+          <img src="https://i.pravatar.cc/150?img=16" alt="Patrícia Gomes">
+          <div><div class="testi-name">Patrícia Gomes</div><div class="testi-meta">Salvador, BA</div></div>
         </div>
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"Comprei desconfiada, achando que era mais um PDF genérico. Me surpreendi, as receitas tradicionais ficaram incríveis."</div>
+        <div class="testi-verified">✓ Compra verificada</div>
+        <div class="testi-reply">💬 Amamos ouvir isso, Patrícia! Bom apetite 🍽️</div>
       </div>
 
-      <div class="fb-comment">
-        <img src="https://i.pravatar.cc/150?img=12" alt="Marcos Vieira">
-        <div class="fb-body">
-          <div class="fb-bubble">
-            <div class="fb-name">Marcos Vieira <span class="fb-verified">✓ compra verificada</span></div>
-            <div class="fb-text">Moro sozinho e sempre foi difícil cozinhar em pouca quantidade. As porções do guia encaixaram certinho pra mim.</div>
-          </div>
-          <div class="fb-meta"><b>Curtir</b><b>Responder</b><span>6 dias · Recife, PE</span><span class="fb-likes"><span class="icons"><span>👍</span><span>❤️</span></span>15</span></div>
+      <div class="testi-card">
+        <div class="testi-top">
+          <img src="https://i.pravatar.cc/150?img=12" alt="Marcos Vieira">
+          <div><div class="testi-name">Marcos Vieira</div><div class="testi-meta">Recife, PE</div></div>
         </div>
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"Moro sozinho e sempre foi difícil cozinhar em pouca quantidade. As porções do guia encaixaram certinho pra mim."</div>
+        <div class="testi-verified">✓ Compra verificada</div>
       </div>
     </div>
 
