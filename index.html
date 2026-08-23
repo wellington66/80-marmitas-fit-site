@@ -1125,17 +1125,17 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
 </div>
 <style>
   .sale-popup{
-    position:fixed;left:50%;top:10px;z-index:1000;
-    transform:translate(-50%,-24px);
+    position:fixed;right:14px;top:14px;z-index:1000;
+    transform:translateY(-24px);
     display:flex;align-items:center;gap:8px;
     background:rgba(255,248,238,.97);border:1px solid rgba(224,112,58,.25);
-    border-radius:999px;padding:8px 16px 8px 10px;
+    border-radius:12px;padding:10px 16px 10px 10px;
     box-shadow:0 10px 30px rgba(0,0,0,.15);
-    max-width:calc(100vw - 24px);
+    width:300px;max-width:calc(100vw - 24px);
     opacity:0;pointer-events:none;
     transition:transform .4s ease,opacity .4s ease;
   }
-  .sale-popup.show{transform:translate(-50%,0);opacity:1;}
+  .sale-popup.show{transform:translateY(0);opacity:1;}
   .sale-popup-icon{
     flex-shrink:0;width:26px;height:26px;border-radius:50%;
     background:rgba(224,112,58,.15);display:flex;align-items:center;justify-content:center;font-size:13px;
