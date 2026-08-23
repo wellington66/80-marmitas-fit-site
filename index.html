@@ -183,10 +183,13 @@
     box-shadow:0 10px 40px rgba(0,0,0,.08);
     display:flex;
     justify-content:space-around;
+    align-items:center;
     padding:26px 10px;
     flex-wrap:wrap;
   }
-  .stat{text-align:center;padding:10px 20px;}
+  .stat{text-align:center;padding:10px 24px;}
+  .stat .icon{font-size:22px;margin-bottom:4px;}
+  .stat-divider{width:1px;align-self:stretch;background:#eee;margin:6px 0;}
   .stat .num{font-size:26px;font-weight:800;color:var(--green-dark);font-family:Georgia,serif;}
   .stat .label{font-size:13.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;}
 
@@ -513,7 +516,9 @@
     .bonus-grid{grid-template-columns:repeat(2,1fr);}
     .plans-grid{grid-template-columns:1fr;}
     .testi-grid{grid-template-columns:1fr;}
-    .stats-strip{margin-top:-24px;gap:6px;}
+    .stats-strip{margin-top:-24px;gap:10px 6px;}
+    .stat{padding:6px 12px;flex:1 1 40%;}
+    .stat-divider{display:none;}
     .hero h1{font-size:24px;}
     .final-cta{padding:32px 22px;}
     .footer-grid{flex-direction:column;text-align:center;}
@@ -646,9 +651,15 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
 
   <div class="wrap">
     <div class="stats-strip">
-      <div class="stat"><div class="num">3.100+</div><div class="label">Compradores</div></div>
-      <div class="stat"><div class="num">80</div><div class="label">Receitas</div></div>
-      <div class="stat"><div class="num">15 dias</div><div class="label">Garantia</div></div>
+      <div class="stat"><div class="icon">🧑‍🤝‍🧑</div><div class="num">3.100+</div><div class="label">Compradores</div></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><div class="icon">🍱</div><div class="num">80</div><div class="label">Receitas</div></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><div class="icon">⭐</div><div class="num">4.9/5</div><div class="label">2.640 avaliações</div></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><div class="icon">🛡️</div><div class="num">15 dias</div><div class="label">Garantia</div></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><div class="icon">🔒</div><div class="num">100%</div><div class="label">Compra segura</div></div>
     </div>
   </div>
 </header>
