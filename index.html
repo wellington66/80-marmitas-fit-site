@@ -80,6 +80,12 @@
   .btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(138,47,31,.45);}
   .btn-wide{width:100%;}
   .btn-terracota{background:var(--terracota);box-shadow:0 6px 18px rgba(224,112,58,.4);}
+  .btn-pulse{animation:btn-pulse-glow 2.2s ease-in-out infinite;}
+  @keyframes btn-pulse-glow{
+    0%,100%{transform:scale(1);box-shadow:0 6px 18px rgba(224,112,58,.4);}
+    50%{transform:scale(1.035);box-shadow:0 6px 26px rgba(224,112,58,.7),0 0 0 8px rgba(224,112,58,.12);}
+  }
+  @media(prefers-reduced-motion:reduce){.btn-pulse{animation:none;}}
 
   /* TOP BAR */
   .topbar{
@@ -886,7 +892,7 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
           <li>✅ Suporte Prioritário VIP</li>
           <li>✅ Acesso Vitalício</li>
         </ul>
-        <a href="https://pay.cakto.com.br/324gn44_1053106" class="btn btn-wide btn-terracota">QUERO O COMBO + 5 BÔNUS →</a>
+        <a href="https://pay.cakto.com.br/324gn44_1053106" class="btn btn-wide btn-terracota btn-pulse">QUERO O COMBO + 5 BÔNUS →</a>
       </div>
     </div>
 
