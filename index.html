@@ -1065,9 +1065,12 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
   .mobile-cta{
     display:none;position:fixed;left:0;right:0;bottom:0;z-index:50;
     padding:10px 14px;background:#fff;box-shadow:0 -8px 24px rgba(0,0,0,.12);
+    transform:translateY(100%);transition:transform .25s ease;
   }
   .mobile-cta .btn{padding:14px 20px;font-size:14px;}
-  @media(max-width:640px){ .mobile-cta{display:block;} body{padding-bottom:70px;} }
+  @media(max-width:640px){ .mobile-cta{display:block;} }
+  .mobile-cta.show{transform:translateY(0);}
+  body.mobile-cta-active{padding-bottom:70px;}
 </style>
 
 <script>
@@ -1077,6 +1080,22 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
     var mm = String(d.getMonth()+1).padStart(2,'0');
     document.getElementById('deadline-date').textContent = dd + '/' + mm;
     document.getElementById('footer-year').textContent = d.getFullYear();
+  })();
+
+  // O CTA fixo só aparece depois que o lead passa pela primeira seção (hero).
+  (function(){
+    var hero = document.querySelector('.hero');
+    var mobileCta = document.querySelector('.mobile-cta');
+    if(!hero || !mobileCta) return;
+
+    function toggleCta(){
+      var rect = hero.getBoundingClientRect();
+      var visible = rect.bottom <= 0;
+      mobileCta.classList.toggle('show', visible);
+      document.body.classList.toggle('mobile-cta-active', visible);
+    }
+    window.addEventListener('scroll', toggleCta, {passive:true});
+    toggleCta();
   })();
 
   // Depois que o lead rola a página e passa pela seção de ofertas (#ofertas),
