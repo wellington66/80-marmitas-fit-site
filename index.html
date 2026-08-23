@@ -1120,7 +1120,7 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
 <div id="sale-popup" class="sale-popup">
   <span class="sale-popup-icon">✅</span>
   <p class="sale-popup-text">
-    <strong>Venda concluída</strong> em <span id="sale-popup-city">São Paulo/SP</span> · há <span id="sale-popup-ago">2</span> min
+    <span id="sale-popup-name">Ana</span> de <span id="sale-popup-city">São Paulo/SP</span> acabou de garantir o <strong>Guia 80 Marmitas + Bônus</strong> · há <span id="sale-popup-ago">2</span> min
   </p>
 </div>
 <style>
@@ -1147,14 +1147,17 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
 <script>
   (function(){
     var cities = ["São Paulo/SP","Rio de Janeiro/RJ","Belo Horizonte/MG","Curitiba/PR","Salvador/BA","Porto Alegre/RS","Recife/PE","Fortaleza/CE","Brasília/DF","Florianópolis/SC","Campinas/SP","Goiânia/GO"];
+    var names = ["Ana","Larissa","Fernanda","Camila","Patrícia","Juliana","Marina","Isabela","Renata","Bruna","Carla","Débora"];
     var popup = document.getElementById('sale-popup');
+    var nameEl = document.getElementById('sale-popup-name');
     var cityEl = document.getElementById('sale-popup-city');
     var agoEl = document.getElementById('sale-popup-ago');
-    if(!popup || !cityEl || !agoEl) return;
+    if(!popup || !nameEl || !cityEl || !agoEl) return;
     var idx = Math.floor(Math.random() * cities.length);
 
     function show(){
       idx = (idx + 1 + Math.floor(Math.random() * 3)) % cities.length;
+      nameEl.textContent = names[idx % names.length];
       cityEl.textContent = cities[idx];
       agoEl.textContent = Math.floor(Math.random() * 8) + 1;
       popup.classList.add('show');
