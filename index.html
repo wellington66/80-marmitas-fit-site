@@ -1155,6 +1155,120 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
   })();
 </script>
 
+<!-- Pop-up de saída R$14,90 -->
+<div id="exit-overlay" class="upsell-overlay">
+  <div class="upsell-box">
+    <button type="button" id="exit-close" class="upsell-close" aria-label="Fechar">✕</button>
+    <div class="upsell-badge">ESPERA! ÚLTIMA CHANCE</div>
+    <img src="assets/20-plano-completo-guia-bonus.webp" alt="Plano Completo - marmitas fit + bônus" class="upsell-img">
+    <h3>Não vá embora sem seu desconto extra</h3>
+    <p class="upsell-sub">Guia com 80 Marmitas + <b>todos os 5 bônus exclusivos</b> por um preço que não vai se repetir.</p>
+    <div class="upsell-price">
+      <span class="old">De R$ 314,50</span><span class="off-badge">-95%</span>
+      <div class="new">R$ 14,90</div>
+      <div class="inst inst-strong">à vista, oferta única</div>
+    </div>
+    <a href="https://pay.cakto.com.br/j2ixf8n_1053121" class="btn btn-wide btn-terracota">SIM, QUERO POR R$ 14,90 →</a>
+    <a href="#" id="exit-decline" class="upsell-decline">Não, obrigado(a)</a>
+  </div>
+</div>
+
+<style>
+  .upsell-overlay{
+    display:none;position:fixed;inset:0;z-index:999;background:rgba(30,20,10,.6);
+    padding:16px;align-items:center;justify-content:center;
+  }
+  .upsell-overlay.show{display:flex;}
+  .upsell-overlay.opening{pointer-events:none;}
+  .upsell-box{
+    position:relative;background:#fff8ee;border-radius:18px;max-width:380px;width:100%;
+    padding:24px 20px 20px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.3);
+    max-height:92vh;overflow-y:auto;
+  }
+  .upsell-close{
+    position:absolute;top:10px;right:10px;width:32px;height:32px;border-radius:50%;
+    background:#fff;border:1px solid #eee;font-size:16px;color:#666;cursor:pointer;
+  }
+  .upsell-badge{
+    display:inline-block;background:#e0703a;color:#fff;font-size:13.5px;font-weight:800;
+    padding:6px 14px;border-radius:20px;letter-spacing:.5px;margin-bottom:12px;
+  }
+  .upsell-img{width:100%;max-width:220px;height:auto;margin:0 auto 14px;display:block;}
+  .upsell-box h3{font-size:19px;color:var(--green-dark);margin-bottom:8px;line-height:1.25;}
+  .upsell-sub{font-size:15px;color:var(--muted);margin-bottom:14px;line-height:1.5;}
+  .upsell-price{margin-bottom:16px;}
+  .upsell-price .old{text-decoration:line-through;color:#999;font-size:14.5px;}
+  .upsell-price .off-badge{
+    display:inline-block;margin-left:6px;background:var(--terracota);color:#fff;
+    font-size:12px;font-weight:800;padding:2px 7px;border-radius:10px;vertical-align:middle;
+  }
+  .upsell-price .new{font-size:34px;font-weight:800;color:var(--terracota);}
+  .upsell-price .inst{font-size:13.5px;color:#999;}
+  .upsell-price .inst.inst-strong{font-size:17px;font-weight:800;color:var(--terracota);}
+  .upsell-decline{
+    display:block;margin-top:14px;font-size:14px;color:var(--muted);
+    text-decoration:underline;
+  }
+</style>
+
+<script>
+  (function(){
+    var overlay = document.getElementById('exit-overlay');
+    var closeBtn = document.getElementById('exit-close');
+    var declineBtn = document.getElementById('exit-decline');
+
+    // stage controla a tentativa de saída do lead:
+    // 0 = nada ainda -> primeira tentativa só é bloqueada (não mostra nada)
+    // 1 = já bloqueou uma vez -> segunda tentativa mostra o pop-up de R$14,90
+    var stage = 0;
+
+    function isOpen(){ return overlay.classList.contains('show'); }
+    // Bloqueia cliques por um instante ao abrir, pra evitar "clique fantasma"
+    // (delay de ~300ms do navegador mobile) caindo em cima do botão do pop-up.
+    function armOpening(el){
+      el.classList.add('opening');
+      setTimeout(function(){ el.classList.remove('opening'); }, 500);
+    }
+    function openOverlay(){
+      if(isOpen()) return;
+      overlay.classList.add('show');
+      armOpening(overlay);
+    }
+    function closeOverlay(){
+      overlay.classList.remove('show');
+    }
+
+    closeBtn.addEventListener('click', closeOverlay);
+    declineBtn.addEventListener('click', function(e){ e.preventDefault(); closeOverlay(); });
+    overlay.addEventListener('click', function(e){
+      if(e.target === overlay){ closeOverlay(); }
+    });
+
+    // Primeira tentativa de saída: só bloqueia (marca o estágio, não mostra nada).
+    // Segunda tentativa: mostra o pop-up de R$14,90.
+    function exitIntentTrigger(){
+      if(isOpen()) return;
+      if(stage === 0){ stage = 1; }
+      else if(stage === 1){ openOverlay(); }
+    }
+
+    // Exit intent - desktop (mouse saindo pelo topo da janela)
+    document.addEventListener('mouseleave', function(e){
+      if(e.clientY <= 0){ exitIntentTrigger(); }
+    });
+
+    // Exit intent - mobile (botão voltar do navegador)
+    // Obs: cliques em links "#âncora" também disparam popstate, então só reage
+    // quando o estado é o marcador que nós mesmos empilhamos (voltar de verdade).
+    history.pushState({exitIntent:true}, '');
+    window.addEventListener('popstate', function(e){
+      if(e.state && e.state.exitIntent && stage < 2){
+        exitIntentTrigger();
+        history.pushState({exitIntent:true}, '');
+      }
+    });
+  })();
+</script>
 
 </body>
 </html>
