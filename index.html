@@ -457,6 +457,14 @@
     margin-top:10px;background:var(--green-light);border-radius:8px;padding:10px 12px;font-size:13.5px;color:var(--green-dark);
   }
   .testi-cta{text-align:center;margin-top:34px;}
+  .testi-shots{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .testi-shots img{
+    width:100%;height:auto;display:block;border-radius:14px;
+    box-shadow:0 6px 20px rgba(0,0,0,.08);cursor:zoom-in;
+    transition:transform .15s ease;
+  }
+  .testi-shots img:hover{transform:scale(1.02);}
+  @media(max-width:700px){.testi-shots{grid-template-columns:repeat(2,1fr);}}
 
   /* FAQ */
   .faq h2{font-size:28px;color:var(--green-dark);text-align:center;margin-bottom:26px;}
@@ -903,79 +911,13 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
       <div><div class="rating-stars">★★★★★</div><div class="rating-count">2.640 avaliações</div></div>
     </div>
 
-    <div class="testi-grid">
-      <div class="testi-card">
-        <div class="testi-top">
-          <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Fernanda Rocha">
-          <div><div class="testi-name">Fernanda Rocha</div><div class="testi-meta">Campinas, SP</div></div>
-        </div>
-        <div class="testi-stars">★★★★★</div>
-        <div class="testi-text">"Passei a cozinhar só aos domingos. De segunda a sexta é só tirar do freezer e esquentar. Mudou minha rotina."</div>
-        <div class="testi-verified">✓ Compra verificada</div>
-        <div class="testi-reply">💬 Isso, Fernanda! Cozinhar em lote é o segredo pra ganhar tempo na semana 💪</div>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-top">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Diego Nascimento">
-          <div><div class="testi-name">Diego Nascimento</div><div class="testi-meta">Belo Horizonte, MG</div></div>
-        </div>
-        <div class="testi-stars">★★★★★</div>
-        <div class="testi-text">"Achei que marmita fit ia ser sem graça. Errei feio, tem receita que fica melhor do que restaurante."</div>
-        <div class="testi-verified">✓ Compra verificada</div>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-top">
-          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Carla Menezes">
-          <div><div class="testi-name">Carla Menezes</div><div class="testi-meta">Porto Alegre, RS</div></div>
-        </div>
-        <div class="testi-stars">★★★★★</div>
-        <div class="testi-text">"Parei de pedir delivery quase todo dia. Só isso já pagou o guia várias vezes no fim do mês."</div>
-        <div class="testi-verified">✓ Compra verificada</div>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-top">
-          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Juliana Alves">
-          <div><div class="testi-name">Juliana Alves</div><div class="testi-meta">Curitiba, PR</div></div>
-        </div>
-        <div class="testi-stars">★★★★★</div>
-        <div class="testi-text">"O guia de congelamento sozinho já vale o preço. Minhas marmitas paravam de ficar aguadas e agora saem perfeitas."</div>
-        <div class="testi-verified">✓ Compra verificada</div>
-        <div class="testi-reply">💬 Que ótimo, Juliana! O segredo é esfriar bem antes de guardar 🙌</div>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-top">
-          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Rafael Torres">
-          <div><div class="testi-name">Rafael Torres</div><div class="testi-meta">São Paulo, SP</div></div>
-        </div>
-        <div class="testi-stars">★★★★★</div>
-        <div class="testi-text">"Malho de manhã e não tinha tempo pra cozinhar. Agora domingo à noite já deixo tudo pronto pra semana toda."</div>
-        <div class="testi-verified">✓ Compra verificada</div>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-top">
-          <img src="https://randomuser.me/api/portraits/women/90.jpg" alt="Patrícia Gomes">
-          <div><div class="testi-name">Patrícia Gomes</div><div class="testi-meta">Salvador, BA</div></div>
-        </div>
-        <div class="testi-stars">★★★★★</div>
-        <div class="testi-text">"Comprei desconfiada, achando que era mais um PDF genérico. Me surpreendi, as receitas tradicionais ficaram incríveis."</div>
-        <div class="testi-verified">✓ Compra verificada</div>
-        <div class="testi-reply">💬 Amamos ouvir isso, Patrícia! Bom apetite 🍽️</div>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-top">
-          <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Marcos Vieira">
-          <div><div class="testi-name">Marcos Vieira</div><div class="testi-meta">Recife, PE</div></div>
-        </div>
-        <div class="testi-stars">★★★★★</div>
-        <div class="testi-text">"Moro sozinho e sempre foi difícil cozinhar em pouca quantidade. As porções do guia encaixaram certinho pra mim."</div>
-        <div class="testi-verified">✓ Compra verificada</div>
-      </div>
+    <div class="testi-shots">
+      <img src="img/depoimentos/depoimento-1.jpeg" alt="Print de conversa no WhatsApp com cliente satisfeita mostrando as marmitas prontas">
+      <img src="img/depoimentos/depoimento-2.jpeg" alt="Print de conversa no WhatsApp com cliente satisfeita mostrando as marmitas prontas">
+      <img src="img/depoimentos/depoimento-3.jpeg" alt="Print de conversa no WhatsApp com cliente satisfeita mostrando as marmitas prontas">
+      <img src="img/depoimentos/depoimento-4.jpeg" alt="Print de conversa no WhatsApp com cliente satisfeita mostrando as marmitas prontas">
+      <img src="img/depoimentos/depoimento-5.jpeg" alt="Print de conversa no WhatsApp com cliente satisfeita mostrando as marmitas prontas">
+      <img src="img/depoimentos/depoimento-6.jpeg" alt="Print de conversa no WhatsApp com cliente satisfeita mostrando as marmitas prontas">
     </div>
 
     <div class="testi-cta"><a href="https://pay.cakto.com.br/324gn44_1053106" class="btn">QUERO AS MARMITAS AGORA →</a></div>
