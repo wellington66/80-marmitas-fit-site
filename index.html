@@ -1108,7 +1108,7 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
   })();
 </script>
 
-<!-- Pop-up de saída R$7,90 -->
+<!-- Pop-up de saída R$22,90 -->
 <div id="exit-overlay" class="upsell-overlay">
   <div class="upsell-box">
     <button type="button" id="exit-close" class="upsell-close" aria-label="Fechar">✕</button>
@@ -1117,11 +1117,11 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
     <h3>Não vá embora sem seu desconto extra</h3>
     <p class="upsell-sub">Guia com 80 Marmitas + <b>todos os 5 bônus exclusivos</b> por um preço que não vai se repetir.</p>
     <div class="upsell-price">
-      <span class="old">De R$ 314,50</span><span class="off-badge">-97%</span>
-      <div class="new">R$ 7,90</div>
+      <span class="old">De R$ 314,50</span><span class="off-badge">-93%</span>
+      <div class="new">R$ 22,90</div>
       <div class="inst inst-strong">à vista, oferta única</div>
     </div>
-    <a href="https://pay.cakto.com.br/j2ixf8n_1053121" class="btn btn-wide btn-terracota">SIM, QUERO POR R$ 7,90 →</a>
+    <a href="https://pay.cakto.com.br/j2ixf8n_1053121" class="btn btn-wide btn-terracota">SIM, QUERO POR R$ 22,90 →</a>
     <a href="#" id="exit-decline" class="upsell-decline">Não, obrigado(a)</a>
   </div>
 </div>
@@ -1172,7 +1172,7 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
 
     // stage controla a tentativa de saída do lead:
     // 0 = nada ainda -> primeira tentativa só é bloqueada (não mostra nada)
-    // 1 = já bloqueou uma vez -> segunda tentativa mostra o pop-up de R$7,90
+    // 1 = já bloqueou uma vez -> segunda tentativa mostra o pop-up de R$22,90
     var stage = 0;
 
     function isOpen(){ return overlay.classList.contains('show'); }
@@ -1198,7 +1198,7 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
     });
 
     // Primeira tentativa de saída: só bloqueia (marca o estágio, não mostra nada).
-    // Segunda tentativa: mostra o pop-up de R$7,90.
+    // Segunda tentativa: mostra o pop-up de R$22,90.
     function exitIntentTrigger(){
       if(isOpen()) return;
       if(stage === 0){ stage = 1; }
