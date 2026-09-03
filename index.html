@@ -437,6 +437,11 @@
     text-align:center;font-size:14px;color:var(--muted);font-weight:700;
     margin-top:12px;
   }
+  .prefer-arrow{
+    text-align:center;font-size:30px;line-height:1;margin-top:4px;color:var(--terracota);
+    animation:arrow-bounce-x 1.4s ease-in-out infinite;
+  }
+  @keyframes arrow-bounce-x{0%,100%{transform:translateX(0);}50%{transform:translateX(6px);}}
 
   /* TESTIMONIALS */
   .testi-header{text-align:center;margin-bottom:20px;}
@@ -546,6 +551,8 @@
     .bonus{padding:36px 20px;}
     .bonus-grid{grid-template-columns:repeat(2,1fr);}
     .plans-grid{grid-template-columns:1fr;}
+    .prefer-arrow{transform:rotate(90deg);animation:arrow-bounce-y 1.4s ease-in-out infinite;}
+    @keyframes arrow-bounce-y{0%,100%{transform:rotate(90deg) translateX(0);}50%{transform:rotate(90deg) translateX(6px);}}
     .testi-grid{grid-template-columns:1fr;}
     .stats-strip{margin-top:-24px;gap:8px 4px;padding:16px 8px;}
     .stat{padding:2px 8px;flex:1 1 30%;}
@@ -901,6 +908,7 @@ src="https://www.facebook.com/tr?id=1323059149900795&ev=PageView&noscript=1"
         </ul>
         <a href="#" id="btn-oferta-basica" class="btn btn-wide">QUERO SÓ O GUIA POR R$ 19,90 →</a>
         <p class="plan-hint" style="color:var(--terracota);">🔥 98% das pessoas preferem a Oferta Completa</p>
+        <div class="prefer-arrow" aria-hidden="true">➜</div>
       </div>
 
       <div class="plan-card popular" id="oferta-completa">
