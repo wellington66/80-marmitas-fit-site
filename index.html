@@ -32,7 +32,9 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%238a2f1f'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle'%3E%F0%9F%8D%B1%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,600&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/01-hero-marmitas-organizadas-m.webp" imagesrcset="assets/01-hero-marmitas-organizadas-m.webp 560w, assets/01-hero-marmitas-organizadas.webp 900w" imagesizes="(max-width:880px) 300px, 460px" fetchpriority="high">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,600&family=Nunito+Sans:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,600&family=Nunito+Sans:wght@400;600;700;800&display=swap"></noscript>
 <style>html{scroll-behavior:smooth;}</style>
 <style>
   :root{
@@ -57,7 +59,7 @@
     line-height:1.5;
     overflow-x:hidden;
   }
-  img{max-width:100%;display:block;}
+  img{max-width:100%;height:auto;display:block;}
   a{text-decoration:none;color:inherit;}
   .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
   section{padding:60px 0;}
@@ -536,7 +538,7 @@
     .hero{
       background:
         linear-gradient(180deg, rgba(30,14,9,.35) 0%, rgba(35,16,10,.75) 38%, rgba(40,18,10,.95) 60%, rgba(40,18,10,.97) 100%),
-        url('assets/18-hero-bg-marmitas-mesa.webp') right 55% / cover no-repeat,
+        url('assets/18-hero-bg-marmitas-mesa-m.webp') right 55% / cover no-repeat,
         linear-gradient(160deg,var(--green-dark) 0%, var(--green) 55%, #a8432b 100%);
     }
     .hero-inner{grid-template-columns:1fr;text-align:center;}
@@ -706,7 +708,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     </div>
 
     <div class="hero-image">
-      <img src="assets/01-hero-marmitas-organizadas.webp" alt="Ebook 80 Marmitas Fit cercado de marmitas prontas com arroz, frango e legumes" fetchpriority="high">
+      <img width="900" height="900" src="assets/01-hero-marmitas-organizadas.webp" srcset="assets/01-hero-marmitas-organizadas-m.webp 560w, assets/01-hero-marmitas-organizadas.webp 900w" sizes="(max-width:880px) 300px, 460px" alt="Ebook 80 Marmitas Fit cercado de marmitas prontas com arroz, frango e legumes" fetchpriority="high">
     </div>
   </div>
 
@@ -735,7 +737,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <div class="problem-item">💸 <div><b>Menos delivery, mais dinheiro no bolso</b><br>Troque o ifood pelo freezer e economize centenas de reais por mês.</div></div>
       </div>
       <div class="problem-image">
-        <img src="assets/02-marmitas-prontas-congelar.webp" alt="Marmitas fit empilhadas prontas para congelar" loading="lazy" decoding="async">
+        <img width="800" height="465" src="assets/02-marmitas-prontas-congelar.webp" alt="Marmitas fit empilhadas prontas para congelar" loading="lazy" decoding="async">
       </div>
     </div>
 
@@ -768,8 +770,8 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     </div>
     <div class="why-grid">
       <div class="why-images">
-        <img class="book" src="assets/03-marmita-colorida-destaque.webp" alt="Marmita colorida com arroz, feijão, frango e legumes" loading="lazy" decoding="async">
-        <img class="chef" src="assets/04-montagem-marmitas.webp" alt="Marmita fit sendo montada" loading="lazy" decoding="async">
+        <img width="700" height="467" class="book" src="assets/03-marmita-colorida-destaque.webp" alt="Marmita colorida com arroz, feijão, frango e legumes" loading="lazy" decoding="async">
+        <img width="420" height="280" class="chef" src="assets/04-montagem-marmitas.webp" alt="Marmita fit sendo montada" loading="lazy" decoding="async">
       </div>
       <div class="why-list">
         <div class="why-item"><div class="num">1</div><div><h4>Fit e tradicionais no mesmo guia</h4><p>Receitas leves para o dia a dia e opções mais robustas para quem também quer comer bem sem contar calorias.</p></div></div>
@@ -796,42 +798,42 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     <div class="recipe-grid">
       <div class="recipe-card">
         <div class="recipe-img">
-          <img src="assets/05-receita-frango-grelhado-arroz-legumes.webp" alt="Frango grelhado com arroz e legumes" loading="lazy" decoding="async">
+          <img width="600" height="400" src="assets/05-receita-frango-grelhado-arroz-legumes.webp" alt="Frango grelhado com arroz e legumes" loading="lazy" decoding="async">
           <span class="tag-diff">Fácil</span><span class="tag-kcal">410 kcal</span>
         </div>
         <div class="recipe-body"><h4>Frango Grelhado Suculento com Arroz Soltinho</h4><div class="recipe-meta"><span>⏱ 25 min</span><span class="healthy">Fit</span></div></div>
       </div>
       <div class="recipe-card">
         <div class="recipe-img">
-          <img src="assets/06-receita-frango-brocolis-arroz-integral.webp" alt="Marmita de frango com brócolis e arroz integral" loading="lazy" decoding="async">
+          <img width="600" height="400" src="assets/06-receita-frango-brocolis-arroz-integral.webp" alt="Marmita de frango com brócolis e arroz integral" loading="lazy" decoding="async">
           <span class="tag-diff">Fácil</span><span class="tag-kcal">385 kcal</span>
         </div>
         <div class="recipe-body"><h4>Frango Dourado com Brócolis Crocante</h4><div class="recipe-meta"><span>⏱ 20 min</span><span class="healthy">Fit</span></div></div>
       </div>
       <div class="recipe-card">
         <div class="recipe-img">
-          <img src="assets/07-receita-peixe-grelhado-legumes-assados.webp" alt="Peixe grelhado com legumes assados" loading="lazy" decoding="async">
+          <img width="600" height="400" src="assets/07-receita-peixe-grelhado-legumes-assados.webp" alt="Peixe grelhado com legumes assados" loading="lazy" decoding="async">
           <span class="tag-diff">Médio</span><span class="tag-kcal">340 kcal</span>
         </div>
         <div class="recipe-body"><h4>Peixe Grelhado no Ponto com Legumes Assados</h4><div class="recipe-meta"><span>⏱ 25 min</span><span class="healthy">Fit</span></div></div>
       </div>
       <div class="recipe-card">
         <div class="recipe-img">
-          <img src="assets/08-receita-frango-arroz-feijao-pure.webp" alt="Frango com arroz, feijão e purê" loading="lazy" decoding="async">
+          <img width="600" height="400" src="assets/08-receita-frango-arroz-feijao-pure.webp" alt="Frango com arroz, feijão e purê" loading="lazy" decoding="async">
           <span class="tag-diff">Completo</span><span class="tag-kcal">520 kcal</span>
         </div>
         <div class="recipe-body"><h4>Frango Caipira, Arroz, Feijão e Purê Cremoso</h4><div class="recipe-meta"><span>⏱ 30 min</span><span class="healthy">Tradicional</span></div></div>
       </div>
       <div class="recipe-card">
         <div class="recipe-img">
-          <img src="assets/09-receita-frango-molho-vegetais.webp" alt="Frango grelhado com molho e vegetais" loading="lazy" decoding="async">
+          <img width="600" height="400" src="assets/09-receita-frango-molho-vegetais.webp" alt="Frango grelhado com molho e vegetais" loading="lazy" decoding="async">
           <span class="tag-diff">Fácil</span><span class="tag-kcal">395 kcal</span>
         </div>
         <div class="recipe-body"><h4>Frango ao Molho Encorpado com Vegetais Salteados</h4><div class="recipe-meta"><span>⏱ 22 min</span><span class="healthy">Fit</span></div></div>
       </div>
       <div class="recipe-card">
         <div class="recipe-img">
-          <img src="assets/10-receita-frango-desfiado-arroz-feijao.webp" alt="Marmita de frango desfiado com arroz e cebolinha" loading="lazy" decoding="async">
+          <img width="600" height="400" src="assets/10-receita-frango-desfiado-arroz-feijao.webp" alt="Marmita de frango desfiado com arroz e cebolinha" loading="lazy" decoding="async">
           <span class="tag-diff">Rápido</span><span class="tag-kcal">360 kcal</span>
         </div>
         <div class="recipe-body"><h4>Bowl de Frango Desfiado Temperadinho</h4><div class="recipe-meta"><span>⏱ 18 min</span><span class="healthy">Fit</span></div></div>
@@ -856,7 +858,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <div class="bonus-card">
           <div class="bonus-img-frame">
             <span class="bonus-free-tag">🎁 GRÁTIS</span>
-            <img src="assets/bonus-congelamento.webp" alt="Guia de Lanches Saudáveis" loading="lazy" decoding="async">
+            <img width="560" height="315" src="assets/bonus-congelamento.webp" alt="Guia de Lanches Saudáveis" loading="lazy" decoding="async">
           </div>
           <h4>Guia de Lanches Saudáveis</h4>
           <div class="bonus-price"><span class="old">R$ 47,00</span> → <span class="new">R$ 0,00</span></div>
@@ -864,7 +866,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <div class="bonus-card">
           <div class="bonus-img-frame">
             <span class="bonus-free-tag">🎁 GRÁTIS</span>
-            <img src="assets/bonus-cardapio-semanal.webp" alt="Planejamento Semanal Pronto" loading="lazy" decoding="async">
+            <img width="560" height="315" src="assets/bonus-cardapio-semanal.webp" alt="Planejamento Semanal Pronto" loading="lazy" decoding="async">
           </div>
           <h4>Planejamento Semanal Pronto</h4>
           <div class="bonus-price"><span class="old">R$ 37,00</span> → <span class="new">R$ 0,00</span></div>
@@ -872,7 +874,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <div class="bonus-card">
           <div class="bonus-img-frame">
             <span class="bonus-free-tag">🎁 GRÁTIS</span>
-            <img src="assets/bonus-lista-compras.webp" alt="Lista de Compras Econômica" loading="lazy" decoding="async">
+            <img width="560" height="315" src="assets/bonus-lista-compras.webp" alt="Lista de Compras Econômica" loading="lazy" decoding="async">
           </div>
           <h4>Lista de Compras Econômica</h4>
           <div class="bonus-price"><span class="old">R$ 29,00</span> → <span class="new">R$ 0,00</span></div>
@@ -880,7 +882,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <div class="bonus-card">
           <div class="bonus-img-frame">
             <span class="bonus-free-tag">🎁 GRÁTIS</span>
-            <img src="assets/bonus-doces-sem-acucar.jpg" alt="50 Receitas de Sobremesas Sem Açúcar" loading="lazy" decoding="async">
+            <img width="560" height="328" src="assets/bonus-doces-sem-acucar.webp" alt="50 Receitas de Sobremesas Sem Açúcar" loading="lazy" decoding="async">
           </div>
           <h4>50 Receitas de Sobremesas Sem Açúcar</h4>
           <div class="bonus-price"><span class="old">R$ 27,00</span> → <span class="new">R$ 0,00</span></div>
@@ -888,7 +890,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <div class="bonus-card">
           <div class="bonus-img-frame">
             <span class="bonus-free-tag">🎁 GRÁTIS</span>
-            <img src="assets/bonus-molhos.webp" alt="Molhos e Temperos Caseiros" loading="lazy" decoding="async">
+            <img width="560" height="315" src="assets/bonus-molhos.webp" alt="Molhos e Temperos Caseiros" loading="lazy" decoding="async">
           </div>
           <h4>Molhos e Temperos Caseiros</h4>
           <div class="bonus-price"><span class="old">R$ 25,00</span> → <span class="new">R$ 0,00</span></div>
@@ -913,7 +915,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
     <div class="plans-grid">
       <div class="plan-card">
-        <img src="assets/guia-80-receitas-com-celular.png" alt="Plano Básico - guia de marmitas fit" loading="lazy" decoding="async">
+        <img width="720" height="534" src="assets/guia-80-receitas-com-celular.webp" alt="Plano Básico - guia de marmitas fit" loading="lazy" decoding="async">
         <h3>Plano Básico</h3>
         <div class="plan-type">Somente o Guia com 80 Marmitas</div>
         <div class="plan-price">
@@ -934,7 +936,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
       <div class="plan-card popular" id="oferta-completa">
         <span class="plan-badge">MAIS ESCOLHIDA ✨</span>
-        <img src="assets/20-plano-completo-guia-bonus.webp" alt="Plano Completo - marmitas fit + bônus" loading="lazy" decoding="async">
+        <img width="640" height="477" src="assets/20-plano-completo-guia-bonus.webp" alt="Plano Completo - marmitas fit + bônus" loading="lazy" decoding="async">
         <h3>Plano Completo</h3>
         <div class="plan-type">Guia + Lanches Saudáveis + Planejamento Semanal + Lista de Compras + Sobremesas Sem Açúcar + Molhos</div>
         <div class="plan-price">
@@ -1007,12 +1009,12 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     </div>
 
     <div class="testi-shots">
-      <img src="img/depoimentos/depoimento-1.jpeg" alt="Print de conversa no WhatsApp com cliente satisfeita mostrando as marmitas prontas">
-      <img src="img/depoimentos/depoimento-2.jpeg" alt="Print de conversa no WhatsApp com cliente satisfeita mostrando as marmitas prontas">
-      <img src="img/depoimentos/depoimento-3.jpeg" alt="Print de conversa no WhatsApp com cliente satisfeita mostrando as marmitas prontas">
-      <img src="img/depoimentos/depoimento-4.jpeg" alt="Print de conversa no WhatsApp com cliente satisfeita mostrando as marmitas prontas">
-      <img src="img/depoimentos/depoimento-5.jpeg" alt="Print de conversa no WhatsApp com cliente satisfeita mostrando as marmitas prontas">
-      <img src="img/depoimentos/depoimento-6.jpeg" alt="Print de conversa no WhatsApp com cliente satisfeita mostrando as marmitas prontas">
+      <img width="600" height="900" src="img/depoimentos/depoimento-1.webp" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com cliente satisfeita mostrando as marmitas prontas">
+      <img width="600" height="900" src="img/depoimentos/depoimento-2.webp" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com cliente satisfeita mostrando as marmitas prontas">
+      <img width="600" height="900" src="img/depoimentos/depoimento-3.webp" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com cliente satisfeita mostrando as marmitas prontas">
+      <img width="600" height="900" src="img/depoimentos/depoimento-4.webp" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com cliente satisfeita mostrando as marmitas prontas">
+      <img width="600" height="900" src="img/depoimentos/depoimento-5.webp" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com cliente satisfeita mostrando as marmitas prontas">
+      <img width="600" height="900" src="img/depoimentos/depoimento-6.webp" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com cliente satisfeita mostrando as marmitas prontas">
     </div>
 
     <div class="testi-cta"><a href="https://pay.cakto.com.br/324gn44_1053106" class="btn">QUERO AS MARMITAS AGORA →</a></div>
@@ -1203,7 +1205,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   <div class="upsell-box">
     <button type="button" id="exit-close" class="upsell-close" aria-label="Fechar">✕</button>
     <div class="upsell-badge">ESPERA! ÚLTIMA CHANCE</div>
-    <img src="assets/20-plano-completo-guia-bonus.webp" alt="Plano Completo - marmitas fit + bônus" class="upsell-img">
+    <img width="640" height="477" src="assets/20-plano-completo-guia-bonus.webp" alt="Plano Completo - marmitas fit + bônus" class="upsell-img" loading="lazy" decoding="async">
     <h3>Não vá embora sem seu desconto extra</h3>
     <p class="upsell-sub">Guia com 80 Marmitas + <b>todos os 5 bônus exclusivos</b> por um preço que não vai se repetir.</p>
     <div class="upsell-price">
