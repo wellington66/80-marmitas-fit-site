@@ -680,13 +680,13 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   ttq.page();
 }(window, document, 'ttq');
 
-// InitiateCheckout no TikTok só em cliques em links que levam ao checkout Cakto
+// InitiateCheckout no TikTok só em cliques em links que levam ao checkout Kirvano
 (function(){
-  var prices = { '324gn44_1053106': 29.90, 'j2ixf8n_1053121': 22.90, 'fbt4b5e': 19.90 };
+  var prices = { '9082d7c0-b319-43f7-9ce6-427c23712f2d': 29.90, '4fa174f3-e2c5-4060-a55f-a770ad32004d': 22.90, '072e1934-eb9c-48ab-b790-3714cd0fd0d0': 19.90 };
   document.addEventListener('click', function(e){
-    var a = e.target.closest && e.target.closest('a[href*="pay.cakto.com.br"]');
+    var a = e.target.closest && e.target.closest('a[href*="pay.kirvano.com"]');
     if (!a) return;
-    var id = a.href.split('pay.cakto.com.br/')[1].split(/[?#/]/)[0];
+    var id = a.href.split('pay.kirvano.com/')[1].split(/[?#/]/)[0];
     ttq.track('InitiateCheckout', {
       contents: [{ content_id: id, content_type: 'product', content_name: '80 Marmitas Fit' }],
       value: prices[id] || 29.90,
@@ -987,7 +987,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
           <li><b>🎁 Bônus 4 - 50 Receitas de Sobremesas Sem Açúcar</b></li>
           <li><b>🎁 Bônus 5 - Molhos e Temperos Caseiros</b></li>
         </ul>
-        <a href="https://pay.cakto.com.br/324gn44_1053106" class="btn btn-wide btn-terracota btn-pulse">COMPRAR AGORA →</a>
+        <a href="https://pay.kirvano.com/9082d7c0-b319-43f7-9ce6-427c23712f2d" class="btn btn-wide btn-terracota btn-pulse">COMPRAR AGORA →</a>
         <p class="plan-hint">🔒 Compra Segura · ✅ Acesso Imediato</p>
       </div>
     </div>
@@ -1008,8 +1008,8 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       <div class="new">R$ 22,90</div>
       <div class="inst">só nesta página, agora</div>
     </div>
-    <a href="https://pay.cakto.com.br/j2ixf8n_1053121" class="btn btn-wide btn-terracota" style="margin-top:16px;">SIM! QUERO O COMPLETO POR R$ 22,90 →</a>
-    <a href="https://pay.cakto.com.br/fbt4b5e" id="upsell-decline" style="display:block;margin-top:14px;font-size:13px;color:var(--muted);text-decoration:underline;">Não, quero continuar só com o guia por R$ 19,90</a>
+    <a href="https://pay.kirvano.com/4fa174f3-e2c5-4060-a55f-a770ad32004d" class="btn btn-wide btn-terracota" style="margin-top:16px;">SIM! QUERO O COMPLETO POR R$ 22,90 →</a>
+    <a href="https://pay.kirvano.com/072e1934-eb9c-48ab-b790-3714cd0fd0d0" id="upsell-decline" style="display:block;margin-top:14px;font-size:13px;color:var(--muted);text-decoration:underline;">Não, quero continuar só com o guia por R$ 19,90</a>
   </div>
 </div>
 
@@ -1051,7 +1051,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       <img width="600" height="900" src="img/depoimentos/depoimento-6.webp" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com cliente satisfeita mostrando as marmitas prontas">
     </div>
 
-    <div class="testi-cta"><a href="https://pay.cakto.com.br/324gn44_1053106" class="btn">QUERO AS 80 MARMITAS →</a></div>
+    <div class="testi-cta"><a href="https://pay.kirvano.com/9082d7c0-b319-43f7-9ce6-427c23712f2d" class="btn">QUERO AS 80 MARMITAS →</a></div>
   </div>
 </section>
 
@@ -1090,7 +1090,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     <div class="final-cta">
       <h3>AINDA NÃO GARANTIU SUA OFERTA?</h3>
       <p>Leve as 80 Marmitas Fit + 5 bônus exclusivos por apenas R$ 29,90 enquanto a promoção ainda está disponível.</p>
-      <a href="https://pay.cakto.com.br/324gn44_1053106" class="btn btn-terracota">QUERO AS 80 MARMITAS FIT →</a>
+      <a href="https://pay.kirvano.com/9082d7c0-b319-43f7-9ce6-427c23712f2d" class="btn btn-terracota">QUERO AS 80 MARMITAS FIT →</a>
       <div class="final-badges">
         <span>✅ Acesso Imediato</span>
         <span>♾️ Acesso Vitalício</span>
@@ -1168,7 +1168,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     var ofertas = document.getElementById('ofertas');
     var ctaLink = document.getElementById('mobile-cta-link');
     if(!ofertas || !ctaLink) return;
-    var checkoutUrl = 'https://pay.cakto.com.br/324gn44_1053106';
+    var checkoutUrl = 'https://pay.kirvano.com/9082d7c0-b319-43f7-9ce6-427c23712f2d';
     var switched = false;
 
     function checkScroll(){
@@ -1250,7 +1250,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       <div class="new">R$ 22,90</div>
       <div class="inst inst-strong">à vista, oferta única</div>
     </div>
-    <a href="https://pay.cakto.com.br/j2ixf8n_1053121" class="btn btn-wide btn-terracota">SIM, QUERO POR R$ 22,90 →</a>
+    <a href="https://pay.kirvano.com/4fa174f3-e2c5-4060-a55f-a770ad32004d" class="btn btn-wide btn-terracota">SIM, QUERO POR R$ 22,90 →</a>
     <a href="#" id="exit-decline" class="upsell-decline">Não, obrigado(a)</a>
   </div>
 </div>
