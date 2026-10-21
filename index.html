@@ -276,12 +276,18 @@
     background:#fff;border-radius:20px;padding:34px;box-shadow:0 10px 40px rgba(0,0,0,.06);
   }
   .why-images{position:relative;display:flex;justify-content:center;}
-  .why-images.guia-leque{height:340px;}
-  .guia-pg{position:absolute;top:10px;width:46%;max-width:210px;height:auto;aspect-ratio:2/3;object-fit:cover;border-radius:10px;background:#fff;box-shadow:0 14px 34px rgba(0,0,0,.18);}
-  .guia-pg.pg-esq{left:2%;transform:rotate(-8deg);top:30px;}
-  .guia-pg.pg-dir{right:2%;transform:rotate(8deg);top:30px;}
-  .guia-pg.pg-meio{left:50%;transform:translateX(-50%);z-index:2;box-shadow:0 20px 44px rgba(0,0,0,.25);}
-  .guia-selo{position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);z-index:3;background:var(--terracota);color:#fff;font-weight:800;font-size:13px;padding:7px 16px;border-radius:30px;white-space:nowrap;box-shadow:0 8px 20px rgba(0,0,0,.18);}
+  .guia-car{display:block;min-width:0;}
+  .guia-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px 16px;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+  .guia-track::-webkit-scrollbar{display:none;}
+  .guia-track img{flex:0 0 250px;width:250px;height:auto;aspect-ratio:2/3;object-fit:cover;border-radius:10px;scroll-snap-align:center;box-shadow:0 10px 26px rgba(0,0,0,.16);cursor:zoom-in;background:#fff;}
+  .guia-nav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:2px;}
+  .guia-count{font-size:13px;color:var(--muted);}
+  .guia-count b{color:var(--terracota);}
+  .guia-btn{width:38px;height:38px;border-radius:50%;border:0;background:var(--terracota);color:#fff;font-size:24px;line-height:1;cursor:pointer;box-shadow:0 6px 14px rgba(0,0,0,.15);}
+  .guia-zoom{position:fixed;inset:0;z-index:1000;background:rgba(20,10,4,.92);display:none;align-items:center;justify-content:center;padding:14px;}
+  .guia-zoom.show{display:flex;}
+  .guia-zoom img{max-width:100%;max-height:100%;border-radius:8px;}
+  .guia-zoom button{position:absolute;top:10px;right:12px;background:#fff;border:0;border-radius:50%;width:38px;height:38px;font-size:18px;cursor:pointer;}
   .why-images img.book{border-radius:12px;box-shadow:0 20px 40px rgba(0,0,0,.15);width:100%;max-width:400px;height:280px;object-fit:cover;}
   .why-images img.chef{
     position:absolute;bottom:-24px;right:-10px;width:190px;height:130px;border-radius:14px;
@@ -559,7 +565,8 @@
     .problem-image{order:-1;}
     .why-grid{grid-template-columns:1fr;padding:24px;gap:50px;}
     .why-images{padding-bottom:10px;}
-    .why-images.guia-leque{height:300px;}
+    .guia-track{margin:0 -24px;padding:6px 24px 16px;}
+    .guia-track img{flex-basis:70vw;width:70vw;max-width:300px;}
     .why-images img.book{height:220px;}
     .why-images img.chef{width:150px;height:105px;right:0;bottom:-30px;}
     .why-list{grid-template-columns:1fr;}
@@ -804,11 +811,23 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       <h2>ESSES ALMOÇOS SÃO PERFEITOS PARA VOCÊ QUE...</h2>
     </div>
     <div class="why-grid">
-      <div class="why-images guia-leque">
-        <img width="600" height="900" class="guia-pg pg-esq" src="assets/guia-pagina-8.webp" srcset="assets/guia-pagina-8-m.webp 360w, assets/guia-pagina-8.webp 600w" sizes="(max-width:880px) 45vw, 200px" alt="Página do guia: Salmão com Molho de Iogurte e Endro" loading="lazy" decoding="async">
-        <img width="600" height="900" class="guia-pg pg-dir" src="assets/guia-pagina-1.webp" srcset="assets/guia-pagina-1-m.webp 360w, assets/guia-pagina-1.webp 600w" sizes="(max-width:880px) 45vw, 200px" alt="Página do guia: Rolê de Frango Recheado com Espinafre e Queijo" loading="lazy" decoding="async">
-        <img width="600" height="900" class="guia-pg pg-meio" src="assets/guia-pagina-5.webp" srcset="assets/guia-pagina-5-m.webp 360w, assets/guia-pagina-5.webp 600w" sizes="(max-width:880px) 45vw, 200px" alt="Página do guia: Frango ao Sugo com Grão-de-Bico" loading="lazy" decoding="async">
-        <span class="guia-selo">📖 Páginas reais do guia</span>
+      <div class="why-images guia-car">
+        <div class="guia-track" id="guia-track">
+          <img width="600" height="900" src="assets/guia-pagina-5-m.webp" srcset="assets/guia-pagina-5-m.webp 360w, assets/guia-pagina-5.webp 600w" sizes="(max-width:880px) 70vw, 250px" data-full="assets/guia-pagina-5.webp" alt="Página do guia: Frango ao Sugo com Grão-de-Bico" loading="lazy" decoding="async">
+          <img width="600" height="900" src="assets/guia-pagina-7-m.webp" srcset="assets/guia-pagina-7-m.webp 360w, assets/guia-pagina-7.webp 600w" sizes="(max-width:880px) 70vw, 250px" data-full="assets/guia-pagina-7.webp" alt="Página do guia: Strogonoff de Frango Fit" loading="lazy" decoding="async">
+          <img width="600" height="900" src="assets/guia-pagina-1-m.webp" srcset="assets/guia-pagina-1-m.webp 360w, assets/guia-pagina-1.webp 600w" sizes="(max-width:880px) 70vw, 250px" data-full="assets/guia-pagina-1.webp" alt="Página do guia: Rolê de Frango Recheado com Espinafre e Queijo" loading="lazy" decoding="async">
+          <img width="600" height="900" src="assets/guia-pagina-2-m.webp" srcset="assets/guia-pagina-2-m.webp 360w, assets/guia-pagina-2.webp 600w" sizes="(max-width:880px) 70vw, 250px" data-full="assets/guia-pagina-2.webp" alt="Página do guia: Espaguete à Bolonhesa Caseira" loading="lazy" decoding="async">
+          <img width="600" height="900" src="assets/guia-pagina-6-m.webp" srcset="assets/guia-pagina-6-m.webp 360w, assets/guia-pagina-6.webp 600w" sizes="(max-width:880px) 70vw, 250px" data-full="assets/guia-pagina-6.webp" alt="Página do guia: Galinhada Fit com Açafrão" loading="lazy" decoding="async">
+          <img width="600" height="900" src="assets/guia-pagina-8-m.webp" srcset="assets/guia-pagina-8-m.webp 360w, assets/guia-pagina-8.webp 600w" sizes="(max-width:880px) 70vw, 250px" data-full="assets/guia-pagina-8.webp" alt="Página do guia: Salmão com Molho de Iogurte e Endro" loading="lazy" decoding="async">
+          <img width="600" height="900" src="assets/guia-pagina-3-m.webp" srcset="assets/guia-pagina-3-m.webp 360w, assets/guia-pagina-3.webp 600w" sizes="(max-width:880px) 70vw, 250px" data-full="assets/guia-pagina-3.webp" alt="Página do guia: Almôndegas de Patinho ao Molho Rústico" loading="lazy" decoding="async">
+          <img width="600" height="900" src="assets/guia-pagina-10-m.webp" srcset="assets/guia-pagina-10-m.webp 360w, assets/guia-pagina-10.webp 600w" sizes="(max-width:880px) 70vw, 250px" data-full="assets/guia-pagina-10.webp" alt="Página do guia: Berinjela Recheada à Parmegiana" loading="lazy" decoding="async">
+          <img width="600" height="900" src="assets/guia-pagina-11-m.webp" srcset="assets/guia-pagina-11-m.webp 360w, assets/guia-pagina-11.webp 600w" sizes="(max-width:880px) 70vw, 250px" data-full="assets/guia-pagina-11.webp" alt="Página do guia: Moqueca de Peixe Leve" loading="lazy" decoding="async">
+        </div>
+        <div class="guia-nav">
+          <button type="button" class="guia-btn" id="guia-prev" aria-label="Página anterior">‹</button>
+          <span class="guia-count"><b id="guia-n">1</b> / 9 · 📖 toque para ampliar</span>
+          <button type="button" class="guia-btn" id="guia-next" aria-label="Próxima página">›</button>
+        </div>
       </div>
       <div class="why-list">
         <div class="why-item"><div class="num">1</div><div><p>Tem uma rotina corrida e precisa de almoços rápidos, sem passar horas na cozinha</p></div></div>
@@ -1374,5 +1393,19 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   })();
 </script>
 
+<div class="guia-zoom" id="guia-zoom"><button type="button" aria-label="Fechar">✕</button><img alt=""></div>
+<script>
+(function(){
+  var t=document.getElementById('guia-track'); if(!t) return;
+  var imgs=t.querySelectorAll('img'), n=document.getElementById('guia-n');
+  function step(){ return imgs[0].getBoundingClientRect().width+14; }
+  document.getElementById('guia-prev').addEventListener('click',function(){ t.scrollBy({left:-step(),behavior:'smooth'}); });
+  document.getElementById('guia-next').addEventListener('click',function(){ t.scrollBy({left:step(),behavior:'smooth'}); });
+  t.addEventListener('scroll',function(){ n.textContent=Math.min(imgs.length,Math.round(t.scrollLeft/step())+1); },{passive:true});
+  var z=document.getElementById('guia-zoom'), zi=z.querySelector('img');
+  imgs.forEach(function(im){ im.addEventListener('click',function(){ zi.src=im.getAttribute('data-full'); zi.alt=im.alt; z.classList.add('show'); }); });
+  z.addEventListener('click',function(){ z.classList.remove('show'); });
+})();
+</script>
 </body>
 </html>
