@@ -318,20 +318,13 @@
     transition:transform .2s ease;
   }
   .recipe-card:hover{transform:translateY(-6px);box-shadow:0 16px 34px rgba(138,47,31,.18);}
-  .recipe-img{position:relative;overflow:hidden;}
-  .recipe-img img{width:100%;height:200px;object-fit:cover;transition:transform .45s ease;}
-  .recipe-card:hover .recipe-img img{transform:scale(1.08);}
-  .recipe-img::after{
-    content:"";position:absolute;inset:0;
-    background:linear-gradient(180deg,transparent 60%,rgba(61,36,23,.35) 100%);
-    pointer-events:none;
-  }
+  .recipe-img{display:flex;justify-content:space-between;gap:8px;padding:14px 16px 0;}
   .tag-diff{
-    position:absolute;top:10px;left:10px;background:#fff;color:var(--green-dark);
+    background:#E8F3EA;color:var(--green-dark);
     font-size:12.5px;font-weight:700;padding:4px 10px;border-radius:20px;
   }
   .tag-kcal{
-    position:absolute;top:10px;right:10px;background:var(--green-dark);color:#fff;
+    background:var(--green-dark);color:#fff;
     font-size:12.5px;font-weight:700;padding:4px 10px;border-radius:20px;
   }
   .recipe-body{padding:14px 16px 18px;}
@@ -620,7 +613,6 @@
     .problem h2,.why-header h2,.recipes-header h2,.plans-header h2,.testi-header h2,.faq h2{font-size:22px;}
     .urgency{padding:20px;text-align:center;justify-content:center;}
     .recipe-grid{grid-template-columns:1fr;}
-    .recipe-img img{height:180px;}
     .freeze-steps{grid-template-columns:1fr;}
     .plan-card{padding:22px;}
     .final-cta h3{font-size:20px;}
@@ -845,42 +837,36 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     <div class="recipe-grid">
       <div class="recipe-card">
         <div class="recipe-img">
-          <img width="600" height="400" src="assets/05-receita-frango-grelhado-arroz-legumes.webp?v=2" srcset="assets/05-receita-frango-grelhado-arroz-legumes-m.webp?v=2 420w, assets/05-receita-frango-grelhado-arroz-legumes.webp?v=2 760w" sizes="(max-width:480px) 100vw, (max-width:880px) 50vw, 340px" alt="Frango grelhado com arroz e legumes" loading="lazy" decoding="async">
           <span class="tag-diff">Fácil</span><span class="tag-kcal">410 kcal</span>
         </div>
         <div class="recipe-body"><h4>Frango Grelhado Suculento com Arroz Soltinho</h4><div class="recipe-meta"><span>⏱ 25 min</span><span class="healthy">Fit</span></div></div>
       </div>
       <div class="recipe-card">
         <div class="recipe-img">
-          <img width="600" height="400" src="assets/06-receita-frango-brocolis-arroz-integral.webp?v=2" srcset="assets/06-receita-frango-brocolis-arroz-integral-m.webp?v=2 420w, assets/06-receita-frango-brocolis-arroz-integral.webp?v=2 760w" sizes="(max-width:480px) 100vw, (max-width:880px) 50vw, 340px" alt="Marmita de frango com brócolis e arroz integral" loading="lazy" decoding="async">
           <span class="tag-diff">Fácil</span><span class="tag-kcal">385 kcal</span>
         </div>
         <div class="recipe-body"><h4>Frango Dourado com Brócolis Crocante</h4><div class="recipe-meta"><span>⏱ 20 min</span><span class="healthy">Fit</span></div></div>
       </div>
       <div class="recipe-card">
         <div class="recipe-img">
-          <img width="600" height="400" src="assets/07-receita-peixe-grelhado-legumes-assados.webp?v=2" srcset="assets/07-receita-peixe-grelhado-legumes-assados-m.webp?v=2 420w, assets/07-receita-peixe-grelhado-legumes-assados.webp?v=2 760w" sizes="(max-width:480px) 100vw, (max-width:880px) 50vw, 340px" alt="Peixe grelhado com legumes assados" loading="lazy" decoding="async">
           <span class="tag-diff">Médio</span><span class="tag-kcal">340 kcal</span>
         </div>
         <div class="recipe-body"><h4>Peixe Grelhado no Ponto com Legumes Assados</h4><div class="recipe-meta"><span>⏱ 25 min</span><span class="healthy">Fit</span></div></div>
       </div>
       <div class="recipe-card">
         <div class="recipe-img">
-          <img width="600" height="400" src="assets/08-receita-frango-arroz-feijao-pure.webp?v=2" srcset="assets/08-receita-frango-arroz-feijao-pure-m.webp?v=2 420w, assets/08-receita-frango-arroz-feijao-pure.webp?v=2 760w" sizes="(max-width:480px) 100vw, (max-width:880px) 50vw, 340px" alt="Frango com arroz, feijão e purê" loading="lazy" decoding="async">
           <span class="tag-diff">Completo</span><span class="tag-kcal">520 kcal</span>
         </div>
         <div class="recipe-body"><h4>Frango Caipira, Arroz, Feijão e Purê Cremoso</h4><div class="recipe-meta"><span>⏱ 30 min</span><span class="healthy">Tradicional</span></div></div>
       </div>
       <div class="recipe-card">
         <div class="recipe-img">
-          <img width="600" height="400" src="assets/09-receita-frango-molho-vegetais.webp?v=2" srcset="assets/09-receita-frango-molho-vegetais-m.webp?v=2 420w, assets/09-receita-frango-molho-vegetais.webp?v=2 760w" sizes="(max-width:480px) 100vw, (max-width:880px) 50vw, 340px" alt="Frango grelhado com molho e vegetais" loading="lazy" decoding="async">
           <span class="tag-diff">Fácil</span><span class="tag-kcal">395 kcal</span>
         </div>
         <div class="recipe-body"><h4>Frango ao Molho Encorpado com Vegetais Salteados</h4><div class="recipe-meta"><span>⏱ 22 min</span><span class="healthy">Fit</span></div></div>
       </div>
       <div class="recipe-card">
         <div class="recipe-img">
-          <img width="600" height="400" src="assets/10-receita-frango-desfiado-arroz-feijao.webp?v=2" srcset="assets/10-receita-frango-desfiado-arroz-feijao-m.webp?v=2 420w, assets/10-receita-frango-desfiado-arroz-feijao.webp?v=2 760w" sizes="(max-width:480px) 100vw, (max-width:880px) 50vw, 340px" alt="Marmita de frango desfiado com arroz e cebolinha" loading="lazy" decoding="async">
           <span class="tag-diff">Rápido</span><span class="tag-kcal">360 kcal</span>
         </div>
         <div class="recipe-body"><h4>Bowl de Frango Desfiado Temperadinho</h4><div class="recipe-meta"><span>⏱ 18 min</span><span class="healthy">Fit</span></div></div>
