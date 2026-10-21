@@ -276,6 +276,12 @@
     background:#fff;border-radius:20px;padding:34px;box-shadow:0 10px 40px rgba(0,0,0,.06);
   }
   .why-images{position:relative;display:flex;justify-content:center;}
+  .why-images.guia-leque{height:340px;}
+  .guia-pg{position:absolute;top:10px;width:46%;max-width:210px;height:auto;aspect-ratio:2/3;object-fit:cover;border-radius:10px;background:#fff;box-shadow:0 14px 34px rgba(0,0,0,.18);}
+  .guia-pg.pg-esq{left:2%;transform:rotate(-8deg);top:30px;}
+  .guia-pg.pg-dir{right:2%;transform:rotate(8deg);top:30px;}
+  .guia-pg.pg-meio{left:50%;transform:translateX(-50%);z-index:2;box-shadow:0 20px 44px rgba(0,0,0,.25);}
+  .guia-selo{position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);z-index:3;background:var(--terracota);color:#fff;font-weight:800;font-size:13px;padding:7px 16px;border-radius:30px;white-space:nowrap;box-shadow:0 8px 20px rgba(0,0,0,.18);}
   .why-images img.book{border-radius:12px;box-shadow:0 20px 40px rgba(0,0,0,.15);width:100%;max-width:400px;height:280px;object-fit:cover;}
   .why-images img.chef{
     position:absolute;bottom:-24px;right:-10px;width:190px;height:130px;border-radius:14px;
@@ -552,6 +558,7 @@
     .problem-image img{height:220px;}
     .why-grid{grid-template-columns:1fr;padding:24px;gap:50px;}
     .why-images{padding-bottom:10px;}
+    .why-images.guia-leque{height:300px;}
     .why-images img.book{height:220px;}
     .why-images img.chef{width:150px;height:105px;right:0;bottom:-30px;}
     .why-list{grid-template-columns:1fr;}
@@ -796,9 +803,11 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       <h2>ESSES ALMOÇOS SÃO PERFEITOS PARA VOCÊ QUE...</h2>
     </div>
     <div class="why-grid">
-      <div class="why-images">
-        <img width="700" height="467" class="book" src="assets/03-marmita-colorida-destaque.webp?v=2" srcset="assets/03-marmita-colorida-destaque-m.webp?v=2 600w, assets/03-marmita-colorida-destaque.webp?v=2 900w" sizes="(max-width:880px) 100vw, 400px" alt="Marmita colorida com arroz, feijão, frango e legumes" loading="lazy" decoding="async">
-        <img width="420" height="280" class="chef" src="assets/04-montagem-marmitas.webp" alt="Almoço fitness sendo montado" loading="lazy" decoding="async">
+      <div class="why-images guia-leque">
+        <img width="600" height="900" class="guia-pg pg-esq" src="assets/guia-pagina-8.webp" srcset="assets/guia-pagina-8-m.webp 360w, assets/guia-pagina-8.webp 600w" sizes="(max-width:880px) 45vw, 200px" alt="Página do guia: Salmão com Molho de Iogurte e Endro" loading="lazy" decoding="async">
+        <img width="600" height="900" class="guia-pg pg-dir" src="assets/guia-pagina-1.webp" srcset="assets/guia-pagina-1-m.webp 360w, assets/guia-pagina-1.webp 600w" sizes="(max-width:880px) 45vw, 200px" alt="Página do guia: Rolê de Frango Recheado com Espinafre e Queijo" loading="lazy" decoding="async">
+        <img width="600" height="900" class="guia-pg pg-meio" src="assets/guia-pagina-5.webp" srcset="assets/guia-pagina-5-m.webp 360w, assets/guia-pagina-5.webp 600w" sizes="(max-width:880px) 45vw, 200px" alt="Página do guia: Frango ao Sugo com Grão-de-Bico" loading="lazy" decoding="async">
+        <span class="guia-selo">📖 Páginas reais do guia</span>
       </div>
       <div class="why-list">
         <div class="why-item"><div class="num">1</div><div><p>Tem uma rotina corrida e precisa de almoços rápidos, sem passar horas na cozinha</p></div></div>
