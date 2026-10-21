@@ -364,7 +364,12 @@
   .bonus-header .eyebrow{background:var(--gold);color:var(--green-dark);}
   .bonus-header h2{font-size:26px;color:#fff;}
   .bonus-header p{color:#f0dcc7;font-size:14px;margin-top:8px;}
-  .bonus-grid{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+  .bonus-grid{position:relative;display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 12px;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+  .bonus-grid::-webkit-scrollbar{display:none;}
+  .bonus-grid > .bonus-card:first-child{margin-left:auto;}
+  .bonus-grid > .bonus-card:last-child{margin-right:auto;}
+  .bonus-grid > .bonus-card{flex:0 0 182px;scroll-snap-align:start;padding:12px 10px;}
+  .bonus-hint{position:relative;display:none;text-align:center;font-size:12.5px;color:#f0dcc7;margin:2px 0 16px;}
   .bonus-card{
     position:relative;
     background:linear-gradient(160deg, rgba(255,255,255,.1), rgba(255,255,255,.03));
@@ -378,16 +383,16 @@
     border-color:rgba(224,168,58,.5);
     box-shadow:0 16px 34px rgba(0,0,0,.28);
   }
-  .bonus-card .bonus-img-frame{position:relative;margin:-6px -8px 14px;padding:0;}
+  .bonus-card .bonus-img-frame{position:relative;width:120px;margin:4px auto 10px;}
   .bonus-card img{height:auto;aspect-ratio:560/742;width:100%;display:block;filter:drop-shadow(0 10px 14px rgba(0,0,0,.45));transition:transform .35s ease;}
   .bonus-card:hover img{transform:scale(1.04) rotate(-1deg);}
 
   .bonus-free-tag{
-    position:absolute;top:4px;left:4px;background:var(--terracota);color:#fff;
+    position:absolute;top:-4px;left:-10px;background:var(--terracota);color:#fff;
     font-size:9.5px;font-weight:800;letter-spacing:.4px;padding:3px 8px;border-radius:20px;
     box-shadow:0 4px 10px rgba(0,0,0,.3);z-index:1;
   }
-  .bonus-card h4{font-size:14px;color:#fff;margin-bottom:8px;min-height:32px;}
+  .bonus-card h4{font-size:13.5px;line-height:1.25;color:#fff;margin-bottom:6px;min-height:34px;}
   .bonus-price{font-size:12.5px;}
   .bonus-price .old{text-decoration:line-through;color:#d9ab8b;}
   .bonus-price .new{color:var(--gold);font-weight:800;}
@@ -563,8 +568,9 @@
     .freeze{padding:28px 20px;}
     .freeze-steps{grid-template-columns:repeat(2,1fr);}
     .bonus{padding:36px 20px;}
-    .bonus-grid{grid-template-columns:repeat(2,1fr);}
-    .bonus-grid .bonus-card:last-child:nth-child(odd){grid-column:1/-1;justify-self:center;width:calc(50% - 8px);}
+    .bonus-grid{margin:0 -20px;padding:4px 20px 12px;scroll-padding-left:20px;}
+    .bonus-grid > .bonus-card{flex-basis:44vw;max-width:190px;}
+    .bonus-hint{display:block;}
     .plans-grid{grid-template-columns:1fr;}
     .prefer-arrow{transform:rotate(90deg);animation:arrow-bounce-y 1.4s ease-in-out infinite;}
     @keyframes arrow-bounce-y{0%,100%{transform:rotate(90deg) translateX(0);}50%{transform:rotate(90deg) translateX(6px);}}
@@ -610,9 +616,6 @@
     .recipe-grid{grid-template-columns:1fr;}
     .recipe-img img{height:180px;}
     .freeze-steps{grid-template-columns:1fr;}
-    .bonus-grid{grid-template-columns:1fr;}
-    .bonus-grid .bonus-card:last-child:nth-child(odd){width:auto;justify-self:stretch;}
-    .bonus-card img{height:140px;}
     .plan-card{padding:22px;}
     .final-cta h3{font-size:20px;}
     .btn{padding:14px 22px;font-size:14px;}
@@ -893,7 +896,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <div class="bonus-card">
           <div class="bonus-img-frame">
             <span class="bonus-free-tag">🎁 GRÁTIS</span>
-            <img width="560" height="742" src="assets/bonus250-lanches.webp?v=2" srcset="assets/bonus250-lanches-m.webp?v=2 380w, assets/bonus250-lanches.webp?v=2 560w" sizes="(max-width:480px) 100vw, (max-width:880px) 50vw, 200px" alt="Guia de Lanches Saudáveis e Econômicos" loading="lazy" decoding="async">
+            <img width="560" height="742" src="assets/bonus250-lanches.webp?v=2" srcset="assets/bonus250-lanches-m.webp?v=2 380w, assets/bonus250-lanches.webp?v=2 560w" sizes="120px" alt="Guia de Lanches Saudáveis e Econômicos" loading="lazy" decoding="async">
           </div>
           <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:var(--gold);text-transform:uppercase;margin-bottom:4px;">Bônus 1</div>
           <h4>Guia de Lanches Saudáveis e Econômicos</h4>
@@ -903,7 +906,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <div class="bonus-card">
           <div class="bonus-img-frame">
             <span class="bonus-free-tag">🎁 GRÁTIS</span>
-            <img width="560" height="742" src="assets/bonus250-planner.webp?v=2" srcset="assets/bonus250-planner-m.webp?v=2 380w, assets/bonus250-planner.webp?v=2 560w" sizes="(max-width:480px) 100vw, (max-width:880px) 50vw, 200px" alt="Planner Semanal Imprimível" loading="lazy" decoding="async">
+            <img width="560" height="742" src="assets/bonus250-planner.webp?v=2" srcset="assets/bonus250-planner-m.webp?v=2 380w, assets/bonus250-planner.webp?v=2 560w" sizes="120px" alt="Planner Semanal Imprimível" loading="lazy" decoding="async">
           </div>
           <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:var(--gold);text-transform:uppercase;margin-bottom:4px;">Bônus 2</div>
           <h4>Planner Semanal Imprimível</h4>
@@ -913,7 +916,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <div class="bonus-card">
           <div class="bonus-img-frame">
             <span class="bonus-free-tag">🎁 GRÁTIS</span>
-            <img width="560" height="742" src="assets/bonus250-substituicoes.webp?v=2" srcset="assets/bonus250-substituicoes-m.webp?v=2 380w, assets/bonus250-substituicoes.webp?v=2 560w" sizes="(max-width:480px) 100vw, (max-width:880px) 50vw, 200px" alt="Lista Inteligente de Substituições" loading="lazy" decoding="async">
+            <img width="560" height="742" src="assets/bonus250-substituicoes.webp?v=2" srcset="assets/bonus250-substituicoes-m.webp?v=2 380w, assets/bonus250-substituicoes.webp?v=2 560w" sizes="120px" alt="Lista Inteligente de Substituições" loading="lazy" decoding="async">
           </div>
           <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:var(--gold);text-transform:uppercase;margin-bottom:4px;">Bônus 3</div>
           <h4>Lista Inteligente de Substituições</h4>
@@ -923,7 +926,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <div class="bonus-card">
           <div class="bonus-img-frame">
             <span class="bonus-free-tag">🎁 GRÁTIS</span>
-            <img width="560" height="742" src="assets/bonus250-chas.webp?v=2" srcset="assets/bonus250-chas-m.webp?v=2 380w, assets/bonus250-chas.webp?v=2 560w" sizes="(max-width:480px) 100vw, (max-width:880px) 50vw, 200px" alt="Guia de Chás Anti-Inflamatórios" loading="lazy" decoding="async">
+            <img width="560" height="742" src="assets/bonus250-chas.webp?v=2" srcset="assets/bonus250-chas-m.webp?v=2 380w, assets/bonus250-chas.webp?v=2 560w" sizes="120px" alt="Guia de Chás Anti-Inflamatórios" loading="lazy" decoding="async">
           </div>
           <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:var(--gold);text-transform:uppercase;margin-bottom:4px;">Bônus 4</div>
           <h4>Guia de Chás Anti-Inflamatórios</h4>
@@ -933,7 +936,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <div class="bonus-card">
           <div class="bonus-img-frame">
             <span class="bonus-free-tag">🎁 GRÁTIS</span>
-            <img width="560" height="742" src="assets/bonus250-jantares.webp?v=2" srcset="assets/bonus250-jantares-m.webp?v=2 380w, assets/bonus250-jantares.webp?v=2 560w" sizes="(max-width:480px) 100vw, (max-width:880px) 50vw, 200px" alt="Guia de Jantares Leves para Desinchar Dormindo" loading="lazy" decoding="async">
+            <img width="560" height="742" src="assets/bonus250-jantares.webp?v=2" srcset="assets/bonus250-jantares-m.webp?v=2 380w, assets/bonus250-jantares.webp?v=2 560w" sizes="120px" alt="Guia de Jantares Leves para Desinchar Dormindo" loading="lazy" decoding="async">
           </div>
           <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:var(--gold);text-transform:uppercase;margin-bottom:4px;">Bônus 5</div>
           <h4>Guia de Jantares Leves para Desinchar Dormindo</h4>
@@ -941,6 +944,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
           <div class="bonus-price"><span class="old">R$ 25,00</span> <span class="new">✓ Grátis hoje</span></div>
         </div>
       </div>
+      <p class="bonus-hint">👉 Arraste para o lado e veja todos os bônus</p>
       <div class="bonus-total">
         <div class="label">Valor total dos bônus</div>
         <div class="value"><span class="old">R$ 165,00</span> → <span class="new">Hoje é GRÁTIS</span></div>
