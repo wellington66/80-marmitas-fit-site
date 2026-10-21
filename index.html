@@ -23,16 +23,16 @@
 <meta property="og:type" content="product">
 <meta property="og:title" content="+250 Almoços Fitness - Práticos, Saborosos e Econômicos">
 <meta property="og:description" content="Mais de 250 almoços fitness de até 30 minutos para variar o cardápio da semana e emagrecer comendo bem.">
-<meta property="og:image" content="https://www.receitas-saborosa.shop/assets/01-hero-marmitas-organizadas.webp">
+<meta property="og:image" content="https://www.receitas-saborosa.shop/assets/hero-chef-catarina-250.webp">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="+250 Almoços Fitness">
 <meta name="twitter:description" content="Almoços fitness práticos e econômicos, prontos em até 30 minutos.">
-<meta name="twitter:image" content="https://www.receitas-saborosa.shop/assets/01-hero-marmitas-organizadas.webp">
+<meta name="twitter:image" content="https://www.receitas-saborosa.shop/assets/hero-chef-catarina-250.webp">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%238a2f1f'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle'%3E%F0%9F%8D%B1%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="assets/01-hero-marmitas-organizadas-m.webp?v=2" imagesrcset="assets/01-hero-marmitas-organizadas-m.webp?v=2 600w, assets/01-hero-marmitas-organizadas.webp?v=2 1000w" imagesizes="(max-width:880px) 300px, 460px" fetchpriority="high">
+<link rel="preload" as="image" href="assets/hero-chef-catarina-250-m.webp" imagesrcset="assets/hero-chef-catarina-250-m.webp 640w, assets/hero-chef-catarina-250.webp 1100w" imagesizes="(max-width:880px) 92vw, 520px" fetchpriority="high">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,600&family=Nunito+Sans:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,600&family=Nunito+Sans:wght@400;600;700;800&display=swap"></noscript>
 <style>html{scroll-behavior:smooth;}</style>
@@ -253,7 +253,7 @@
     border-left:4px solid var(--green);
   }
   .problem-item b{color:var(--green-dark);}
-  .problem-image img{border-radius:16px;box-shadow:0 15px 40px rgba(0,0,0,.12);object-fit:cover;height:320px;width:100%;}
+  .problem-image img{border-radius:16px;box-shadow:0 15px 40px rgba(0,0,0,.12);object-fit:cover;height:auto;aspect-ratio:3/2;width:100%;}
   .problem-cta{text-align:center;margin-top:34px;}
 
   /* URGENCY BANNER */
@@ -379,7 +379,7 @@
     box-shadow:0 16px 34px rgba(0,0,0,.28);
   }
   .bonus-card .bonus-img-frame{position:relative;border-radius:10px;overflow:hidden;margin-bottom:12px;box-shadow:0 8px 18px rgba(0,0,0,.3);}
-  .bonus-card img{border-radius:10px;height:100px;object-fit:cover;width:100%;display:block;transition:transform .35s ease;}
+  .bonus-card img{border-radius:10px;height:auto;aspect-ratio:1/1;object-fit:cover;width:100%;display:block;transition:transform .35s ease;}
   .bonus-card:hover img{transform:scale(1.07);}
   .bonus-img-frame::after{
     content:"";position:absolute;inset:0;
@@ -484,14 +484,16 @@
     margin-top:10px;background:var(--green-light);border-radius:8px;padding:10px 12px;font-size:13.5px;color:var(--green-dark);
   }
   .testi-cta{text-align:center;margin-top:34px;}
-  .testi-shots{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .testi-shots{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px 14px;-webkit-overflow-scrolling:touch;}
+  .testi-shots > img{flex:0 0 300px;width:300px !important;scroll-snap-align:center;}
+  .testi-hint{text-align:center;font-size:13px;color:var(--muted);margin-top:4px;}
   .testi-shots img{
     width:100%;height:auto;display:block;border-radius:14px;
-    box-shadow:0 6px 20px rgba(0,0,0,.08);cursor:zoom-in;
+    box-shadow:0 6px 20px rgba(0,0,0,.08);
     transition:transform .15s ease;
   }
   .testi-shots img:hover{transform:scale(1.02);}
-  @media(max-width:700px){.testi-shots{grid-template-columns:1fr;max-width:420px;margin:0 auto;}}
+  @media(max-width:700px){.testi-shots > img{flex-basis:78vw;width:78vw !important;}}
 
   /* FAQ */
   .faq h2{font-size:28px;color:var(--green-dark);text-align:center;margin-bottom:26px;}
@@ -549,13 +551,12 @@
     .hero-inner{grid-template-columns:1fr;text-align:center;}
     .hero p.sub{margin:16px auto 0;}
     .hero-image{order:-1;margin-bottom:6px;}
-    .hero-image img{max-width:300px;}
+    .hero-image img{max-width:100%;width:520px;}
     .hero-image::before{width:260px;height:260px;}
     .hero-badges{justify-content:center;}
     .price-box{width:100%;max-width:320px;}
     .problem-grid{grid-template-columns:1fr;gap:24px;}
     .problem-image{order:-1;}
-    .problem-image img{height:220px;}
     .why-grid{grid-template-columns:1fr;padding:24px;gap:50px;}
     .why-images{padding-bottom:10px;}
     .why-images.guia-leque{height:300px;}
@@ -738,7 +739,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     </div>
 
     <div class="hero-image">
-      <img width="900" height="900" src="assets/01-hero-marmitas-organizadas.webp?v=2" srcset="assets/01-hero-marmitas-organizadas-m.webp?v=2 600w, assets/01-hero-marmitas-organizadas.webp?v=2 1000w" sizes="(max-width:880px) 300px, 460px" alt="Guia +250 Almoços Fitness cercado de pratos prontos com arroz, frango e legumes" fetchpriority="high">
+      <img width="1100" height="575" src="assets/hero-chef-catarina-250.webp" srcset="assets/hero-chef-catarina-250-m.webp 640w, assets/hero-chef-catarina-250.webp 1100w" sizes="(max-width:880px) 92vw, 520px" alt="Chef Catarina Moretti segurando o guia +250 Almoços Fitness" fetchpriority="high">
     </div>
   </div>
 
@@ -772,7 +773,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <div class="problem-item">📱 <div><b>Acesso no celular ou impresso</b></div></div>
       </div>
       <div class="problem-image">
-        <img width="800" height="465" src="assets/02-marmitas-prontas-congelar.webp?v=2" srcset="assets/02-marmitas-prontas-congelar-m.webp?v=2 720w, assets/02-marmitas-prontas-congelar.webp?v=2 1100w" sizes="(max-width:880px) 100vw, 530px" alt="Almoços fitness prontos e organizados" loading="lazy" decoding="async">
+        <img width="1100" height="733" src="assets/mockup-250-livro-celular.webp" srcset="assets/mockup-250-livro-celular-m.webp 720w, assets/mockup-250-livro-celular.webp 1100w" sizes="(max-width:880px) 100vw, 530px" alt="Guia +250 Almoços Fitness no livro e no celular" loading="lazy" decoding="async">
       </div>
     </div>
 
@@ -894,51 +895,51 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <div class="bonus-card">
           <div class="bonus-img-frame">
             <span class="bonus-free-tag">🎁 GRÁTIS</span>
-            <img width="560" height="315" src="assets/bonus-congelamento.webp?v=2" srcset="assets/bonus-congelamento-m.webp?v=2 420w, assets/bonus-congelamento.webp?v=2 800w" sizes="(max-width:480px) 100vw, (max-width:880px) 50vw, 200px" alt="Guia de Lanches Saudáveis" loading="lazy" decoding="async">
+            <img width="600" height="600" src="assets/bonus250-lanches.webp" srcset="assets/bonus250-lanches-m.webp 400w, assets/bonus250-lanches.webp 600w" sizes="(max-width:480px) 100vw, (max-width:880px) 50vw, 200px" alt="Guia de Lanches Saudáveis e Econômicos" loading="lazy" decoding="async">
           </div>
           <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:var(--gold);text-transform:uppercase;margin-bottom:4px;">Bônus 1</div>
-          <h4>Guia de Lanches Saudáveis</h4>
-          <p style="font-size:12.5px;color:#f0dcc7;margin-bottom:8px;">Opções gostosas e econômicas para os intervalos do dia</p>
+          <h4>Guia de Lanches Saudáveis e Econômicos</h4>
+          <p style="font-size:12.5px;color:#f0dcc7;margin-bottom:8px;">15 opções gostosas, prontas em 5 minutos, para os intervalos do dia</p>
           <div class="bonus-price"><span class="old">R$ 47,00</span> <span class="new">✓ Grátis hoje</span></div>
         </div>
         <div class="bonus-card">
           <div class="bonus-img-frame">
             <span class="bonus-free-tag">🎁 GRÁTIS</span>
-            <img width="560" height="315" src="assets/bonus-cardapio-semanal.webp?v=2" srcset="assets/bonus-cardapio-semanal-m.webp?v=2 420w, assets/bonus-cardapio-semanal.webp?v=2 800w" sizes="(max-width:480px) 100vw, (max-width:880px) 50vw, 200px" alt="Planejamento Semanal Pronto" loading="lazy" decoding="async">
+            <img width="600" height="600" src="assets/bonus250-planner.webp" srcset="assets/bonus250-planner-m.webp 400w, assets/bonus250-planner.webp 600w" sizes="(max-width:480px) 100vw, (max-width:880px) 50vw, 200px" alt="Planner Semanal Imprimível" loading="lazy" decoding="async">
           </div>
           <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:var(--gold);text-transform:uppercase;margin-bottom:4px;">Bônus 2</div>
-          <h4>Planejamento Semanal Pronto</h4>
-          <p style="font-size:12.5px;color:#f0dcc7;margin-bottom:8px;">Como preparar tudo de uma vez e não pensar em comida o resto dos dias</p>
+          <h4>Planner Semanal Imprimível</h4>
+          <p style="font-size:12.5px;color:#f0dcc7;margin-bottom:8px;">Prepare tudo de uma vez e não pense em comida o resto dos dias</p>
           <div class="bonus-price"><span class="old">R$ 37,00</span> <span class="new">✓ Grátis hoje</span></div>
         </div>
         <div class="bonus-card">
           <div class="bonus-img-frame">
             <span class="bonus-free-tag">🎁 GRÁTIS</span>
-            <img width="560" height="315" src="assets/bonus-lista-compras.webp?v=2" srcset="assets/bonus-lista-compras-m.webp?v=2 420w, assets/bonus-lista-compras.webp?v=2 800w" sizes="(max-width:480px) 100vw, (max-width:880px) 50vw, 200px" alt="Lista de Compras Econômica" loading="lazy" decoding="async">
+            <img width="600" height="600" src="assets/bonus250-substituicoes.webp" srcset="assets/bonus250-substituicoes-m.webp 400w, assets/bonus250-substituicoes.webp 600w" sizes="(max-width:480px) 100vw, (max-width:880px) 50vw, 200px" alt="Lista Inteligente de Substituições" loading="lazy" decoding="async">
           </div>
           <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:var(--gold);text-transform:uppercase;margin-bottom:4px;">Bônus 3</div>
-          <h4>Lista de Compras Econômica</h4>
-          <p style="font-size:12.5px;color:#f0dcc7;margin-bottom:8px;">Compre só o necessário e gaste menos no mercado</p>
+          <h4>Lista Inteligente de Substituições</h4>
+          <p style="font-size:12.5px;color:#f0dcc7;margin-bottom:8px;">Troque qualquer ingrediente sem perder o sabor nem o resultado</p>
           <div class="bonus-price"><span class="old">R$ 29,00</span> <span class="new">✓ Grátis hoje</span></div>
         </div>
         <div class="bonus-card">
           <div class="bonus-img-frame">
             <span class="bonus-free-tag">🎁 GRÁTIS</span>
-            <img width="560" height="328" src="assets/bonus-doces-sem-acucar.webp?v=2" srcset="assets/bonus-doces-sem-acucar-m.webp?v=2 420w, assets/bonus-doces-sem-acucar.webp?v=2 800w" sizes="(max-width:480px) 100vw, (max-width:880px) 50vw, 200px" alt="50 Receitas de Sobremesas Sem Açúcar" loading="lazy" decoding="async">
+            <img width="600" height="600" src="assets/bonus250-chas.webp" srcset="assets/bonus250-chas-m.webp 400w, assets/bonus250-chas.webp 600w" sizes="(max-width:480px) 100vw, (max-width:880px) 50vw, 200px" alt="Guia de Chás Anti-Inflamatórios" loading="lazy" decoding="async">
           </div>
           <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:var(--gold);text-transform:uppercase;margin-bottom:4px;">Bônus 4</div>
-          <h4>50 Receitas de Sobremesas Sem Açúcar</h4>
-          <p style="font-size:12.5px;color:#f0dcc7;margin-bottom:8px;">Doces leves para matar a vontade sem sair da dieta</p>
+          <h4>Guia de Chás Anti-Inflamatórios</h4>
+          <p style="font-size:12.5px;color:#f0dcc7;margin-bottom:8px;">Bebidas para desinchar, acelerar o metabolismo e limpar o organismo</p>
           <div class="bonus-price"><span class="old">R$ 27,00</span> <span class="new">✓ Grátis hoje</span></div>
         </div>
         <div class="bonus-card">
           <div class="bonus-img-frame">
             <span class="bonus-free-tag">🎁 GRÁTIS</span>
-            <img width="560" height="315" src="assets/bonus-molhos.webp?v=2" srcset="assets/bonus-molhos-m.webp?v=2 420w, assets/bonus-molhos.webp?v=2 800w" sizes="(max-width:480px) 100vw, (max-width:880px) 50vw, 200px" alt="Molhos e Temperos Caseiros" loading="lazy" decoding="async">
+            <img width="600" height="600" src="assets/bonus250-jantares.webp" srcset="assets/bonus250-jantares-m.webp 400w, assets/bonus250-jantares.webp 600w" sizes="(max-width:480px) 100vw, (max-width:880px) 50vw, 200px" alt="Guia de Jantares Leves para Desinchar Dormindo" loading="lazy" decoding="async">
           </div>
           <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:var(--gold);text-transform:uppercase;margin-bottom:4px;">Bônus 5</div>
-          <h4>Molhos e Temperos Caseiros</h4>
-          <p style="font-size:12.5px;color:#f0dcc7;margin-bottom:8px;">O toque de sabor que deixa qualquer almoço irresistível</p>
+          <h4>Guia de Jantares Leves para Desinchar Dormindo</h4>
+          <p style="font-size:12.5px;color:#f0dcc7;margin-bottom:8px;">Receitas leves para o jantar que ajudam você a acordar mais leve</p>
           <div class="bonus-price"><span class="old">R$ 25,00</span> <span class="new">✓ Grátis hoje</span></div>
         </div>
       </div>
@@ -948,6 +949,36 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <div class="sub">Tudo incluso no Plano Completo</div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi">
+  <div class="wrap">
+    <div class="testi-header">
+      <h2>QUEM JÁ PREPAROU, APROVOU!</h2>
+      <p>3.180+ pessoas já transformaram sua rotina na cozinha. Veja o que algumas alunas estão preparando com as receitas do guia.</p>
+    </div>
+    <div class="rating-row">
+      <div class="rating-score">4.9</div>
+      <div><div class="rating-stars">★★★★★</div><div class="rating-count">2.640 avaliações</div></div>
+    </div>
+
+    <div class="testi-shots">
+      <img width="620" height="930" src="img/prints250/print-1.webp" srcset="img/prints250/print-1-m.webp 420w, img/prints250/print-1.webp 620w" sizes="(max-width:700px) 78vw, 300px" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com aluna mostrando o almoço que preparou com o guia">
+      <img width="620" height="930" src="img/prints250/print-2.webp" srcset="img/prints250/print-2-m.webp 420w, img/prints250/print-2.webp 620w" sizes="(max-width:700px) 78vw, 300px" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com aluna mostrando o almoço que preparou com o guia">
+      <img width="620" height="930" src="img/prints250/print-3.webp" srcset="img/prints250/print-3-m.webp 420w, img/prints250/print-3.webp 620w" sizes="(max-width:700px) 78vw, 300px" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com aluna mostrando o almoço que preparou com o guia">
+      <img width="620" height="930" src="img/prints250/print-4.webp" srcset="img/prints250/print-4-m.webp 420w, img/prints250/print-4.webp 620w" sizes="(max-width:700px) 78vw, 300px" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com aluna mostrando o almoço que preparou com o guia">
+      <img width="620" height="930" src="img/prints250/print-5.webp" srcset="img/prints250/print-5-m.webp 420w, img/prints250/print-5.webp 620w" sizes="(max-width:700px) 78vw, 300px" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com aluna mostrando o almoço que preparou com o guia">
+      <img width="620" height="930" src="img/prints250/print-6.webp" srcset="img/prints250/print-6-m.webp 420w, img/prints250/print-6.webp 620w" sizes="(max-width:700px) 78vw, 300px" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com aluna mostrando o almoço que preparou com o guia">
+      <img width="620" height="930" src="img/prints250/print-7.webp" srcset="img/prints250/print-7-m.webp 420w, img/prints250/print-7.webp 620w" sizes="(max-width:700px) 78vw, 300px" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com aluna mostrando o almoço que preparou com o guia">
+      <img width="620" height="930" src="img/prints250/print-8.webp" srcset="img/prints250/print-8-m.webp 420w, img/prints250/print-8.webp 620w" sizes="(max-width:700px) 78vw, 300px" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com aluna mostrando o almoço que preparou com o guia">
+      <img width="620" height="930" src="img/prints250/print-9.webp" srcset="img/prints250/print-9-m.webp 420w, img/prints250/print-9.webp 620w" sizes="(max-width:700px) 78vw, 300px" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com aluna mostrando o almoço que preparou com o guia">
+      <img width="620" height="930" src="img/prints250/print-10.webp" srcset="img/prints250/print-10-m.webp 420w, img/prints250/print-10.webp 620w" sizes="(max-width:700px) 78vw, 300px" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com aluna mostrando o almoço que preparou com o guia">
+    </div>
+    <p class="testi-hint">👉 Arraste para o lado e veja mais</p>
+
+    <div class="testi-cta"><a href="#oferta-completa" class="btn">QUERO OS +250 ALMOÇOS →</a></div>
   </div>
 </section>
 
@@ -961,7 +992,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
     <div class="plans-grid">
       <div class="plan-card">
-        <img width="720" height="534" src="assets/plano-basico-sem-fundo.webp?v=2" srcset="assets/plano-basico-sem-fundo-m.webp?v=2 520w, assets/plano-basico-sem-fundo.webp?v=2 900w" sizes="(max-width:880px) 300px, 260px" alt="Plano Básico - guia +250 Almoços Fitness" loading="lazy" decoding="async">
+        <img width="800" height="800" src="assets/plano-basico-250.webp" srcset="assets/plano-basico-250-m.webp 480w, assets/plano-basico-250.webp 800w" sizes="(max-width:880px) 300px, 260px" alt="Plano Básico - guia +250 Almoços Fitness" loading="lazy" decoding="async">
         <h3>OFERTA BÁSICA</h3>
         <div class="plan-type">+250 Almoços Fitness</div>
         <div class="plan-price">
@@ -983,7 +1014,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
       <div class="plan-card popular" id="oferta-completa">
         <span class="plan-badge">MAIS RECOMENDADO ✨</span>
-        <img width="640" height="477" src="assets/plano-completo-sem-fundo.webp?v=2" srcset="assets/plano-completo-sem-fundo-m.webp?v=2 480w, assets/plano-completo-sem-fundo.webp?v=2 780w" sizes="(max-width:880px) 300px, 260px" alt="Plano Completo - +250 Almoços Fitness + bônus" loading="lazy" decoding="async">
+        <img width="900" height="868" src="assets/plano-completo-250.webp" srcset="assets/plano-completo-250-m.webp 520w, assets/plano-completo-250.webp 900w" sizes="(max-width:880px) 300px, 260px" alt="Plano Completo - +250 Almoços Fitness + 5 bônus" loading="lazy" decoding="async">
         <h3>SUPER OFERTA</h3>
         <div class="plan-type">+250 Almoços Fitness COMPLETO</div>
         <div class="plan-price">
@@ -996,11 +1027,11 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
           <li>✅ Acesso Vitalício ao Material</li>
           <li>✅ Entrega Imediata no E-mail + WhatsApp</li>
           <li>✅ Suporte Prioritário VIP</li>
-          <li><b>🎁 Bônus 1 - Guia de Lanches Saudáveis</b></li>
-          <li><b>🎁 Bônus 2 - Planejamento Semanal Pronto</b></li>
-          <li><b>🎁 Bônus 3 - Lista de Compras Econômica</b></li>
-          <li><b>🎁 Bônus 4 - 50 Receitas de Sobremesas Sem Açúcar</b></li>
-          <li><b>🎁 Bônus 5 - Molhos e Temperos Caseiros</b></li>
+          <li><b>🎁 Bônus 1 - Guia de Lanches Saudáveis e Econômicos</b></li>
+          <li><b>🎁 Bônus 2 - Planner Semanal Imprimível</b></li>
+          <li><b>🎁 Bônus 3 - Lista Inteligente de Substituições</b></li>
+          <li><b>🎁 Bônus 4 - Guia de Chás Anti-Inflamatórios</b></li>
+          <li><b>🎁 Bônus 5 - Guia de Jantares Leves para Desinchar Dormindo</b></li>
         </ul>
         <a href="https://pay.kirvano.com/9082d7c0-b319-43f7-9ce6-427c23712f2d" class="btn btn-wide btn-terracota btn-pulse">COMPRAR AGORA →</a>
         <p class="plan-hint">🔒 Compra Segura · ✅ Acesso Imediato</p>
@@ -1044,31 +1075,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   });
 })();
 </script>
-
-<!-- TESTIMONIALS -->
-<section class="testi">
-  <div class="wrap">
-    <div class="testi-header">
-      <h2>QUEM JÁ PREPAROU, APROVOU!</h2>
-      <p>3.180+ pessoas já transformaram sua rotina na cozinha. Veja o que algumas alunas estão preparando com as receitas do guia.</p>
-    </div>
-    <div class="rating-row">
-      <div class="rating-score">4.9</div>
-      <div><div class="rating-stars">★★★★★</div><div class="rating-count">2.640 avaliações</div></div>
-    </div>
-
-    <div class="testi-shots">
-      <img width="600" height="900" src="img/depoimentos/depoimento-1.webp?v=2" srcset="img/depoimentos/depoimento-1-m.webp?v=2 520w, img/depoimentos/depoimento-1.webp?v=2 900w" sizes="(max-width:700px) min(420px, 100vw), 340px" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com cliente satisfeita mostrando as marmitas prontas">
-      <img width="600" height="900" src="img/depoimentos/depoimento-2.webp?v=2" srcset="img/depoimentos/depoimento-2-m.webp?v=2 520w, img/depoimentos/depoimento-2.webp?v=2 900w" sizes="(max-width:700px) min(420px, 100vw), 340px" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com cliente satisfeita mostrando as marmitas prontas">
-      <img width="600" height="900" src="img/depoimentos/depoimento-3.webp?v=2" srcset="img/depoimentos/depoimento-3-m.webp?v=2 520w, img/depoimentos/depoimento-3.webp?v=2 900w" sizes="(max-width:700px) min(420px, 100vw), 340px" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com cliente satisfeita mostrando as marmitas prontas">
-      <img width="600" height="900" src="img/depoimentos/depoimento-4.webp?v=2" srcset="img/depoimentos/depoimento-4-m.webp?v=2 520w, img/depoimentos/depoimento-4.webp?v=2 900w" sizes="(max-width:700px) min(420px, 100vw), 340px" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com cliente satisfeita mostrando as marmitas prontas">
-      <img width="600" height="900" src="img/depoimentos/depoimento-5.webp?v=2" srcset="img/depoimentos/depoimento-5-m.webp?v=2 520w, img/depoimentos/depoimento-5.webp?v=2 900w" sizes="(max-width:700px) min(420px, 100vw), 340px" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com cliente satisfeita mostrando as marmitas prontas">
-      <img width="600" height="900" src="img/depoimentos/depoimento-6.webp?v=2" srcset="img/depoimentos/depoimento-6-m.webp?v=2 520w, img/depoimentos/depoimento-6.webp?v=2 900w" sizes="(max-width:700px) min(420px, 100vw), 340px" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com cliente satisfeita mostrando as marmitas prontas">
-    </div>
-
-    <div class="testi-cta"><a href="https://pay.kirvano.com/9082d7c0-b319-43f7-9ce6-427c23712f2d" class="btn">QUERO OS +250 ALMOÇOS →</a></div>
-  </div>
-</section>
 
 <!-- GUARANTEE -->
 <section class="guarantee">
@@ -1257,7 +1263,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   <div class="upsell-box">
     <button type="button" id="exit-close" class="upsell-close" aria-label="Fechar">✕</button>
     <div class="upsell-badge">ESPERA! ÚLTIMA CHANCE</div>
-    <img width="640" height="477" src="assets/plano-completo-sem-fundo.webp?v=2" srcset="assets/plano-completo-sem-fundo-m.webp?v=2 480w, assets/plano-completo-sem-fundo.webp?v=2 780w" sizes="(max-width:880px) 300px, 260px" alt="Plano Completo - +250 Almoços Fitness + bônus" class="upsell-img" loading="lazy" decoding="async">
+    <img class="upsell-img" width="900" height="868" src="assets/plano-completo-250.webp" srcset="assets/plano-completo-250-m.webp 520w, assets/plano-completo-250.webp 900w" sizes="(max-width:880px) 300px, 260px" alt="Plano Completo - +250 Almoços Fitness + 5 bônus" loading="lazy" decoding="async">
     <h3>Não vá embora sem seu desconto extra</h3>
     <p class="upsell-sub">Guia +250 Almoços Fitness + <b>todos os 5 bônus exclusivos</b> por um preço que não vai se repetir.</p>
     <div class="upsell-price">
