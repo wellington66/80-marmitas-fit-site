@@ -549,7 +549,13 @@
     }
     .hero-inner{grid-template-columns:1fr;text-align:center;}
     .hero p.sub{margin:16px auto 0;}
-    .hero-image{order:-1;margin-bottom:6px;}
+    .hero-inner{display:flex;flex-direction:column;gap:0;}
+    .hero-text{display:contents;}
+    .hero h1{order:1;}
+    .hero p.sub{order:2;}
+    .hero-image{order:3;margin-top:20px;}
+    .hero-cta{order:4;margin-top:20px;}
+    .hero-badges{order:5;}
     .hero-image img{max-width:100%;width:520px;}
     .hero-image::before{width:260px;height:260px;}
     .hero-badges{justify-content:center;}
@@ -717,7 +723,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 <!-- HERO -->
 <header class="hero">
   <div class="wrap hero-inner">
-    <div>
+    <div class="hero-text">
       <h1>+250 Almoços Fitness <span>Práticos e Econômicos</span></h1>
       <p class="sub"><b>Seu Guia Completo para Secar Comendo Comida de Verdade, Sem Abrir Mão do Sabor!</b><br>Mais de 250 almoços práticos, baratos e que funcionam de verdade — prontos em até 15 minutos e com ingredientes que você tem em casa.</p>
 
