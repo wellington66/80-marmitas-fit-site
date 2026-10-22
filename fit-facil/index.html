@@ -74,6 +74,10 @@ summary{font-weight:800;font-size:14px;cursor:pointer}details p{font-size:13.5px
 .nao{display:block;text-align:center;color:#8a7a68;font-size:13.5px;font-weight:600;text-decoration:underline;margin:22px auto 0;max-width:320px;line-height:1.4}
 footer{text-align:center;font-size:11.5px;color:#a89b8a;padding:20px}
 </style>
+<!-- Painel de Rastreio: etapa do pós-compra, vídeo (só com som), botões -->
+<meta name="al-etapa" content="upsell">
+<script>window.alq = window.alq || [];</script>
+<script src="https://almocos-painel.vercel.app/al.js" async></script>
 </head>
 <body>
 <div class="bar">⚠ Não feche esta página — sua compra está sendo finalizada.<br>Oferta especial só para quem acabou de comprar o guia.</div>
@@ -83,7 +87,7 @@ footer{text-align:center;font-size:11.5px;color:#a89b8a;padding:20px}
   <p class="sub">É rapidinho — e vale a pena ver até o final.</p>
 
   <div class="vsl" id="vsl">
-    <video id="v" src="vsl.mp4" poster="poster.jpg" playsinline webkit-playsinline muted autoplay preload="auto"></video>
+    <video id="v" data-al-vsl data-al-pitch="182" src="vsl.mp4" poster="poster.jpg" playsinline webkit-playsinline muted autoplay preload="auto"></video>
     <div class="ov on" id="som" aria-label="Ativar o som"><div class="caixa"><div class="t1">Seu vídeo já começou</div>
       <svg viewBox="0 0 24 24" fill="#fff"><path d="M3 9v6h4l5 5V4L7 9H3z"/><path d="M16.5 12A4.5 4.5 0 0 0 14 8v8a4.5 4.5 0 0 0 2.5-4z" opacity=".55"/><path d="M14 3.2v2.1a7 7 0 0 1 0 13.4v2.1A9 9 0 0 0 14 3.2z" opacity=".55"/><path d="M19 9l4 6M23 9l-4 6" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
       <div class="t2">Clique para ouvir</div></div></div>
@@ -95,10 +99,10 @@ footer{text-align:center;font-size:11.5px;color:#a89b8a;padding:20px}
   <p class="aviso" id="aviso">🔈 Verifique se o som do seu celular está ligado.</p>
   <div id="cta">
     <div class="linha">De <s>R$ 97</s> por <b>R$ 47</b> · pagamento único</div>
-    <a class="buy kirvano-payment-trigger" id="comprar1" href="javascript:void(0)">Sim, quero adicionar o Fit Fácil<small>R$ 50 de desconto pela compra do guia</small></a>
+    <a class="buy kirvano-payment-trigger" data-al-buy id="comprar1" href="javascript:void(0)">Sim, quero adicionar o Fit Fácil<small>R$ 50 de desconto pela compra do guia</small></a>
     <div class="seg"><span>🔒 Seguro</span><span>⚡ Acesso imediato</span><span>📱 Celular</span></div>
-    <button class="mais" id="mais">Ver tudo o que vem no app ▼</button>
-    <a class="nao kirvano-refuse-trigger" href="javascript:void(0)" style="margin-top:14px">Não, obrigada. Quero continuar apenas com o meu guia.</a>
+    <button class="mais" data-al-more id="mais">Ver tudo o que vem no app ▼</button>
+    <a class="nao kirvano-refuse-trigger" data-al-no href="javascript:void(0)" style="margin-top:14px">Não, obrigada. Quero continuar apenas com o meu guia.</a>
   </div>
 
   <section id="oferta">
@@ -116,7 +120,7 @@ footer{text-align:center;font-size:11.5px;color:#a89b8a;padding:20px}
       <div class="de">De <s>R$ 97</s> por apenas</div>
       <div class="val"><small>R$</small>47</div>
       <div class="unico">Pagamento único · acesso vitalício · sem mensalidade</div>
-      <a class="buy kirvano-payment-trigger" id="comprar" href="javascript:void(0)">Sim, quero adicionar o Fit Fácil<small>R$ 50 de desconto pela compra do guia</small></a>
+      <a class="buy kirvano-payment-trigger" data-al-buy id="comprar" href="javascript:void(0)">Sim, quero adicionar o Fit Fácil<small>R$ 50 de desconto pela compra do guia</small></a>
       <div class="seg"><span>🔒 Seguro</span><span>⚡ Acesso imediato</span><span>📱 Celular</span></div>
       <div class="gar"><img src="selo7.png" alt="7 dias de garantia"><div><b>7 dias de garantia.</b> Use o app, fotografe seus pratos, monte seu cardápio. Se não fizer sentido para a sua rotina, é só pedir o reembolso dentro do prazo.</div></div>
     </div>
@@ -128,7 +132,7 @@ footer{text-align:center;font-size:11.5px;color:#a89b8a;padding:20px}
       <details><summary>Como recebo o acesso?</summary><p>Assim que o pagamento é aprovado, você recebe no e-mail o acesso ao app. É só entrar com o mesmo e-mail da compra no celular, tablet ou computador — não precisa baixar nada da loja.</p></details>
       <details><summary>Preciso entender de tecnologia?</summary><p>Não. Você tira uma foto, escreve uma dúvida ou toca em um prato — o app faz o resto. E se precisar, nossa equipe ajuda.</p></details>
     </div>
-    <a class="nao kirvano-refuse-trigger" id="nao" href="javascript:void(0)">Não, obrigada. Quero continuar apenas com o meu guia.</a>
+    <a class="nao kirvano-refuse-trigger" data-al-no id="nao" href="javascript:void(0)">Não, obrigada. Quero continuar apenas com o meu guia.</a>
   </section>
 </main>
 <footer>© 2026 Fit Fácil · Chef Catarina · Todos os direitos reservados</footer>
@@ -151,6 +155,7 @@ var CONFIG = {
     // depois do preço: primeiro só o botão logo abaixo do vídeo; o resto da página abre se a pessoa quiser
     var cta = document.getElementById('cta'); if (cta.classList.contains('on')) return;
     cta.classList.add('on');
+    if (!teste) window.alq.push(['up_cta']);
     if (!teste) { try { localStorage.setItem('ff_oferta', '1'); } catch (e) {} }
     try { fbq('track', 'ViewContent', { content_name: 'Fit Fácil upsell', value: 47, currency: 'BRL' }); } catch (e) {}
   }

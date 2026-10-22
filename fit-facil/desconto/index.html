@@ -71,6 +71,10 @@ footer{text-align:center;font-size:11.5px;color:#a89b8a;padding:20px}
 .lista li:last-child{border:0}.lista li span:first-child:before{content:"✓ ";color:var(--g);font-weight:900}
 .lista li s{color:#C0392B;font-weight:800;white-space:nowrap}
 </style>
+<!-- Painel de Rastreio: etapa do pós-compra, vídeo (só com som), botões -->
+<meta name="al-etapa" content="downsell">
+<script>window.alq = window.alq || [];</script>
+<script src="https://almocos-painel.vercel.app/al.js" async></script>
 </head>
 <body>
 <div class="bar">⚠ Não feche esta página — sua compra está sendo finalizada.</div>
@@ -93,10 +97,10 @@ footer{text-align:center;font-size:11.5px;color:#a89b8a;padding:20px}
     <div class="val"><small>R$</small>27</div>
     <div class="unico" style="margin:0">Pagamento único · acesso vitalício · sem mensalidade</div>
   </div>
-  <a class="buy kirvano-payment-trigger" id="comprar" href="javascript:void(0)">Sim, quero o Fit Fácil por R$ 27<small>Mesmo app completo, mesma garantia de 7 dias</small></a>
+  <a class="buy kirvano-payment-trigger" data-al-buy id="comprar" href="javascript:void(0)">Sim, quero o Fit Fácil por R$ 27<small>Mesmo app completo, mesma garantia de 7 dias</small></a>
   <div class="seg"><span>🔒 Seguro</span><span>⚡ Imediato</span><span>📱 Celular</span></div>
   <div class="gar"><img src="../selo7.png" alt="7 dias de garantia"><div><b>Risco zero:</b> 7 dias para usar o app. Se não gostar, devolvemos 100% do valor. Seu guia continua seu de qualquer jeito.</div></div>
-  <a class="nao kirvano-refuse-trigger" id="nao" href="javascript:void(0)">Não, recusar essa oferta</a>
+  <a class="nao kirvano-refuse-trigger" data-al-no id="nao" href="javascript:void(0)">Não, recusar essa oferta</a>
 </main>
 <footer>© 2026 Fit Fácil · Chef Catarina · Todos os direitos reservados</footer>
 <script>
