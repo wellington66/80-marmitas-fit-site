@@ -542,6 +542,18 @@
   .footer-links{display:flex;gap:18px;}
   .footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:16px;text-align:center;font-size:12.5px;color:#c9a689;}
 
+  /* CHEF */
+  .chef{background:#fff;}
+  .chef-box{display:grid;grid-template-columns:300px 1fr;gap:44px;align-items:center;max-width:920px;margin:0 auto;}
+  .chef-foto{position:relative;}
+  .chef-foto img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:50%;border:6px solid #fff;box-shadow:0 0 0 3px var(--gold),0 18px 40px rgba(92,58,23,.25);}
+  .chef-foto .assinatura{position:absolute;left:50%;bottom:-14px;transform:translateX(-50%);white-space:nowrap;background:var(--green-dark);color:#fff;font-weight:800;font-size:13px;letter-spacing:.04em;padding:7px 16px;border-radius:30px;box-shadow:0 6px 14px rgba(0,0,0,.18);}
+  .chef h2{font-size:30px;color:var(--green-dark);margin:6px 0 14px;}
+  .chef h2 span{color:var(--terracota);}
+  .chef p{font-size:16px;line-height:1.65;color:#4a3a2c;margin-top:10px;}
+  .chef .proposito{margin-top:18px;padding:14px 18px;background:var(--green-light);border-left:4px solid var(--terracota);border-radius:10px;font-family:'Fraunces',Georgia,serif;font-size:18px;font-weight:700;color:var(--green-dark);}
+  .chef .assina{margin-top:14px;font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:20px;color:var(--green);}
+
   @media(max-width:880px){
     section{padding:44px 0;}
     .hero{
@@ -552,6 +564,11 @@
     }
     .hero-inner{grid-template-columns:1fr;text-align:center;}
     .hero p.sub{margin:16px auto 0;}
+    .chef-box{grid-template-columns:1fr;gap:34px;text-align:center;}
+    .chef-foto{max-width:230px;margin:0 auto;}
+    .chef h2{font-size:25px;}
+    .chef p{font-size:15px;text-align:left;}
+    .chef .proposito{font-size:16px;text-align:left;}
     .hero-inner{display:flex;flex-direction:column;gap:0;}
     .hero-text{display:contents;}
     .hero h1{order:1;}
@@ -1023,6 +1040,26 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   });
 })();
 </script>
+
+<!-- CHEF -->
+<section class="chef" id="chef">
+  <div class="wrap chef-box">
+    <div class="chef-foto">
+      <img width="640" height="640" src="assets/chef-catarina.webp" srcset="assets/chef-catarina-m.webp 400w, assets/chef-catarina.webp 640w" sizes="(max-width:880px) 230px, 300px" alt="Chef Catarina Moretti" loading="lazy" decoding="async">
+      <span class="assinatura">👩‍🍳 Chef Catarina Moretti</span>
+    </div>
+    <div>
+      <span class="eyebrow">Quem sou eu</span>
+      <h2>Prazer, sou a <span>Chef Catarina Moretti</span></h2>
+      <p>Minha relação com a cozinha começou com aquilo que torna uma refeição especial: o cuidado em escolher os ingredientes, o aroma de uma comida sendo preparada e a alegria de reunir pessoas à mesa. Foi nesse universo de sabores e afeto que nasceu a vontade de transformar a culinária em parte da minha história.</p>
+      <p>Com o tempo, esse olhar passou a encontrar um novo propósito: levar o prazer de comer bem para a rotina de quem tem pouco tempo para cozinhar. Percebi que a correria do dia a dia muitas vezes transforma a alimentação em uma tarefa repetitiva, quando ela poderia ser um momento de cuidado e satisfação.</p>
+      <p>Foi dessa motivação que surgiu minha dedicação à cozinha prática e às marmitas. Minha proposta é unir receitas saborosas, ingredientes acessíveis e preparos que façam sentido na vida real, ajudando você a variar o cardápio e organizar as refeições com mais facilidade.</p>
+      <p>Aqui, compartilho essa forma de enxergar a cozinha: um espaço onde o planejamento facilita, a criatividade traz variedade e o sabor faz toda a diferença. Quero ajudar você a ganhar confiança para preparar suas próprias refeições e descobrir novas possibilidades com os ingredientes do dia a dia.</p>
+      <div class="proposito">Meu propósito é tornar a cozinha mais simples e cada refeição mais especial.</div>
+      <div class="assina">Chef Catarina Moretti</div>
+    </div>
+  </div>
+</section>
 
 <!-- GUARANTEE -->
 <section class="guarantee">
