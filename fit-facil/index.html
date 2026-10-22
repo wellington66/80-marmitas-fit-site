@@ -47,6 +47,10 @@ h1 em{font-style:normal;color:var(--o)}
 .prog{position:absolute;left:0;right:0;bottom:0;height:7px;background:rgba(255,255,255,.18);z-index:2}.prog i{display:block;height:100%;width:0;background:#E0703A;transition:width .25s linear}
 .aviso{text-align:center;font-size:12.5px;color:var(--m);font-weight:600;margin:10px 0 0}
 /* oferta */
+#cta{display:none;margin-top:16px;text-align:center}
+#cta.on{display:block;animation:sobe .5s ease-out}
+#cta .linha{font-size:15px;font-weight:700;color:var(--m);margin-bottom:10px}#cta .linha s{color:#b0a596}#cta .linha b{color:var(--g);font-size:22px;font-weight:900}
+.mais{display:block;margin:14px auto 0;background:none;border:0;color:var(--g2);font:800 14px Montserrat,sans-serif;text-decoration:underline;cursor:pointer}
 #oferta{display:none;margin-top:22px}
 #oferta.on{display:block;animation:sobe .5s ease-out}
 @keyframes sobe{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
@@ -88,7 +92,14 @@ footer{text-align:center;font-size:11.5px;color:#a89b8a;padding:20px}
       <button class="b1" id="continuar">▶ Continuar assistindo</button><button class="b2" id="inicio">↺ Assistir do início</button></div>
     <div class="prog"><i id="barra"></i></div>
   </div>
-  <p class="aviso">🔈 Verifique se o som do seu celular está ligado.</p>
+  <p class="aviso" id="aviso">🔈 Verifique se o som do seu celular está ligado.</p>
+  <div id="cta">
+    <div class="linha">De <s>R$ 97</s> por <b>R$ 47</b> · pagamento único</div>
+    <a class="buy kirvano-payment-trigger" id="comprar1" href="javascript:void(0)">Sim, quero adicionar o Fit Fácil<small>R$ 50 de desconto pela compra do guia</small></a>
+    <div class="seg"><span>🔒 Seguro</span><span>⚡ Acesso imediato</span><span>📱 Celular</span></div>
+    <button class="mais" id="mais">Ver tudo o que vem no app ▼</button>
+    <a class="nao kirvano-refuse-trigger" href="javascript:void(0)" style="margin-top:14px">Não, obrigada. Quero continuar apenas com o meu guia.</a>
+  </div>
 
   <section id="oferta">
     <div class="card">
@@ -132,13 +143,13 @@ var CONFIG = {
   // Compra com 1 clique: quando a Kirvano manda o comprador para cá, a URL traz "kirvano_upsell" e o script da Kirvano
   // (no fim da página) cuida dos botões. Sem esse parâmetro (página aberta direto), os botões viram links normais.
   if (!/[?&]kirvano_upsell=/.test(qs)) {
-    var c = document.getElementById('comprar'), n = document.getElementById('nao');
-    c.classList.remove('kirvano-payment-trigger'); n.classList.remove('kirvano-refuse-trigger');
-    c.href = CONFIG.checkout + qs; n.href = 'desconto/' + qs;
+    document.querySelectorAll('.kirvano-payment-trigger').forEach(function (c) { c.classList.remove('kirvano-payment-trigger'); c.href = CONFIG.checkout + qs; });
+    document.querySelectorAll('.kirvano-refuse-trigger').forEach(function (n) { n.classList.remove('kirvano-refuse-trigger'); n.href = 'desconto/' + qs; });
   }
   function mostrar() {
-    if (oferta.classList.contains('on')) return;
-    oferta.classList.add('on');
+    // depois do preço: primeiro só o botão logo abaixo do vídeo; o resto da página abre se a pessoa quiser
+    var cta = document.getElementById('cta'); if (cta.classList.contains('on')) return;
+    cta.classList.add('on');
     try { localStorage.setItem('ff_oferta', '1'); } catch (e) {}
     try { fbq('track', 'ViewContent', { content_name: 'Fit Fácil upsell', value: 47, currency: 'BRL' }); } catch (e) {}
   }
@@ -164,10 +175,12 @@ var CONFIG = {
   // mudo: fica em loop nos primeiros segundos, como o autoplay do vturb
   v.addEventListener('timeupdate', function () { if (v.muted && v.currentTime > 20) v.currentTime = 0; });
   v.addEventListener('ended', mostrar);
-  document.getElementById('comprar').addEventListener('click', function () {
+  document.getElementById('mais').onclick = function () { oferta.classList.add('on'); this.style.display = 'none'; oferta.scrollIntoView({ behavior: 'smooth' }); };
+  document.querySelectorAll('.buy').forEach(function (b) { b.addEventListener('click', function () {
     try { fbq('track', 'InitiateCheckout', { content_name: 'Fit Fácil', value: 47, currency: 'BRL' }); } catch (e) {}
     try { ttq.track('InitiateCheckout', { value: 47, currency: 'BRL' }); } catch (e) {}
-  });
+  }); });
+
 })();
 </script>
 <!-- Kirvano: compra com 1 clique (estratégia no produto do guia) -->
