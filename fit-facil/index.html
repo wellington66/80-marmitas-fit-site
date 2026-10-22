@@ -148,7 +148,7 @@ var CONFIG = {
   // (no fim da página) cuida dos botões. Sem esse parâmetro (página aberta direto), os botões viram links normais.
   if (!/[?&]kirvano_upsell=/.test(qs)) {
     document.querySelectorAll('.kirvano-payment-trigger').forEach(function (c) { c.classList.remove('kirvano-payment-trigger'); c.href = CONFIG.checkout + qs; });
-    document.querySelectorAll('.kirvano-refuse-trigger').forEach(function (n) { n.classList.remove('kirvano-refuse-trigger'); n.href = 'desconto/' + qs; });
+    document.querySelectorAll('.kirvano-refuse-trigger').forEach(function (n) { n.classList.remove('kirvano-refuse-trigger'); n.href = '/fit-facil/desconto/' + qs; });
   }
   if (/[?&]reset=1/.test(qs)) { try { localStorage.removeItem('ff_oferta'); localStorage.removeItem('ff_vsl_t'); } catch (e) {} }
   function mostrar(teste) {

@@ -110,7 +110,7 @@ var CONFIG = { checkout: 'https://pay.kirvano.com/54eed73c-6d6f-4c77-a6d9-38e6d5
   if (!/[?&]kirvano_upsell=/.test(qs)) {  // sem o parâmetro da Kirvano não há 1 clique: links normais
     var c = document.getElementById('comprar'), n = document.getElementById('nao');
     c.classList.remove('kirvano-payment-trigger'); n.classList.remove('kirvano-refuse-trigger');
-    c.href = CONFIG.checkout + qs; n.href = '../obrigado/' + qs;
+    c.href = CONFIG.checkout + qs; n.href = '/obrigado/' + qs;
   }
   try { fbq('track', 'ViewContent', { content_name: 'Fit Fácil downsell', value: 27, currency: 'BRL' }); } catch (e) {}
   document.getElementById('comprar').addEventListener('click', function () {
