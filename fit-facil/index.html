@@ -105,7 +105,7 @@ footer{text-align:center;font-size:11.5px;color:#a89b8a;padding:20px}
       <div class="de">De <s>R$ 97</s> por apenas</div>
       <div class="val"><small>R$</small>47</div>
       <div class="unico">Pagamento único · acesso vitalício · sem mensalidade</div>
-      <a class="buy" id="comprar" href="#">Sim, quero adicionar o Fit Fácil<small>R$ 50 de desconto pela compra do guia</small></a>
+      <a class="buy kirvano-payment-trigger" id="comprar" href="javascript:void(0)">Sim, quero adicionar o Fit Fácil<small>R$ 50 de desconto pela compra do guia</small></a>
       <div class="seg"><span>🔒 Seguro</span><span>⚡ Acesso imediato</span><span>📱 Celular</span></div>
       <div class="gar"><img src="selo7.png" alt="7 dias de garantia"><div><b>7 dias de garantia.</b> Use o app, fotografe seus pratos, monte seu cardápio. Se não fizer sentido para a sua rotina, é só pedir o reembolso dentro do prazo.</div></div>
     </div>
@@ -117,7 +117,7 @@ footer{text-align:center;font-size:11.5px;color:#a89b8a;padding:20px}
       <details><summary>Como recebo o acesso?</summary><p>Assim que o pagamento é aprovado, você recebe no e-mail o acesso ao app. É só entrar com o mesmo e-mail da compra no celular, tablet ou computador — não precisa baixar nada da loja.</p></details>
       <details><summary>Preciso entender de tecnologia?</summary><p>Não. Você tira uma foto, escreve uma dúvida ou toca em um prato — o app faz o resto. E se precisar, nossa equipe ajuda.</p></details>
     </div>
-    <a class="nao" id="nao" href="desconto/">Não, obrigada. Quero continuar apenas com o meu guia.</a>
+    <a class="nao kirvano-refuse-trigger" id="nao" href="javascript:void(0)">Não, obrigada. Quero continuar apenas com o meu guia.</a>
   </section>
 </main>
 <footer>© 2026 Fit Fácil · Chef Catarina · Todos os direitos reservados</footer>
@@ -129,9 +129,13 @@ var CONFIG = {
 (function () {
   var v = document.getElementById('v'),
       barra = document.getElementById('barra'), oferta = document.getElementById('oferta'), qs = location.search;
-  // leva os dados da compra (que a Kirvano manda na URL) e as UTMs para o checkout do app
-  document.getElementById('comprar').href = CONFIG.checkout + (qs ? (CONFIG.checkout.indexOf('?') < 0 ? '?' : '&') + qs.slice(1) : '');
-  document.getElementById('nao').href = 'desconto/' + qs;
+  // Compra com 1 clique: quando a Kirvano manda o comprador para cá, a URL traz "kirvano_upsell" e o script da Kirvano
+  // (no fim da página) cuida dos botões. Sem esse parâmetro (página aberta direto), os botões viram links normais.
+  if (!/[?&]kirvano_upsell=/.test(qs)) {
+    var c = document.getElementById('comprar'), n = document.getElementById('nao');
+    c.classList.remove('kirvano-payment-trigger'); n.classList.remove('kirvano-refuse-trigger');
+    c.href = CONFIG.checkout + qs; n.href = 'desconto/' + qs;
+  }
   function mostrar() {
     if (oferta.classList.contains('on')) return;
     oferta.classList.add('on');
@@ -166,5 +170,12 @@ var CONFIG = {
   });
 })();
 </script>
+<!-- Kirvano: compra com 1 clique (estratégia no produto do guia) -->
+<script>
+  var offer = "2d61cf95-b3d3-46fd-803e-14b9a2fab737";
+  var nextPageURL = "https://chef-catarina-app.vercel.app/?comprou=1";
+  var refusePageURL = "https://www.receitas-saborosa.shop/fit-facil/desconto/";
+</script>
+<script src="https://snippets.kirvano.com/upsell.min.js"></script>
 </body>
 </html>

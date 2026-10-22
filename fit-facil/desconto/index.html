@@ -93,18 +93,21 @@ footer{text-align:center;font-size:11.5px;color:#a89b8a;padding:20px}
     <div class="val"><small>R$</small>27</div>
     <div class="unico" style="margin:0">Pagamento único · acesso vitalício · sem mensalidade</div>
   </div>
-  <a class="buy" id="comprar" href="#">Sim, quero o Fit Fácil por R$ 27<small>Mesmo app completo, mesma garantia de 7 dias</small></a>
+  <a class="buy kirvano-payment-trigger" id="comprar" href="javascript:void(0)">Sim, quero o Fit Fácil por R$ 27<small>Mesmo app completo, mesma garantia de 7 dias</small></a>
   <div class="seg"><span>🔒 Seguro</span><span>⚡ Imediato</span><span>📱 Celular</span></div>
   <div class="gar"><img src="../selo7.png" alt="7 dias de garantia"><div><b>Risco zero:</b> 7 dias para usar o app. Se não gostar, devolvemos 100% do valor. Seu guia continua seu de qualquer jeito.</div></div>
-  <a class="nao" id="nao" href="../obrigado/">Não, recusar essa oferta</a>
+  <a class="nao kirvano-refuse-trigger" id="nao" href="javascript:void(0)">Não, recusar essa oferta</a>
 </main>
 <footer>© 2026 Fit Fácil · Chef Catarina · Todos os direitos reservados</footer>
 <script>
 var CONFIG = { checkout: 'https://pay.kirvano.com/54eed73c-6d6f-4c77-a6d9-38e6d5758693' }; // oferta R$ 27 (downsell)
 (function () {
   var qs = location.search;
-  document.getElementById('comprar').href = CONFIG.checkout + (qs ? (CONFIG.checkout.indexOf('?') < 0 ? '?' : '&') + qs.slice(1) : '');
-  document.getElementById('nao').href = '../obrigado/' + qs;
+  if (!/[?&]kirvano_upsell=/.test(qs)) {  // sem o parâmetro da Kirvano não há 1 clique: links normais
+    var c = document.getElementById('comprar'), n = document.getElementById('nao');
+    c.classList.remove('kirvano-payment-trigger'); n.classList.remove('kirvano-refuse-trigger');
+    c.href = CONFIG.checkout + qs; n.href = '../obrigado/' + qs;
+  }
   try { fbq('track', 'ViewContent', { content_name: 'Fit Fácil downsell', value: 27, currency: 'BRL' }); } catch (e) {}
   document.getElementById('comprar').addEventListener('click', function () {
     try { fbq('track', 'InitiateCheckout', { content_name: 'Fit Fácil downsell', value: 27, currency: 'BRL' }); } catch (e) {}
@@ -112,5 +115,12 @@ var CONFIG = { checkout: 'https://pay.kirvano.com/54eed73c-6d6f-4c77-a6d9-38e6d5
   });
 })();
 </script>
+<!-- Kirvano: compra com 1 clique (estratégia no produto do guia) -->
+<script>
+  var offer = "54eed73c-6d6f-4c77-a6d9-38e6d5758693";
+  var nextPageURL = "https://chef-catarina-app.vercel.app/?comprou=1";
+  var refusePageURL = "https://www.receitas-saborosa.shop/obrigado/";
+</script>
+<script src="https://snippets.kirvano.com/upsell.min.js"></script>
 </body>
 </html>
