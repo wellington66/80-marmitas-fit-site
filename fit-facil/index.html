@@ -146,15 +146,16 @@ var CONFIG = {
     document.querySelectorAll('.kirvano-payment-trigger').forEach(function (c) { c.classList.remove('kirvano-payment-trigger'); c.href = CONFIG.checkout + qs; });
     document.querySelectorAll('.kirvano-refuse-trigger').forEach(function (n) { n.classList.remove('kirvano-refuse-trigger'); n.href = 'desconto/' + qs; });
   }
-  function mostrar() {
+  if (/[?&]reset=1/.test(qs)) { try { localStorage.removeItem('ff_oferta'); localStorage.removeItem('ff_vsl_t'); } catch (e) {} }
+  function mostrar(teste) {
     // depois do preço: primeiro só o botão logo abaixo do vídeo; o resto da página abre se a pessoa quiser
     var cta = document.getElementById('cta'); if (cta.classList.contains('on')) return;
     cta.classList.add('on');
-    try { localStorage.setItem('ff_oferta', '1'); } catch (e) {}
+    if (!teste) { try { localStorage.setItem('ff_oferta', '1'); } catch (e) {} }
     try { fbq('track', 'ViewContent', { content_name: 'Fit Fácil upsell', value: 47, currency: 'BRL' }); } catch (e) {}
   }
   var ja = false; try { ja = localStorage.getItem('ff_oferta') === '1'; } catch (e) {}
-  if (ja || /[?&]direto=1/.test(qs)) mostrar();
+  if (ja) mostrar(); else if (/[?&]direto=1/.test(qs)) mostrar(true);
   var K = 'ff_vsl_t', ultimo = 0; try { ultimo = +localStorage.getItem(K) || 0; } catch (e) {}
   function ver(id) { ['som', 'pause', 'volta'].forEach(function (o) { document.getElementById(o).classList.toggle('on', o === id); }); }
   function comSom(t) { v.muted = false; v.currentTime = t; v.play(); ver(null); }
