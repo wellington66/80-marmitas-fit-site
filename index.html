@@ -543,8 +543,8 @@
   .footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:16px;text-align:center;font-size:12.5px;color:#c9a689;}
 
   /* CHEF */
-  .chef{background:#fff;}
-  .chef-box{display:grid;grid-template-columns:300px 1fr;gap:44px;align-items:center;max-width:920px;margin:0 auto;}
+  .chef{background:linear-gradient(180deg,var(--cream) 0%,var(--green-light) 100%);}
+  .chef-box{display:grid;grid-template-columns:300px 1fr;gap:44px;align-items:center;max-width:980px;margin:0 auto;background:#fff;border:2px solid #f1d9c2;border-top:6px solid var(--terracota);border-radius:22px;padding:44px 48px;box-shadow:0 20px 50px rgba(92,58,23,.14);}
   .chef-foto{position:relative;}
   .chef-foto img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:50%;border:6px solid #fff;box-shadow:0 0 0 3px var(--gold),0 18px 40px rgba(92,58,23,.25);}
   .chef-foto .assinatura{position:absolute;left:50%;bottom:-14px;transform:translateX(-50%);white-space:nowrap;background:var(--green-dark);color:#fff;font-weight:800;font-size:13px;letter-spacing:.04em;padding:7px 16px;border-radius:30px;box-shadow:0 6px 14px rgba(0,0,0,.18);}
@@ -564,7 +564,7 @@
     }
     .hero-inner{grid-template-columns:1fr;text-align:center;}
     .hero p.sub{margin:16px auto 0;}
-    .chef-box{grid-template-columns:1fr;gap:34px;text-align:center;}
+    .chef-box{grid-template-columns:1fr;gap:34px;text-align:center;padding:30px 18px 26px;border-radius:18px;}
     .chef-foto{max-width:230px;margin:0 auto;}
     .chef h2{font-size:25px;}
     .chef p{font-size:15px;text-align:left;}
@@ -1043,7 +1043,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
 <!-- CHEF -->
 <section class="chef" id="chef">
-  <div class="wrap chef-box">
+  <div class="wrap"><div class="chef-box">
     <div class="chef-foto">
       <img width="640" height="640" src="assets/chef-catarina.webp" srcset="assets/chef-catarina-m.webp 400w, assets/chef-catarina.webp 640w" sizes="(max-width:880px) 230px, 300px" alt="Chef Catarina Moretti" loading="lazy" decoding="async">
       <span class="assinatura">👩‍🍳 Chef Catarina Moretti</span>
@@ -1058,7 +1058,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       <div class="proposito">Meu propósito é tornar a cozinha mais simples e cada refeição mais especial.</div>
       <div class="assina">Chef Catarina Moretti</div>
     </div>
-  </div>
+  </div></div>
 </section>
 
 <!-- GUARANTEE -->
