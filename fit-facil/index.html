@@ -26,16 +26,25 @@ h1{font-size:25px;line-height:1.12;font-weight:900;letter-spacing:-.02em;margin:
 h1 em{font-style:normal;color:var(--o)}
 .sub{text-align:center;color:var(--m);font-size:14.5px;font-weight:600;margin:0 0 16px}
 .top{text-align:center}
-/* player */
-.vsl{position:relative;width:100%;aspect-ratio:9/16;max-height:78vh;margin:0 auto;border-radius:18px;overflow:hidden;background:#000;box-shadow:0 10px 30px rgba(30,40,30,.25)}
-.vsl video{width:100%;height:100%;object-fit:cover;display:block}
-.som{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.25);cursor:pointer;border:0;padding:0}
-.som span{background:var(--o);color:#fff;font-weight:900;font-size:16px;line-height:1.25;padding:16px 20px;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.35);text-align:center;animation:pul 1.4s infinite}
-.som span small{display:block;font-size:12px;font-weight:700;opacity:.9;margin-top:4px}
-@keyframes pul{50%{transform:scale(1.05)}}
-.prog{position:absolute;left:0;right:0;bottom:0;height:6px;background:rgba(255,255,255,.25)}.prog i{display:block;height:100%;width:0;background:var(--o)}
-.pause{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.45);color:#fff;font-weight:800;font-size:15px;cursor:pointer}
-.pause b{background:rgba(0,0,0,.6);padding:12px 18px;border-radius:12px}
+/* player no estilo vturb (SmartPlayer) */
+.vsl{position:relative;width:100%;aspect-ratio:9/16;max-height:80vh;margin:0 auto;border-radius:14px;overflow:hidden;background:#000;box-shadow:0 10px 30px rgba(30,40,30,.25);user-select:none;-webkit-tap-highlight-color:transparent}
+.vsl video{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.ov{position:absolute;inset:0;display:none;align-items:center;justify-content:center;cursor:pointer;z-index:3}
+.ov.on{display:flex}
+#som{background:rgba(0,0,0,.18)}
+.caixa{background:#E0703A;color:#fff;border-radius:14px;padding:18px 22px;text-align:center;box-shadow:0 10px 28px rgba(0,0,0,.4);animation:pul 1.6s infinite;max-width:78%}
+.caixa .t1{font-weight:900;font-size:17px;line-height:1.2}
+.caixa svg{width:64px;height:64px;display:block;margin:8px auto}
+.caixa .t2{font-weight:800;font-size:15px}
+@keyframes pul{50%{transform:scale(1.04)}}
+#pause{background:rgba(0,0,0,.45)}
+#pause .play{width:86px;height:86px;border-radius:50%;background:#E0703A;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+#pause .play:after{content:"";margin-left:8px;border-left:30px solid #fff;border-top:19px solid transparent;border-bottom:19px solid transparent}
+#volta{background:rgba(0,0,0,.72);flex-direction:column;gap:12px;color:#fff;text-align:center;padding:24px}
+#volta p{font-weight:800;font-size:17px;margin:0 0 6px}
+#volta button{font:800 15px Montserrat,sans-serif;border:0;border-radius:12px;padding:14px 18px;width:80%;max-width:280px;cursor:pointer}
+#volta .b1{background:#E0703A;color:#fff}#volta .b2{background:#fff;color:#1d2a21}
+.prog{position:absolute;left:0;right:0;bottom:0;height:7px;background:rgba(255,255,255,.18);z-index:2}.prog i{display:block;height:100%;width:0;background:#E0703A;transition:width .25s linear}
 .aviso{text-align:center;font-size:12.5px;color:var(--m);font-weight:600;margin:10px 0 0}
 /* oferta */
 #oferta{display:none;margin-top:22px}
@@ -70,9 +79,13 @@ footer{text-align:center;font-size:11.5px;color:#a89b8a;padding:20px}
   <p class="sub">É rapidinho — e vale a pena ver até o final.</p>
 
   <div class="vsl" id="vsl">
-    <video id="v" src="vsl.mp4" poster="poster.jpg" playsinline muted autoplay preload="auto"></video>
-    <button class="som" id="som" aria-label="Ativar o som"><span>🔊 Seu vídeo já começou<small>Toque para ouvir</small></span></button>
-    <div class="pause" id="pause"><b>▶ Toque para continuar</b></div>
+    <video id="v" src="vsl.mp4" poster="poster.jpg" playsinline webkit-playsinline muted autoplay preload="auto"></video>
+    <div class="ov on" id="som" aria-label="Ativar o som"><div class="caixa"><div class="t1">Seu vídeo já começou</div>
+      <svg viewBox="0 0 24 24" fill="#fff"><path d="M3 9v6h4l5 5V4L7 9H3z"/><path d="M16.5 12A4.5 4.5 0 0 0 14 8v8a4.5 4.5 0 0 0 2.5-4z" opacity=".55"/><path d="M14 3.2v2.1a7 7 0 0 1 0 13.4v2.1A9 9 0 0 0 14 3.2z" opacity=".55"/><path d="M19 9l4 6M23 9l-4 6" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+      <div class="t2">Clique para ouvir</div></div></div>
+    <div class="ov" id="pause"><div class="play"></div></div>
+    <div class="ov" id="volta"><p>Você já começou a assistir este vídeo</p>
+      <button class="b1" id="continuar">▶ Continuar assistindo</button><button class="b2" id="inicio">↺ Assistir do início</button></div>
     <div class="prog"><i id="barra"></i></div>
   </div>
   <p class="aviso">🔈 Verifique se o som do seu celular está ligado.</p>
@@ -114,7 +127,7 @@ var CONFIG = {
   revelar: 182                                   // segundo do vídeo em que a oferta aparece ("por apenas quarenta e sete reais")
 };
 (function () {
-  var v = document.getElementById('v'), som = document.getElementById('som'), pause = document.getElementById('pause'),
+  var v = document.getElementById('v'),
       barra = document.getElementById('barra'), oferta = document.getElementById('oferta'), qs = location.search;
   // leva os dados da compra (que a Kirvano manda na URL) e as UTMs para o checkout do app
   document.getElementById('comprar').href = CONFIG.checkout + (qs ? (CONFIG.checkout.indexOf('?') < 0 ? '?' : '&') + qs.slice(1) : '');
@@ -127,14 +140,25 @@ var CONFIG = {
   }
   var ja = false; try { ja = localStorage.getItem('ff_oferta') === '1'; } catch (e) {}
   if (ja || /[?&]direto=1/.test(qs)) mostrar();
-  som.onclick = function () { v.muted = false; v.currentTime = 0; v.play(); som.style.display = 'none'; };
-  v.addEventListener('click', function () { if (som.style.display !== 'none') return; v.pause(); pause.style.display = 'flex'; });
-  pause.onclick = function () { pause.style.display = 'none'; v.play(); };
+  var K = 'ff_vsl_t', ultimo = 0; try { ultimo = +localStorage.getItem(K) || 0; } catch (e) {}
+  function ver(id) { ['som', 'pause', 'volta'].forEach(function (o) { document.getElementById(o).classList.toggle('on', o === id); }); }
+  function comSom(t) { v.muted = false; v.currentTime = t; v.play(); ver(null); }
+  // como no vturb: começa mudo sozinho; o 1º toque recomeça do zero com som; quem volta pode continuar de onde parou
+  document.getElementById('som').onclick = function () { if (ultimo > 8 && ultimo < (v.duration || 1e9) - 5) ver('volta'); else comSom(0); };
+  document.getElementById('continuar').onclick = function (e) { e.stopPropagation(); comSom(ultimo); };
+  document.getElementById('inicio').onclick = function (e) { e.stopPropagation(); comSom(0); };
+  document.getElementById('vsl').addEventListener('click', function (e) {
+    if (v.muted || e.target.closest('#som,#volta')) return;
+    if (v.paused) { v.play(); ver(null); } else { v.pause(); ver('pause'); }
+  });
   v.addEventListener('timeupdate', function () {
-    // barra que anda mais rápido no começo (o vídeo parece curto)
-    var p = v.duration ? v.currentTime / v.duration : 0; barra.style.width = (100 * (1 - Math.pow(1 - p, 2.2))) + '%';
+    // barra "inteligente" do vturb: anda rápido no começo e devagar depois (o vídeo parece curto)
+    var p = v.duration ? v.currentTime / v.duration : 0; barra.style.width = (100 * (1 - Math.pow(1 - p, 2.6))) + '%';
+    if (!v.muted) { try { localStorage.setItem(K, Math.floor(v.currentTime)); } catch (e) {} }
     if (!v.muted && v.currentTime >= CONFIG.revelar) mostrar();
   });
+  // mudo: fica em loop nos primeiros segundos, como o autoplay do vturb
+  v.addEventListener('timeupdate', function () { if (v.muted && v.currentTime > 20) v.currentTime = 0; });
   v.addEventListener('ended', mostrar);
   document.getElementById('comprar').addEventListener('click', function () {
     try { fbq('track', 'InitiateCheckout', { content_name: 'Fit Fácil', value: 47, currency: 'BRL' }); } catch (e) {}
