@@ -78,6 +78,28 @@ footer{text-align:center;font-size:11.5px;color:#a89b8a;padding:20px}
 <meta name="al-etapa" content="upsell">
 <script>window.alq = window.alq || [];</script>
 <script src="https://almocos-painel.vercel.app/al.js" async></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18461158842"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18461158842');
+</script>
+<!-- Event snippet for Compra conversion page (1 vez por pessoa: recarregar a página não conta de novo) -->
+<script>
+  (function () {
+    try { if (localStorage.getItem('gads_compra')) return; localStorage.setItem('gads_compra', String(Date.now())); } catch (e) {}
+    var q = new URLSearchParams(location.search);
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18461158842/eTKZCI6miP0cELrb--JE',
+        'value': 1.0,
+        'currency': 'BRL',
+        'transaction_id': q.get('sale_id') || q.get('transaction_id') || q.get('order_id') || ''
+    });
+  })();
+</script>
 </head>
 <body>
 <div class="bar">⚠ Não feche esta página — sua compra está sendo finalizada.<br>Oferta especial só para quem acabou de comprar o guia.</div>
