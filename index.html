@@ -742,7 +742,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
 // InitiateCheckout no TikTok só em cliques em links que levam ao checkout Kirvano
 (function(){
-  var prices = { '9082d7c0-b319-43f7-9ce6-427c23712f2d': 27.00, '4fa174f3-e2c5-4060-a55f-a770ad32004d': 12.90, '072e1934-eb9c-48ab-b790-3714cd0fd0d0': 18.00 };
+  var prices = { '9082d7c0-b319-43f7-9ce6-427c23712f2d': 27.00, '4fa174f3-e2c5-4060-a55f-a770ad32004d': 22.90, '072e1934-eb9c-48ab-b790-3714cd0fd0d0': 18.00 };
   document.addEventListener('click', function(e){
     var a = e.target.closest && e.target.closest('a[href*="pay.kirvano.com"]');
     if (!a) return;
@@ -1066,13 +1066,13 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     <button id="upsell-close" aria-label="Fechar" style="position:absolute;top:12px;right:14px;background:none;border:none;font-size:20px;color:var(--muted);cursor:pointer;line-height:1;">✕</button>
     <span class="eyebrow" style="background:var(--terracota);">ESPERA! OFERTA ÚNICA 🎁</span>
     <h3 style="font-family:'Fraunces',Georgia,serif;font-size:22px;color:var(--green-dark);margin-top:12px;">Antes de continuar por R$ 18,00...</h3>
-    <p style="font-size:14.5px;color:var(--muted);margin-top:10px;">Por um valor especial, leve o <b>Plano Completo com os 5 Bônus Exclusivos</b> (valor R$ 165,00) por só:</p>
+    <p style="font-size:14.5px;color:var(--muted);margin-top:10px;">Por apenas <b style="color:var(--green-dark);">mais R$ 4,90</b>, leve o <b>Plano Completo com os 5 Bônus Exclusivos</b> (valor R$ 165,00) por só:</p>
     <div class="plan-price" style="margin-top:14px;">
       <span class="old">De R$ 27,00</span><span class="off-badge">OFERTA ÚNICA</span>
-      <div class="new">R$ 12,90</div>
+      <div class="new">R$ 22,90</div>
       <div class="inst">só nesta página, agora</div>
     </div>
-    <a href="https://pay.kirvano.com/4fa174f3-e2c5-4060-a55f-a770ad32004d" class="btn btn-wide btn-terracota" style="margin-top:16px;">SIM! QUERO O COMPLETO POR R$ 12,90 →</a>
+    <a href="https://pay.kirvano.com/4fa174f3-e2c5-4060-a55f-a770ad32004d" class="btn btn-wide btn-terracota" style="margin-top:16px;">SIM! QUERO O COMPLETO POR R$ 22,90 →</a>
     <a href="https://pay.kirvano.com/072e1934-eb9c-48ab-b790-3714cd0fd0d0" id="upsell-decline" style="display:block;margin-top:14px;font-size:13px;color:var(--muted);text-decoration:underline;">Não, quero continuar só com o guia por R$ 18,00</a>
   </div>
 </div>
@@ -1296,7 +1296,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   })();
 </script>
 
-<!-- Pop-up de saída R$12,90 -->
+<!-- Pop-up de saída R$22,90 -->
 <div id="exit-overlay" class="upsell-overlay">
   <div class="upsell-box">
     <button type="button" id="exit-close" class="upsell-close" aria-label="Fechar">✕</button>
@@ -1305,11 +1305,11 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     <h3>Não vá embora sem seu desconto extra</h3>
     <p class="upsell-sub">Guia +250 Almoços Fitness + <b>todos os 5 bônus exclusivos</b> por um preço que não vai se repetir.</p>
     <div class="upsell-price">
-      <span class="old">De R$ 314,50</span><span class="off-badge">-96%</span>
-      <div class="new">R$ 12,90</div>
+      <span class="old">De R$ 314,50</span><span class="off-badge">-93%</span>
+      <div class="new">R$ 22,90</div>
       <div class="inst inst-strong">à vista, oferta única</div>
     </div>
-    <a href="https://pay.kirvano.com/4fa174f3-e2c5-4060-a55f-a770ad32004d" class="btn btn-wide btn-terracota">SIM, QUERO POR R$ 12,90 →</a>
+    <a href="https://pay.kirvano.com/4fa174f3-e2c5-4060-a55f-a770ad32004d" class="btn btn-wide btn-terracota">SIM, QUERO POR R$ 22,90 →</a>
     <a href="#" id="exit-decline" class="upsell-decline">Não, obrigado(a)</a>
   </div>
 </div>
@@ -1360,7 +1360,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
     // stage controla a tentativa de saída do lead:
     // 0 = nada ainda -> primeira tentativa só é bloqueada (não mostra nada)
-    // 1 = já bloqueou uma vez -> segunda tentativa mostra o pop-up de R$12,90
+    // 1 = já bloqueou uma vez -> segunda tentativa mostra o pop-up de R$22,90
     var stage = 0;
 
     function isOpen(){ return overlay.classList.contains('show'); }
@@ -1386,7 +1386,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     });
 
     // Primeira tentativa de saída: só bloqueia (marca o estágio, não mostra nada).
-    // Segunda tentativa: mostra o pop-up de R$12,90.
+    // Segunda tentativa: mostra o pop-up de R$22,90.
     function exitIntentTrigger(){
       if(isOpen()) return;
       if(stage === 0){ stage = 1; }
