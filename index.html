@@ -156,6 +156,7 @@
   }
   .hero p.sub b{color:#fff;}
   .hero-cta{margin-top:26px;}
+  .hero-price{display:block;max-width:300px;margin:0 0 16px;text-align:center;padding:12px 18px;}
   .price-box{
     margin-top:22px;
     background:rgba(255,255,255,.08);
@@ -580,6 +581,7 @@
     .hero-image::before{width:260px;height:260px;}
     .hero-badges{justify-content:center;}
     .price-box{width:100%;max-width:320px;}
+    .hero-price{margin:0 auto 14px;}
     .problem-grid{grid-template-columns:1fr;gap:24px;}
     .problem-image{order:-1;}
     .why-grid{grid-template-columns:1fr;padding:24px;gap:50px;}
@@ -717,19 +719,19 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
 // InitiateCheckout no TikTok só em cliques em links que levam ao checkout Kirvano
 (function(){
-  var prices = { '9082d7c0-b319-43f7-9ce6-427c23712f2d': 27.00, '4fa174f3-e2c5-4060-a55f-a770ad32004d': 22.90, '072e1934-eb9c-48ab-b790-3714cd0fd0d0': 18.00 };
+  var prices = { '9082d7c0-b319-43f7-9ce6-427c23712f2d': 17.90, '4fa174f3-e2c5-4060-a55f-a770ad32004d': 12.90, '072e1934-eb9c-48ab-b790-3714cd0fd0d0': 5.90 };
   document.addEventListener('click', function(e){
     var a = e.target.closest && e.target.closest('a[href*="pay.kirvano.com"]');
     if (!a) return;
     var id = a.href.split('pay.kirvano.com/')[1].split(/[?#/]/)[0];
     ttq.track('InitiateCheckout', {
       contents: [{ content_id: id, content_type: 'product', content_name: '+250 Almocos Fitness' }],
-      value: prices[id] || 27.00,
+      value: prices[id] || 17.90,
       currency: 'BRL'
     });
     if (window.fbq) fbq('track', 'InitiateCheckout', {
       content_ids: [id], content_type: 'product', content_name: '+250 Almocos Fitness',
-      value: prices[id] || 27.00, currency: 'BRL'
+      value: prices[id] || 17.90, currency: 'BRL'
     });
   }, true);
 })();
@@ -748,6 +750,11 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       <p class="sub"><b>Seu Guia Completo para Secar Comendo Comida de Verdade, Sem Abrir Mão do Sabor!</b><br>Mais de 250 almoços práticos, baratos e que funcionam de verdade — prontos em até 15 minutos e com ingredientes que você tem em casa.</p>
 
       <div class="hero-cta">
+        <div class="price-box hero-price">
+          <div class="price-old">De R$ 314,50</div>
+          <div class="price-new">R$ 17,90</div>
+          <div class="price-inst">pagamento único · acesso vitalício</div>
+        </div>
         <a href="#oferta-completa" class="btn btn-terracota">QUERO OS +250 ALMOÇOS FITNESS →</a>
       </div>
 
@@ -961,8 +968,8 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <h3>OFERTA BÁSICA</h3>
         <div class="plan-type">+250 Almoços Fitness</div>
         <div class="plan-price">
-          <span class="old">De R$ 97,00</span><span class="off-badge">-81%</span>
-          <div class="new new-small">R$ 18,00</div>
+          <span class="old">De R$ 97,00</span><span class="off-badge">-94%</span>
+          <div class="new new-small">R$ 5,90</div>
           <div class="inst">Pagamento Único</div>
         </div>
         <ul class="plan-features">
@@ -983,8 +990,8 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <h3>SUPER OFERTA</h3>
         <div class="plan-type">+250 Almoços Fitness COMPLETO</div>
         <div class="plan-price">
-          <span class="old">De R$ 314,50</span><span class="off-badge">-91%</span>
-          <div class="new">R$ 27,00</div>
+          <span class="old">De R$ 314,50</span><span class="off-badge">-94%</span>
+          <div class="new">R$ 17,90</div>
           <div class="inst">Pagamento Único</div>
         </div>
         <ul class="plan-features">
@@ -1012,15 +1019,15 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   <div style="background:#fff;border-radius:20px;max-width:420px;width:100%;padding:32px 26px;position:relative;text-align:center;box-shadow:0 30px 70px rgba(0,0,0,.4);">
     <button id="upsell-close" aria-label="Fechar" style="position:absolute;top:12px;right:14px;background:none;border:none;font-size:20px;color:var(--muted);cursor:pointer;line-height:1;">✕</button>
     <span class="eyebrow" style="background:var(--terracota);">ESPERA! OFERTA ÚNICA 🎁</span>
-    <h3 style="font-family:'Fraunces',Georgia,serif;font-size:22px;color:var(--green-dark);margin-top:12px;">Antes de continuar por R$ 18,00...</h3>
-    <p style="font-size:14.5px;color:var(--muted);margin-top:10px;">Por apenas <b style="color:var(--green-dark);">mais R$ 4,90</b>, leve o <b>Plano Completo com os 5 Bônus Exclusivos</b> (valor R$ 165,00) por só:</p>
+    <h3 style="font-family:'Fraunces',Georgia,serif;font-size:22px;color:var(--green-dark);margin-top:12px;">Antes de continuar por R$ 5,90...</h3>
+    <p style="font-size:14.5px;color:var(--muted);margin-top:10px;">Por apenas <b style="color:var(--green-dark);">mais R$ 7,00</b>, leve o <b>Plano Completo com os 5 Bônus Exclusivos</b> (valor R$ 165,00) por só:</p>
     <div class="plan-price" style="margin-top:14px;">
-      <span class="old">De R$ 27,00</span><span class="off-badge">OFERTA ÚNICA</span>
-      <div class="new">R$ 22,90</div>
+      <span class="old">De R$ 17,90</span><span class="off-badge">OFERTA ÚNICA</span>
+      <div class="new">R$ 12,90</div>
       <div class="inst">só nesta página, agora</div>
     </div>
-    <a href="https://pay.kirvano.com/4fa174f3-e2c5-4060-a55f-a770ad32004d" class="btn btn-wide btn-terracota" style="margin-top:16px;">SIM! QUERO O COMPLETO POR R$ 22,90 →</a>
-    <a href="https://pay.kirvano.com/072e1934-eb9c-48ab-b790-3714cd0fd0d0" id="upsell-decline" style="display:block;margin-top:14px;font-size:13px;color:var(--muted);text-decoration:underline;">Não, quero continuar só com o guia por R$ 18,00</a>
+    <a href="https://pay.kirvano.com/4fa174f3-e2c5-4060-a55f-a770ad32004d" class="btn btn-wide btn-terracota" style="margin-top:16px;">SIM! QUERO O COMPLETO POR R$ 12,90 →</a>
+    <a href="https://pay.kirvano.com/072e1934-eb9c-48ab-b790-3714cd0fd0d0" id="upsell-decline" style="display:block;margin-top:14px;font-size:13px;color:var(--muted);text-decoration:underline;">Não, quero continuar só com o guia por R$ 5,90</a>
   </div>
 </div>
 
@@ -1095,7 +1102,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   <div class="wrap">
     <div class="final-cta">
       <h3>AINDA NÃO GARANTIU SUA OFERTA?</h3>
-      <p>Leve os +250 Almoços Fitness + 5 bônus exclusivos por apenas R$ 27,00 enquanto a promoção ainda está disponível.</p>
+      <p>Leve os +250 Almoços Fitness + 5 bônus exclusivos por apenas R$ 17,90 enquanto a promoção ainda está disponível.</p>
       <a href="https://pay.kirvano.com/9082d7c0-b319-43f7-9ce6-427c23712f2d" class="btn btn-terracota">QUERO OS +250 ALMOÇOS FITNESS →</a>
       <div class="final-badges">
         <span>✅ Acesso Imediato</span>
@@ -1183,7 +1190,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       if(rect.bottom <= 0){
         switched = true;
         ctaLink.href = checkoutUrl;
-        ctaLink.textContent = 'QUERO POR R$ 27,00 →';
+        ctaLink.textContent = 'QUERO POR R$ 17,90 →';
       }
     }
     window.addEventListener('scroll', checkScroll, {passive:true});
@@ -1243,7 +1250,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   })();
 </script>
 
-<!-- Pop-up de saída R$22,90 -->
+<!-- Pop-up de saída R$12,90 -->
 <div id="exit-overlay" class="upsell-overlay">
   <div class="upsell-box">
     <button type="button" id="exit-close" class="upsell-close" aria-label="Fechar">✕</button>
@@ -1252,11 +1259,11 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     <h3>Não vá embora sem seu desconto extra</h3>
     <p class="upsell-sub">Guia +250 Almoços Fitness + <b>todos os 5 bônus exclusivos</b> por um preço que não vai se repetir.</p>
     <div class="upsell-price">
-      <span class="old">De R$ 314,50</span><span class="off-badge">-93%</span>
-      <div class="new">R$ 22,90</div>
+      <span class="old">De R$ 314,50</span><span class="off-badge">-96%</span>
+      <div class="new">R$ 12,90</div>
       <div class="inst inst-strong">à vista, oferta única</div>
     </div>
-    <a href="https://pay.kirvano.com/4fa174f3-e2c5-4060-a55f-a770ad32004d" class="btn btn-wide btn-terracota">SIM, QUERO POR R$ 22,90 →</a>
+    <a href="https://pay.kirvano.com/4fa174f3-e2c5-4060-a55f-a770ad32004d" class="btn btn-wide btn-terracota">SIM, QUERO POR R$ 12,90 →</a>
     <a href="#" id="exit-decline" class="upsell-decline">Não, obrigado(a)</a>
   </div>
 </div>
@@ -1307,7 +1314,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
     // stage controla a tentativa de saída do lead:
     // 0 = nada ainda -> primeira tentativa só é bloqueada (não mostra nada)
-    // 1 = já bloqueou uma vez -> segunda tentativa mostra o pop-up de R$22,90
+    // 1 = já bloqueou uma vez -> segunda tentativa mostra o pop-up de R$12,90
     var stage = 0;
 
     function isOpen(){ return overlay.classList.contains('show'); }
@@ -1333,7 +1340,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     });
 
     // Primeira tentativa de saída: só bloqueia (marca o estágio, não mostra nada).
-    // Segunda tentativa: mostra o pop-up de R$22,90.
+    // Segunda tentativa: mostra o pop-up de R$12,90.
     function exitIntentTrigger(){
       if(isOpen()) return;
       if(stage === 0){ stage = 1; }
