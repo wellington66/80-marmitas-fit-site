@@ -32,648 +32,327 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%238a2f1f'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle'%3E%F0%9F%8D%B1%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="assets/hero-chef-catarina-250-m.webp" imagesrcset="assets/hero-chef-catarina-250-m.webp 640w, assets/hero-chef-catarina-250.webp 1100w" imagesizes="(max-width:880px) 92vw, 520px" fetchpriority="high">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,600&family=Nunito+Sans:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,600&family=Nunito+Sans:wght@400;600;700;800&display=swap"></noscript>
+<link rel="preload" as="image" href="assets/mockup-250-livro-celular-m.webp" imagesrcset="assets/mockup-250-livro-celular-m.webp 720w, assets/mockup-250-livro-celular.webp 1100w" imagesizes="(max-width:880px) 100vw, 896px" fetchpriority="high">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"></noscript>
 <style>html{scroll-behavior:smooth;}</style>
 <style>
-  :root{
-    --green-dark:#5c3a17;
-    --green:#8a2f1f;
-    --green-light:#fdece0;
-    --cream:#fff8ee;
-    --terracota:#e0703a;
-    --terracota-dark:#c85a28;
-    --tomato:#c8391f;
-    --text:#3d2417;
-    --muted:#8a6f5c;
-    --gold:#e0a83a;
-    --radius:14px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  html{overflow-x:hidden;}
-  body{
-    font-family:'Nunito Sans',system-ui,-apple-system,sans-serif;
-    background:var(--cream);
-    color:var(--text);
-    line-height:1.5;
-    overflow-x:hidden;
-  }
-  img{max-width:100%;height:auto;display:block;}
-  a{text-decoration:none;color:inherit;}
-  .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
-  section{padding:60px 0;}
-  h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.15;}
-  .eyebrow{
-    display:inline-block;
-    background:var(--terracota);
-    color:#fff;
-    font-size:13.5px;
-    font-weight:700;
-    letter-spacing:1px;
-    padding:6px 16px;
-    border-radius:30px;
-    margin-bottom:14px;
-    text-transform:uppercase;
-  }
-  .center{text-align:center;}
-  .btn{
-    --btn-glow:138,47,31;
-    display:inline-block;
-    background:var(--green);
-    color:#fff;
-    font-weight:700;
-    font-size:15px;
-    padding:16px 30px;
-    border-radius:8px;
-    text-align:center;
-    letter-spacing:.3px;
-    box-shadow:0 6px 18px rgba(138,47,31,.35);
-    border:none;
-    cursor:pointer;
-    animation:btn-pulse-glow 1.9s ease-in-out infinite;
-    transition:transform .15s ease, box-shadow .15s ease;
-  }
-  .btn:hover{animation-play-state:paused;transform:translateY(-2px) scale(1.04);box-shadow:0 10px 26px rgba(var(--btn-glow),.55);}
-  .btn-wide{width:100%;}
-  .btn-terracota{background:var(--terracota);--btn-glow:224,112,58;box-shadow:0 6px 18px rgba(224,112,58,.4);}
-  @keyframes btn-pulse-glow{
-    0%,100%{transform:scale(1);box-shadow:0 6px 18px rgba(var(--btn-glow),.4);}
-    50%{transform:scale(1.05);box-shadow:0 6px 30px rgba(var(--btn-glow),.8),0 0 0 10px rgba(var(--btn-glow),.16);}
-  }
-  @media(prefers-reduced-motion:reduce){.btn{animation:none;}}
+body{margin:0;background:#fff}
+/* Landing NutriBaby — cores do 150 Almoços (verde #00C853, laranja #FF6B00, fundos creme) */
+.rb{
+  --verde:#00C853;--verde-d:#00A844;--verde-preco:#14AE5C;--laranja:#FF6B00;--laranja-d:#E55F00;--ouro:#FFB300;
+  --preto:#1A1A1A;--texto:#333;--cinza:#555;--cinza-c:#6b7280;
+  --bg:#FFFFFF;--creme:#FFFDF9;--creme2:#FFF9F2;--cinza-bg:#F9F9F9;--escuro:#1E1E1E;
+  min-height:100vh;background:var(--bg);color:var(--preto);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+.rb *{box-sizing:border-box}
+.rb img{max-width:100%;display:block}
+.rb a{text-decoration:none;color:inherit}
+.rb h1,.rb h2,.rb h3,.rb h4,.rb p{margin:0}
+.rb h1,.rb h2,.rb h3,.rb h4{font-family:inherit;letter-spacing:-.02em}
+.rb .bonus .cover.emo{font-size:44px}
+.rb b,.rb strong{font-weight:800}
 
-  /* TOP BAR */
-  .topbar{
-    background:var(--green-dark);
-    color:#fff;
-    font-size:13.5px;
-    text-align:center;
-    padding:8px 10px;
-    letter-spacing:.4px;
-    white-space:nowrap;
-    overflow-x:auto;
-  }
-  .topbar b{color:var(--gold);}
+/* contêineres */
+.rb .w3{max-width:768px;margin:0 auto}
+.rb .w4{max-width:896px;margin:0 auto}
+.rb .w5{max-width:1024px;margin:0 auto}
+.rb .wmd{max-width:448px;margin:0 auto}
+.rb .sec{padding:40px 12px}
+.rb .sec-alt{padding:36px 12px;background:var(--creme);border-bottom:1px solid #f3f4f6}
+@media(min-width:640px){.rb .sec{padding:56px 16px}.rb .sec-alt{padding:56px 16px}}
 
-  /* HERO */
-  .hero{
-    background:
-      linear-gradient(100deg, rgba(30,14,9,.95) 0%, rgba(40,18,10,.88) 30%, rgba(50,22,12,.55) 55%, rgba(60,26,14,.25) 75%, rgba(60,26,14,.1) 100%),
-      url('assets/18-hero-bg-marmitas-mesa.webp?v=2') right 60% / cover no-repeat,
-      linear-gradient(160deg,var(--green-dark) 0%, var(--green) 55%, #a8432b 100%);
-    color:#fff;
-    padding:50px 0 40px;
-    position:relative;
-    overflow:hidden;
-  }
-  .hero::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:radial-gradient(circle at 80% 20%, rgba(255,255,255,.08), transparent 60%);
-  }
-  .hero-inner{
-    position:relative;
-    display:grid;
-    grid-template-columns:1.1fr .9fr;
-    gap:40px;
-    align-items:center;
-  }
-  .hero h1{
-    font-size:38px;
-    font-weight:900;
-    line-height:1.12;
-    color:#fff;
-    text-shadow:0 2px 14px rgba(0,0,0,.45);
-  }
-  .hero h1 span{display:block;color:var(--gold);font-size:1.08em;}
-  .hero p.sub{
-    margin-top:16px;
-    font-size:16px;
-    color:#f6e3d3;
-    max-width:480px;
-  }
-  .hero p.sub b{color:#fff;}
-  .hero-cta{margin-top:26px;}
-  .hero-price{display:block;max-width:300px;margin:0 0 16px;text-align:center;padding:14px 18px 12px;border:2px solid var(--gold);background:rgba(224,168,58,.12);box-shadow:0 0 0 4px rgba(224,168,58,.12),0 8px 24px rgba(0,0,0,.25);}
-  .hero-price .hp-tag{display:inline-block;background:var(--gold);color:#3a2410;font-size:11.5px;font-weight:800;letter-spacing:.06em;padding:4px 10px;border-radius:20px;margin-bottom:6px;}
-  .hero-price .price-new{font-size:48px;line-height:1.05;color:var(--gold);font-family:Georgia,serif;text-shadow:0 2px 14px rgba(224,168,58,.4);}
-  .price-box{
-    margin-top:22px;
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.2);
-    border-radius:12px;
-    padding:18px 22px;
-    display:inline-block;
-  }
-  .price-old{font-size:14.5px;color:#e9c7ae;text-decoration:line-through;}
-  .price-new{font-size:34px;font-weight:800;color:#fff;}
-  .price-inst{font-size:14.5px;color:#f6e3d3;}
-  .access-highlight{
-    display:inline-block;margin-top:18px;padding:10px 16px;border-radius:10px;
-    background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);
-    color:#fff;font-size:13.5px;
-  }
-  .hero-badges{
-    display:flex;
-    gap:22px;
-    margin-top:26px;
-    flex-wrap:wrap;
-    font-size:13.5px;
-    color:#f6e3d3;
-  }
-  .hero-badges span{display:flex;align-items:center;gap:6px;}
-  .hero-image{
-    position:relative;
-    display:flex;
-    justify-content:center;
-  }
-  .hero-image::before{
-    content:"";
-    position:absolute;
-    width:340px;height:340px;
-    background:radial-gradient(circle, rgba(224,168,58,.4), transparent 70%);
-    filter:blur(10px);
-    z-index:0;
-  }
-  .hero-image img{
-    position:relative;
-    z-index:1;
-    border-radius:18px;
-    border:3px solid rgba(255,255,255,.25);
-    box-shadow:0 25px 60px rgba(0,0,0,.5);
-    width:100%;
-    max-width:520px;
-    height:auto;
-  }
-  .stats-strip{
-    background:#fff;
-    border-radius:16px;
-    margin-top:-40px;
-    position:relative;
-    z-index:2;
-    box-shadow:0 10px 40px rgba(0,0,0,.08);
-    display:flex;
-    justify-content:space-around;
-    align-items:center;
-    padding:26px 10px;
-    flex-wrap:wrap;
-  }
-  .stat{text-align:center;padding:10px 24px;}
-  .stat .icon{font-size:22px;margin-bottom:4px;}
-  .stat-divider{width:1px;align-self:stretch;background:#eee;margin:6px 0;}
-  .stat .num{font-size:26px;font-weight:800;color:var(--green-dark);font-family:Georgia,serif;}
-  .stat .label{font-size:13.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;}
+/* barra de promoção */
+.rb .topbar{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--laranja);color:#fff;text-align:center;
+  padding:8px 16px;font-size:12px;font-weight:700;box-shadow:0 4px 6px -1px rgba(0,0,0,.12)}
+@media(min-width:640px){.rb .topbar{font-size:14px}}
 
-  /* MARQUEE */
-  .marquee-bar{
-    background:var(--green-dark);
-    color:#fff;
-    padding:12px 0;
-    overflow:hidden;
-    white-space:nowrap;
-    font-size:13.5px;
-    letter-spacing:1.5px;
-    font-weight:700;
-    text-transform:uppercase;
-  }
-  .marquee-track{display:inline-block;animation:scroll 30s linear infinite;}
-  .marquee-track span{margin:0 22px;color:var(--gold);}
-  @keyframes scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+/* títulos de seção */
+.rb .head{text-align:center;margin-bottom:24px}
+.rb .head h2{font-size:24px;font-weight:900;text-transform:uppercase;line-height:1.2;letter-spacing:-.02em;color:var(--preto)}
+.rb .head p{color:var(--cinza);font-size:14px;margin-top:8px;line-height:1.6}
+.rb .bar{height:4px;width:80px;border-radius:99px;background:var(--laranja);margin:12px auto 0}
+.rb .bar.g{background:var(--verde)}
+@media(min-width:640px){.rb .head{margin-bottom:32px}.rb .head h2{font-size:30px}.rb .head p{font-size:16px}}
+@media(min-width:768px){.rb .head h2{font-size:36px}}
+.rb .tv{color:var(--verde)}
+.rb .tl{color:var(--laranja)}
+.rb .lead{text-align:center;font-size:14px;font-weight:900;text-transform:uppercase;margin-bottom:16px}
+.rb .note{color:var(--cinza);font-size:14px;margin-top:8px;line-height:1.6}
+.rb .strong-line{margin-top:8px;font-size:14px;font-weight:700;line-height:1.6;color:var(--texto)}
+@media(min-width:640px){.rb .lead,.rb .note,.rb .strong-line{font-size:16px}}
 
-  /* PROBLEM SECTION */
-  .problem h2{font-size:28px;color:var(--green-dark);text-align:center;}
-  .problem h2 span{color:var(--terracota);}
-  .problem p.lead{
-    max-width:640px;margin:16px auto 30px;text-align:center;color:var(--muted);font-size:15px;
-  }
-  .problem-grid{
-    display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;
-  }
-  .problem-list{display:flex;flex-direction:column;gap:14px;}
-  .problem-item{
-    background:#fff;border-radius:10px;padding:16px 18px;
-    box-shadow:0 4px 14px rgba(0,0,0,.05);
-    display:flex;gap:12px;align-items:flex-start;font-size:14px;
-    border-left:4px solid var(--green);
-  }
-  .problem-item b{color:var(--green-dark);}
-  .problem-image img{border-radius:16px;box-shadow:0 15px 40px rgba(0,0,0,.12);object-fit:cover;height:auto;aspect-ratio:3/2;width:100%;}
-  .problem-cta{text-align:center;margin-top:34px;}
+/* botão */
+.rb .cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;cursor:pointer;
+  background:var(--verde);color:#fff;font-weight:800;text-transform:uppercase;letter-spacing:.05em;
+  padding:16px 28px;border-radius:999px;font-size:14px;line-height:1.25;text-align:center;
+  box-shadow:0 6px 20px rgba(0,200,83,.35);transition:transform .3s,box-shadow .3s,background .3s;
+  animation:rbPulse 2s ease-in-out infinite}
+.rb .cta:hover{background:#00B248;transform:scale(1.05);box-shadow:0 10px 25px rgba(0,200,83,.5)}
+.rb .cta:active{transform:scale(.95)}
+.rb .cta.grad,.rb .cta.full:not(.ghost){background:linear-gradient(90deg,#00C853,#FFC107);box-shadow:0 6px 25px rgba(0,200,83,.4)}
+.rb .cta.full{width:100%}
+.rb .cta svg{flex:none}
+@media(min-width:640px){.rb .cta{font-size:16px;padding:16px 40px}}
+@keyframes rbPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
 
-  /* URGENCY BANNER */
-  .urgency{
-    background:linear-gradient(90deg,var(--terracota),var(--terracota-dark));
-    color:#fff;border-radius:14px;padding:26px 30px;
-    display:flex;align-items:center;gap:18px;flex-wrap:wrap;
-    box-shadow:0 15px 40px rgba(224,112,58,.3);
-  }
-  .urgency .icon{font-size:30px;}
-  .urgency h3{font-size:18px;}
-  .urgency p{font-size:14.5px;color:#ffe9de;margin-top:4px;}
+/* hero */
+.rb .hero{background:linear-gradient(to bottom,#FFFFFF,#fff);padding:56px 16px 24px;text-align:center}
+@media(min-width:640px){.rb .hero{padding:80px 24px 40px}}
+.rb .hero h1{font-size:22px;font-weight:900;line-height:1.15;text-transform:uppercase;letter-spacing:-.02em;max-width:672px;margin:0 auto 8px;
+  background:linear-gradient(90deg,#00C853,#AEEA00 50%,#FF6B00);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:4px}
+.rb .hero h2{font-size:18px;font-weight:800;color:#2D3748;max-width:768px;margin:0 auto 8px;line-height:1.35}
+.rb .hero .desc{color:var(--cinza-c);font-size:14px;font-weight:500;max-width:672px;margin:0 auto 12px;line-height:1.6;padding:0 8px}
+.rb .hero .desc b{color:#4b5563}
+@media(min-width:640px){.rb .hero h1{font-size:30px}.rb .hero h2{font-size:24px}.rb .hero .desc{font-size:18px;margin-bottom:20px}}
+@media(min-width:768px){.rb .hero h1{font-size:36px}.rb .hero h2{font-size:30px}}
+@media(min-width:1024px){.rb .hero h1{font-size:48px}}
+/* foto de entrada: recortada (PNG sem fundo), solta direto na página */
+.rb .entrada{margin:8px -8px 12px}
+.rb .entrada img{display:block;width:100%;height:auto;filter:drop-shadow(0 16px 28px rgba(0,0,0,.12))}
+@media(min-width:640px){.rb .entrada{margin:12px 0 20px}}
+@media(min-width:1024px){.rb .entrada{margin:12px -40px 24px}}
+.rb .mockup{position:relative;max-width:380px;margin:0 auto 12px}
+.rb .mockup::before{content:"";position:absolute;inset:0;margin:auto;width:320px;height:320px;border-radius:50%;
+  background:linear-gradient(45deg,rgba(0,200,83,.1),rgba(255,107,0,.1));filter:blur(48px);z-index:0}
+.rb .mockup img{position:relative;z-index:1;width:100%;height:auto;filter:drop-shadow(0 20px 40px rgba(0,0,0,.12))}
+@media(min-width:640px){.rb .mockup{max-width:576px;margin-bottom:24px}}
+@media(min-width:768px){.rb .mockup{max-width:672px}}
+.rb .price-box{display:flex;flex-direction:column;align-items:center;margin-bottom:12px}
+.rb .price-de{color:#EF4444;font-size:16px;font-weight:800;text-decoration:line-through 2px}
+.rb .price-lbl{color:var(--cinza);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-top:4px}
+.rb .price-big{color:var(--verde);font-size:36px;font-weight:900;letter-spacing:-.02em;margin-top:2px;line-height:1.1}
+.rb .price-sub{color:var(--cinza-c);font-size:13px;font-weight:600;margin-top:2px}
+@media(min-width:640px){.rb .price-de{font-size:20px}.rb .price-lbl{font-size:14px}.rb .price-big{font-size:60px}}
+@media(min-width:768px){.rb .price-big{font-size:72px}}
+.rb .trust{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;margin-top:12px;font-size:12px;color:var(--cinza-c);font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.rb .trust span{display:flex;align-items:center;gap:6px}
+.rb .trust svg{color:var(--verde)}
 
-  /* WHY SECTION */
-  .why-header{text-align:center;margin-bottom:36px;}
-  .why-header .eyebrow{background:var(--green);}
-  .why-header h2{font-size:28px;color:var(--green-dark);}
-  .why-grid{
-    display:grid;grid-template-columns:1fr;gap:40px;align-items:center;
-    background:#fff;border-radius:20px;padding:34px;box-shadow:0 10px 40px rgba(0,0,0,.06);
-  }
-  .why-images{position:relative;display:flex;justify-content:center;}
-  .guia-car{display:block;min-width:0;}
-  .guia-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px 16px;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
-  .guia-track::-webkit-scrollbar{display:none;}
-  .guia-track img{flex:0 0 250px;width:250px;height:auto;align-self:flex-start;border-radius:10px;scroll-snap-align:center;box-shadow:0 10px 26px rgba(0,0,0,.16);cursor:zoom-in;background:#fff;}
-  .guia-nav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:2px;}
-  .guia-count{font-size:13px;color:var(--muted);}
-  .guia-count b{color:var(--terracota);}
-  .guia-btn{width:38px;height:38px;border-radius:50%;border:0;background:var(--terracota);color:#fff;font-size:24px;line-height:1;cursor:pointer;box-shadow:0 6px 14px rgba(0,0,0,.15);}
-  .guia-zoom{position:fixed;inset:0;z-index:1000;background:rgba(20,10,4,.92);display:none;align-items:center;justify-content:center;padding:14px;}
-  .guia-zoom.show{display:flex;}
-  .guia-zoom img{max-width:100%;max-height:100%;border-radius:8px;}
-  .guia-zoom button{position:absolute;top:10px;right:12px;background:#fff;border:0;border-radius:50%;width:38px;height:38px;font-size:18px;cursor:pointer;}
-  .why-images img.book{border-radius:12px;box-shadow:0 20px 40px rgba(0,0,0,.15);width:100%;max-width:400px;height:280px;object-fit:cover;}
-  .why-images img.chef{
-    position:absolute;bottom:-24px;right:-10px;width:190px;height:130px;border-radius:14px;
-    border:4px solid #fff;box-shadow:0 10px 30px rgba(0,0,0,.2);object-fit:cover;
-  }
-  .why-list{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
-  .why-item{display:flex;gap:10px;}
-  .why-item .num{
-    width:34px;height:34px;border-radius:50%;background:var(--green-light);
-    color:var(--green-dark);display:flex;align-items:center;justify-content:center;
-    font-weight:800;flex-shrink:0;font-size:14px;
-  }
-  .why-item h4{font-size:14px;color:var(--green-dark);margin-bottom:4px;}
-  .why-item p{font-size:14px;color:var(--muted);}
-  .why-cta{grid-column:1/-1;text-align:center;margin-top:10px;}
+/* cartões pequenos com ícone */
+.rb .tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.rb .tiles.t3{grid-template-columns:repeat(3,1fr)}
+@media(min-width:640px){.rb .tiles{gap:16px}}
+@media(min-width:768px){.rb .tiles.t4{grid-template-columns:repeat(4,1fr)}}
+.rb .tile{height:118px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;
+  background:#fff;border:1px solid #f3f4f6;border-radius:16px;padding:12px;box-shadow:0 3px 12px rgba(31,41,55,.07);transition:all .3s}
+.rb .tile:hover{transform:translateY(-2px);border-color:rgba(0,200,83,.3)}
+.rb .tile p{font-size:11.5px;font-weight:800;line-height:1.25;color:var(--texto)}
+@media(min-width:640px){.rb .tile{height:112px;padding:12px 16px}.rb .tile p{font-size:14px}}
+.rb .ic{width:36px;height:36px;flex:none;display:flex;align-items:center;justify-content:center;border-radius:12px;background:#F0FBF5;font-size:18px}
 
-  /* RECIPES GALLERY */
-  .recipes-header{text-align:center;margin-bottom:30px;}
-  .recipes-header .eyebrow{background:var(--terracota);}
-  .recipes-header h2{font-size:28px;color:var(--green-dark);}
-  .recipes-header p{color:var(--muted);font-size:14px;margin-top:8px;}
-  .recipe-grid{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
-  }
-  .recipe-card{
-    background:#fff;border-radius:16px;overflow:hidden;
-    box-shadow:0 8px 24px rgba(0,0,0,.07);
-    transition:transform .2s ease;
-  }
-  .recipe-card:hover{transform:translateY(-6px);box-shadow:0 16px 34px rgba(138,47,31,.18);}
-  .recipe-img{display:flex;justify-content:space-between;gap:8px;padding:14px 16px 0;}
-  .tag-diff{
-    background:#E8F3EA;color:var(--green-dark);
-    font-size:12.5px;font-weight:700;padding:4px 10px;border-radius:20px;
-  }
-  .tag-kcal{
-    background:var(--green-dark);color:#fff;
-    font-size:12.5px;font-weight:700;padding:4px 10px;border-radius:20px;
-  }
-  .recipe-body{padding:14px 16px 18px;}
-  .recipe-body h4{font-size:15px;color:var(--text);margin-bottom:6px;}
-  .recipe-meta{display:flex;gap:10px;font-size:13.5px;color:var(--muted);}
-  .recipe-meta .healthy{color:var(--green);font-weight:700;}
-  .recipes-more{text-align:center;margin:26px 0;color:var(--muted);font-size:14px;font-style:italic;}
-  .recipes-cta{text-align:center;}
+/* listas ✓ / ✕ */
+.rb .list{overflow:hidden;border-radius:24px;border:1px solid #f3f4f6;background:var(--cinza-bg);padding:0 16px;box-shadow:0 1px 2px rgba(0,0,0,.05)}
+@media(min-width:640px){.rb .list{padding:0 24px}}
+.rb .li{display:flex;align-items:flex-start;gap:12px;padding:16px 0;border-bottom:1px solid rgba(229,231,235,.8)}
+.rb .li:last-child{border-bottom:0}
+.rb .li p{font-size:14px;font-weight:700;line-height:1.6;color:var(--texto)}
+@media(min-width:640px){.rb .li p{font-size:16px}}
+.rb .mk{margin-top:2px;width:24px;height:24px;flex:none;display:flex;align-items:center;justify-content:center;font-size:14px}
+.rb .mk.ok{border-radius:50%;background:rgba(0,200,83,.15);color:var(--verde-d)}
 
-  /* FREEZE STEPS */
-  .freeze{background:var(--green-light);border-radius:20px;padding:44px;}
-  .freeze-header{text-align:center;margin-bottom:30px;}
-  .freeze-header .eyebrow{background:var(--green);}
-  .freeze-header h2{font-size:26px;color:var(--green-dark);}
-  .freeze-header p{color:var(--muted);font-size:14px;margin-top:8px;}
-  .freeze-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
-  .freeze-step{background:#fff;border-radius:14px;padding:20px;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,.05);}
-  .freeze-step .num{
-    width:36px;height:36px;border-radius:50%;background:var(--terracota);color:#fff;
-    display:flex;align-items:center;justify-content:center;font-weight:800;margin:0 auto 12px;
-  }
-  .freeze-step h4{font-size:15px;color:var(--green-dark);margin-bottom:6px;}
-  .freeze-step p{font-size:13.5px;color:var(--muted);}
+/* cartões de texto */
+.rb .cards{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:640px){.rb .cards.c2{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.rb .cards{gap:20px}}
+.rb .card{background:#fff;border:1px solid #f3f4f6;border-radius:16px;box-shadow:0 1px 2px rgba(0,0,0,.05);padding:20px;transition:border-color .3s;display:flex;flex-direction:column}
+.rb .card:hover{border-color:rgba(0,200,83,.4)}
+.rb .card .ct{display:flex;align-items:center;gap:12px}
+.rb .card h4{font-size:15px;font-weight:900;line-height:1.25;letter-spacing:-.01em}
+.rb .card .cd{margin-top:8px;color:#4b5563;font-size:14px;line-height:1.6}
+.rb .card .q{font-weight:800;font-size:16px;line-height:1.35;margin-bottom:8px}
+.rb .quote{font-size:20px;font-weight:900;text-align:center}
+@media(min-width:640px){.rb .card h4{font-size:16px}.rb .quote{font-size:24px}}
 
-  /* VIDEOAULAS */
-  .aulas{text-align:center;padding-bottom:0;}
-  .aulas .eyebrow{background:var(--green);}
-  .aulas h2{font-size:28px;color:var(--green-dark);}
-  .aulas h2 em{font-style:normal;color:var(--terracota);}
-  .aulas-lead{max-width:620px;margin:10px auto 0;color:var(--muted);font-size:15px;}
-  .aulas-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:24px 4px 14px;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
-  .aulas-track::-webkit-scrollbar{display:none;}
-  @media(min-width:900px){.aulas-track{justify-content:center;}}
-  .aula{flex:none;width:150px;aspect-ratio:3/4;position:relative;border-radius:18px;overflow:hidden;background:#3d2417;scroll-snap-align:center;box-shadow:0 10px 26px rgba(61,36,23,.28);text-align:left;}
-  .aula img{width:100%;height:100%;object-fit:cover;}
-  .aula::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(30,14,9,.85));}
-  .aula i{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.93);z-index:1;}
-  .aula i::before{content:"";position:absolute;left:17px;top:13px;border-left:14px solid var(--terracota);border-top:9px solid transparent;border-bottom:9px solid transparent;}
-  .aula b{position:absolute;left:10px;right:10px;bottom:10px;z-index:1;color:#fff;font-size:13px;font-weight:800;line-height:1.2;}
-  .aula small{display:block;font-weight:600;font-size:11px;color:var(--gold);margin-top:3px;}
-  .aulas-nums{display:flex;justify-content:center;gap:12px;margin:10px auto 0;max-width:520px;}
-  .aulas-nums div{flex:1;background:#fff;border:1px solid #f0dcc7;border-radius:14px;padding:12px 6px;font-family:Georgia,serif;font-size:26px;font-weight:800;color:var(--green);line-height:1.1;}
-  .aulas-nums span{display:block;font-family:'Nunito Sans',sans-serif;font-size:12px;font-weight:700;color:var(--muted);margin-top:4px;}
-  .aulas-gift{display:inline-block;margin-top:16px;background:var(--green-light);color:var(--green);font-weight:800;font-size:13.5px;padding:8px 16px;border-radius:30px;}
+/* vídeo */
+.rb .video{position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:#000;margin:0 auto 24px;box-shadow:0 12px 30px rgba(0,0,0,.15)}
+.rb .video iframe,.rb .video button{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;cursor:pointer;background:#000}
+.rb .video img{width:100%;height:100%;object-fit:cover;opacity:.9}
+.rb .video .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:68px;height:68px;border-radius:50%;background:var(--laranja);
+  display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 10px rgba(0,200,83,.25)}
 
-  /* BONUS SECTION */
-  .bonus{
-    position:relative;overflow:hidden;color:#fff;border-radius:24px;padding:50px 40px;
-    background:
-      radial-gradient(ellipse 60% 50% at 15% 0%, rgba(224,168,58,.25), transparent 60%),
-      radial-gradient(ellipse 55% 45% at 100% 100%, rgba(224,112,58,.3), transparent 60%),
-      linear-gradient(160deg, rgba(30,55,26,.93) 0%, rgba(74,44,17,.93) 100%),
-      url('assets/bonus-bg.webp?v=2') center / cover no-repeat;
-    box-shadow:0 25px 60px rgba(0,0,0,.25);
-  }
-  .bonus-header{position:relative;text-align:center;margin-bottom:34px;}
-  .bonus-header .eyebrow{background:var(--gold);color:var(--green-dark);}
-  .bonus-header h2{font-size:26px;color:#fff;}
-  .bonus-header p{color:#f0dcc7;font-size:14px;margin-top:8px;}
-  .bonus-grid{position:relative;display:flex;flex-direction:column;gap:12px;max-width:620px;margin:0 auto 18px;}
-  .bonus-grid > .bonus-card{display:grid;grid-template-columns:92px 1fr;column-gap:16px;align-items:center;text-align:left;padding:14px 16px;}
-  .bonus-grid > .bonus-card > *:not(.bonus-img-frame){grid-column:2;}
-  .bonus-grid > .bonus-card > .bonus-img-frame{grid-column:1;grid-row:1 / span 4;}
-  .bonus-hint{display:none !important;}
-  .bonus-card{
-    position:relative;
-    background:linear-gradient(160deg, rgba(255,255,255,.1), rgba(255,255,255,.03));
-    border:1px solid rgba(255,255,255,.16);
-    border-radius:16px;padding:14px;text-align:center;
-    box-shadow:0 10px 26px rgba(0,0,0,.18);
-    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-  }
-  .bonus-card:hover{
-    transform:translateY(-4px);
-    border-color:rgba(224,168,58,.5);
-    box-shadow:0 16px 34px rgba(0,0,0,.28);
-  }
-  .bonus-card .bonus-img-frame{position:relative;width:92px;margin:0;}
-  .bonus-card img{height:auto;aspect-ratio:560/742;width:100%;display:block;filter:drop-shadow(0 10px 14px rgba(0,0,0,.45));transition:transform .35s ease;}
-  .bonus-card:hover img{transform:scale(1.04) rotate(-1deg);}
+/* carrossel horizontal (páginas e depoimentos) */
+.rb .scroller{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -12px;padding:0 12px 12px;scrollbar-width:none}
+.rb .scroller::-webkit-scrollbar{display:none}
+@media(min-width:640px){.rb .scroller{gap:20px;margin:0 -24px;padding:0 24px 12px}}
+.rb .slide{width:88vw;max-width:390px;flex:none;scroll-snap-align:start;scroll-snap-stop:always;overflow:hidden;border-radius:22px;border:1px solid #e5e7eb;
+  background:#fff;padding:6px;box-shadow:0 8px 24px rgba(31,41,55,.08)}
+.rb .slide.sm{max-width:300px;width:72vw}
+.rb .slide img{width:100%;height:auto;border-radius:17px}
+.rb .slide .cap{text-align:center;font-size:13px;font-weight:800;color:var(--texto);padding:10px 4px 6px}
+@media(min-width:640px){.rb .slide{width:46%;scroll-snap-align:center}.rb .slide.sm{width:30%}}
+@media(min-width:1024px){.rb .slide{width:31%}.rb .slide.sm{width:23%}}
+.rb .swipe{margin-top:12px;display:flex;align-items:center;justify-content:center;gap:6px;color:rgba(0,168,68,.8);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.14em}
+@media(min-width:640px){.rb .swipe{display:none}}
 
-  .bonus-free-tag{
-    position:absolute;top:-6px;left:-6px;background:var(--terracota);color:#fff;
-    font-size:9.5px;font-weight:800;letter-spacing:.4px;padding:3px 8px;border-radius:20px;
-    box-shadow:0 4px 10px rgba(0,0,0,.3);z-index:1;
-  }
-  .bonus-card h4{font-size:15px;line-height:1.25;color:#fff;margin-bottom:4px;}
-  .bonus-price{font-size:12.5px;}
-  .bonus-price .old{text-decoration:line-through;color:#d9ab8b;}
-  .bonus-price .new{color:var(--gold);font-weight:800;}
-  .bonus-total{
-    position:relative;text-align:center;margin-top:34px;
-    background:linear-gradient(135deg, rgba(224,168,58,.16), rgba(255,255,255,.06));
-    border:1px solid rgba(224,168,58,.3);
-    border-radius:16px;padding:22px;
-  }
-  .bonus-total .label{font-size:13.5px;color:#f0dcc7;text-transform:uppercase;letter-spacing:1px;}
-  .bonus-total .value{font-size:32px;font-weight:800;color:var(--gold);font-family:Georgia,serif;text-shadow:0 2px 12px rgba(224,168,58,.35);}
-  .bonus-total .sub{font-size:13.5px;color:#f0dcc7;margin-top:4px;}
+/* bônus */
+.rb .bonus{position:relative;display:flex;align-items:center;gap:12px;background:#fff;border:1px solid rgba(255,107,0,.1);border-radius:16px;padding:12px;
+  box-shadow:0 4px 14px rgba(31,41,55,.08);transition:all .3s}
+.rb .bonus:hover{transform:translateY(-2px);border-color:rgba(0,200,83,.35)}
+@media(min-width:640px){.rb .bonus{gap:16px;padding:16px}}
+.rb .bonus .tag{position:absolute;left:-4px;top:-8px;z-index:2;background:var(--laranja);color:#fff;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;
+  padding:4px 10px;border-radius:6px 999px 999px 6px}
+.rb .bonus .cover{width:86px;height:108px;flex:none;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:12px;background:var(--creme2);padding:6px}
+.rb .bonus .cover img{width:100%;height:100%;object-fit:contain}
+@media(min-width:640px){.rb .bonus .tag{font-size:10px}.rb .bonus .cover{width:100px;height:124px}}
+.rb .bonus h4{font-size:15px;font-weight:900;line-height:1.25}
+.rb .bonus .bd{margin-top:4px;font-size:12px;font-weight:500;line-height:1.35;color:var(--cinza-c)}
+.rb .bonus .bp{margin-top:8px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:11px;font-weight:800}
+.rb .bonus .bp s{color:#9ca3af}
+.rb .bonus .free{border-radius:999px;background:rgba(0,200,83,.12);padding:4px 10px;text-transform:uppercase;letter-spacing:.03em;color:var(--verde-d)}
 
-  /* PLANS */
-  .plans-header{text-align:center;margin-bottom:36px;}
-  .plans-header h2{font-size:28px;color:var(--green-dark);}
-  .plans-header p{color:var(--muted);font-size:14px;margin-top:8px;}
-  .plans-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;}
-  .plans-grid-single{grid-template-columns:1fr;max-width:420px;margin:0 auto;}
-  .plan-card{
-    background:#fff;border-radius:18px;padding:30px;
-    box-shadow:0 8px 30px rgba(0,0,0,.06);
-    border:2px solid transparent;
-    position:relative;
-  }
-  .plan-card.popular{
-    border-color:var(--terracota);
-    box-shadow:0 15px 40px rgba(224,112,58,.2);
-  }
-  .plan-badge{
-    position:absolute;top:-14px;left:50%;transform:translateX(-50%);
-    background:var(--terracota);color:#fff;font-size:12.5px;font-weight:800;
-    padding:6px 16px;border-radius:20px;letter-spacing:.5px;white-space:nowrap;
-  }
-  .plan-card img{width:100%;height:190px;object-fit:contain;background:transparent;margin:0 auto 16px;filter:drop-shadow(0 10px 14px rgba(61,36,23,.22));}
-  .plan-img-frame img{background:#fff;box-shadow:none;object-fit:contain;transform:scale(1.06);}
-  .plan-img-frame{position:relative;overflow:hidden;border-radius:10px;}
-  .plan-card h3{font-size:18px;text-align:center;color:var(--green-dark);}
-  .plan-card .plan-type{text-align:center;color:var(--muted);font-size:13.5px;margin-bottom:14px;}
-  .plan-price{text-align:center;margin-bottom:18px;}
-  .plan-price .old{font-size:14.5px;color:var(--muted);text-decoration:line-through;}
-  .plan-price .off-badge{
-    display:inline-block;margin-left:6px;background:var(--terracota);color:#fff;
-    font-size:12px;font-weight:800;padding:2px 7px;border-radius:10px;vertical-align:middle;
-  }
-  .plan-price .new{font-size:26px;font-weight:800;color:var(--green-dark);font-family:Georgia,serif;}
-  .plan-price .inst{font-size:13.5px;color:var(--muted);}
-  .plan-price .inst.inst-strong{font-size:17px;font-weight:800;color:var(--green-dark);}
-  .plan-price .new.new-small{font-size:21px;}
-  .plan-features{list-style:none;margin-bottom:20px;}
-  .plan-features li{
-    font-size:15px;padding:8px 0;border-bottom:1px dashed #eee;
-    display:flex;gap:8px;color:var(--text);
-  }
-  .plan-features li:last-child{border-bottom:none;}
-  .plan-features li.x{color:#b8b8b8;}
-  .plan-features li b{color:var(--terracota);}
-  .plan-hint{
-    text-align:center;font-size:14px;color:var(--muted);font-weight:700;
-    margin-top:12px;
-  }
-  .prefer-arrow{
-    text-align:center;font-size:30px;line-height:1;margin-top:4px;color:var(--terracota);
-    animation:arrow-bounce-x 1.4s ease-in-out infinite;
-  }
-  @keyframes arrow-bounce-x{0%,100%{transform:translateX(0);}50%{transform:translateX(6px);}}
+/* oferta */
+.rb .pricing{padding:48px 16px;background:linear-gradient(to bottom,#FFFDF9,#FFF9F2);border-top:1px solid rgba(255,107,0,.1);border-bottom:1px solid rgba(255,107,0,.1);scroll-margin-top:32px}
+@media(min-width:640px){.rb .pricing{padding:64px 16px}}
+.rb .plan{position:relative;background:#fff;border-radius:24px;padding:16px 16px 20px;border:4px solid var(--verde);box-shadow:0 25px 50px -12px rgba(0,0,0,.25)}
+.rb .plan.plain{border:1px solid #e5e7eb;box-shadow:0 4px 6px -1px rgba(0,0,0,.08)}
+@media(min-width:640px){.rb .plan{padding:32px}}
+.rb .plan .ribbon{position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:var(--verde);color:#fff;padding:6px 20px;border-radius:999px;
+  font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;white-space:nowrap;box-shadow:0 4px 6px rgba(0,0,0,.1)}
+.rb .pill{display:inline-block;padding:6px 16px;border-radius:999px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;
+  background:rgba(0,200,83,.1);color:var(--verde);margin-bottom:6px}
+.rb .pill.gray{background:#f3f4f6;color:#4b5563}
+.rb .plan h4{font-size:20px;font-weight:800;line-height:1.35;text-align:center}
+.rb .plan .pimg{max-width:300px;margin:4px auto 10px}
+.rb .items{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.rb .it{display:flex;align-items:flex-start;gap:8px;font-size:13px;font-weight:600;line-height:1.5;color:#444}
+.rb .it svg{color:var(--verde);flex:none;margin-top:3px}
+.rb .it.gift{color:var(--laranja)}
+.rb .it .v{margin-left:auto;color:#9ca3af;font-weight:700;white-space:nowrap}
+.rb .pp{text-align:center;margin-bottom:14px}
+.rb .pp .l1{color:#dc2626;font-size:12px;font-weight:700}
+.rb .pp .l1 s{color:#dc2626}
+.rb .pp .l1 span{color:#6b7280;text-transform:uppercase;letter-spacing:.05em;font-size:11px}
+.rb .pp .val{font-size:36px;font-weight:900;color:var(--verde-preco);letter-spacing:-.02em;line-height:1.15}
+.rb .pp .par{font-size:13px;color:#6b7280;font-weight:600}
+@media(min-width:640px){.rb .plan h4{font-size:24px}.rb .it{font-size:14px}.rb .pp .val{font-size:48px}}
+.rb .mini-trust{display:flex;justify-content:center;gap:16px;margin-top:12px;font-size:11px;color:#9ca3af;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.rb .mini-trust span{display:flex;align-items:center;gap:4px}
+.rb .mini-trust svg{color:var(--verde)}
+.rb .vagas{margin-top:10px;text-align:center;font-size:12px;font-weight:800;color:var(--laranja);text-transform:uppercase;letter-spacing:.05em}
+.rb .basic{margin-top:18px;text-align:center;font-size:13px;color:var(--cinza);line-height:1.55}
+.rb .basic button{margin-top:8px;background:none;border:0;color:var(--cinza-c);font-weight:700;text-decoration:underline;cursor:pointer;font-size:13px}
 
-  /* TESTIMONIALS */
-  .testi-header{text-align:center;margin-bottom:20px;}
-  .testi-header h2{font-size:28px;color:var(--green-dark);}
-  .testi-header p{color:var(--muted);font-size:14px;margin-top:8px;}
-  .rating-row{
-    display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:34px;flex-wrap:wrap;
-  }
-  .rating-score{font-size:38px;font-weight:800;color:var(--green-dark);font-family:Georgia,serif;}
-  .rating-stars{color:var(--gold);font-size:18px;}
-  .rating-count{font-size:14.5px;color:var(--muted);}
-  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-  .testi-card{
-    background:#fff;border-radius:14px;padding:20px;box-shadow:0 6px 20px rgba(0,0,0,.05);
-  }
-  .testi-top{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
-  .testi-top img{width:42px;height:42px;border-radius:50%;}
-  .testi-name{font-size:15px;font-weight:700;color:var(--text);}
-  .testi-meta{font-size:12.5px;color:var(--muted);}
-  .testi-stars{color:var(--gold);font-size:13.5px;margin-bottom:8px;}
-  .testi-text{font-size:14.5px;color:var(--text);margin-bottom:10px;}
-  .testi-verified{font-size:12.5px;color:var(--green);font-weight:700;}
-  .testi-reply{
-    margin-top:10px;background:var(--green-light);border-radius:8px;padding:10px 12px;font-size:13.5px;color:var(--green-dark);
-  }
-  .testi-cta{text-align:center;margin-top:34px;}
-  .testi-shots{display:flex;align-items:flex-start;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px 14px;-webkit-overflow-scrolling:touch;}
-  .testi-shots > img{flex:0 0 300px;width:300px !important;scroll-snap-align:center;}
-  .testi-hint{text-align:center;font-size:13px;color:var(--muted);margin-top:4px;}
-  .testi-shots img{
-    width:100%;height:auto;display:block;border-radius:14px;
-    box-shadow:0 6px 20px rgba(0,0,0,.08);
-    transition:transform .15s ease;
-  }
-  .testi-shots img:hover{transform:scale(1.02);}
-  @media(max-width:700px){.testi-shots > img{flex-basis:78vw;width:78vw !important;}}
+/* garantia */
+.rb .guar{padding:64px 16px;background:var(--escuro);color:#fff;text-align:center}
+.rb .guar .shield{display:inline-flex;align-items:center;justify-content:center;width:80px;height:80px;border-radius:50%;background:rgba(255,179,0,.1);
+  border:2px solid var(--ouro);color:var(--ouro);margin-bottom:24px}
+.rb .guar .shield svg{animation:rbFade 2s ease-in-out infinite}
+@keyframes rbFade{50%{opacity:.5}}
+.rb .guar h3{font-size:24px;font-weight:800;text-transform:uppercase;letter-spacing:-.01em;margin-bottom:16px;color:var(--ouro)}
+.rb .guar p{color:#e5e7eb;font-size:16px;line-height:1.65;max-width:672px;margin:0 auto 24px;font-weight:500}
+.rb .guar small{display:block;font-size:14px;color:#9ca3af;font-weight:800;text-transform:uppercase;letter-spacing:.05em}
+@media(min-width:640px){.rb .guar h3{font-size:30px}.rb .guar p{font-size:18px}}
 
-  /* FAQ */
-  .faq h2{font-size:28px;color:var(--green-dark);text-align:center;margin-bottom:26px;}
-  .faq-item{
-    background:#fff;border-radius:10px;padding:18px 22px;margin-bottom:12px;
-    box-shadow:0 4px 14px rgba(0,0,0,.04);
-  }
-  .faq-item h4{font-size:15px;color:var(--green-dark);margin-bottom:6px;}
-  .faq-item p{font-size:15px;color:var(--muted);}
+/* FAQ */
+.rb .faq{display:flex;flex-direction:column;gap:16px}
+.rb details{background:var(--cinza-bg);border:1px solid #e5e7eb;border-radius:16px;padding:16px;cursor:pointer;transition:border-color .3s;box-shadow:0 1px 2px rgba(0,0,0,.05)}
+.rb details:hover{border-color:rgba(0,200,83,.4)}
+@media(min-width:640px){.rb details{padding:20px}}
+.rb summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;font-weight:800;font-size:14px;outline:none;user-select:none}
+.rb summary::-webkit-details-marker{display:none}
+.rb summary .qi{display:flex;align-items:center;gap:12px;line-height:1.35}
+.rb summary svg{color:#9ca3af;flex:none;transition:transform .3s}
+.rb details[open] summary svg{transform:rotate(180deg)}
+.rb details .ans{margin-top:12px;padding:12px 0 0 32px;border-top:1px solid rgba(229,231,235,.5);color:var(--cinza);font-size:13px;line-height:1.65}
+@media(min-width:640px){.rb summary{font-size:16px}.rb details .ans{font-size:14px}}
 
-  /* FINAL CTA */
-  .final-cta{
-    background:linear-gradient(160deg,var(--green-dark),var(--green));
-    color:#fff;border-radius:20px;padding:44px;text-align:center;
-  }
-  .final-cta h3{font-size:24px;margin-bottom:10px;}
-  .final-cta p{color:#f6e3d3;font-size:14px;margin-bottom:22px;}
-  .final-badges{
-    display:flex;gap:22px;justify-content:center;margin-top:22px;flex-wrap:wrap;
-    font-size:13.5px;color:#f6e3d3;
-  }
+/* CTA final + rodapé */
+.rb .last{padding:40px 16px;background:linear-gradient(to bottom,#FFFDF9,#F9F9F9);border-top:1px solid #f3f4f6;text-align:center}
+.rb .last h2{font-size:24px;font-weight:900;text-transform:uppercase;line-height:1.2;letter-spacing:-.02em}
+@media(min-width:640px){.rb .last h2{font-size:30px}}
+.rb footer{background:var(--escuro);color:#fff;border-top:1px solid #333;padding:40px 16px;text-align:center}
+.rb footer .brand{font-weight:900;color:var(--verde);font-size:18px;text-transform:uppercase;letter-spacing:.1em}
+.rb footer .disc{font-size:12px;color:#9ca3af;max-width:576px;margin:16px auto 0;line-height:1.65}
+.rb footer hr{border:0;height:1px;background:#333;margin:24px 0}
+.rb footer .copy{font-size:11px;color:#6b7280}
 
-  /* GUARANTEE */
-  .guarantee{background:var(--green-light);border-radius:24px;padding:40px;}
-  .guarantee-box{
-    display:flex;align-items:center;gap:28px;background:#fff;border-radius:20px;
-    padding:32px 36px;box-shadow:0 10px 40px rgba(0,0,0,.06);
-  }
-  .guarantee-seal{
-    flex:0 0 auto;width:96px;height:96px;border-radius:50%;
-    background:linear-gradient(160deg,var(--green),var(--green-dark));
-    color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;
-    font-weight:800;line-height:1.1;box-shadow:0 8px 24px rgba(0,0,0,.15);
-  }
-  .guarantee-seal .num{font-size:26px;}
-  .guarantee-seal .txt{font-size:11px;letter-spacing:.4px;}
-  .guarantee-box h3{font-size:20px;color:var(--green-dark);margin-bottom:8px;}
-  .guarantee-box p{font-size:14px;color:var(--muted);}
+/* pop-ups */
+.rb .pop-overlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.65);display:flex;align-items:center;justify-content:center;padding:16px}
+.rb .pop-box{position:relative;width:100%;max-width:420px;max-height:92vh;overflow-y:auto;background:#fff;border-radius:24px;padding:28px 20px 20px;text-align:center;
+  border:4px solid var(--verde);box-shadow:0 25px 50px -12px rgba(0,0,0,.4)}
+.rb .pop-close{position:absolute;top:10px;right:12px;width:32px;height:32px;border-radius:50%;border:0;background:#f3f4f6;color:#6b7280;cursor:pointer;font-size:14px}
+.rb .pop-badge{display:inline-block;background:var(--laranja);color:#fff;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;padding:6px 14px;border-radius:999px}
+.rb .pop-img{max-width:240px;margin:10px auto}
+.rb .pop-box h3{font-size:20px;font-weight:900;text-transform:uppercase;line-height:1.2}
+.rb .pop-sub{color:var(--cinza);font-size:14px;line-height:1.55;margin:8px 0 12px}
+.rb .pop-price{color:var(--cinza);font-size:14px;margin-bottom:14px}
+.rb .pop-price b{display:block;color:var(--verde-preco);font-size:36px;font-weight:900;line-height:1.1}
+.rb .pop-price small{display:block;font-size:11px;font-weight:800;letter-spacing:.05em;color:#9ca3af;margin-top:2px}
+.rb .pop-decline{display:block;width:100%;margin-top:12px;background:none;border:0;color:#9ca3af;font-size:13px;text-decoration:underline;cursor:pointer}
+.rb .pop-guar{margin-top:10px;font-size:12px;font-weight:700;color:var(--cinza-c)}
 
-  /* FOOTER */
-  footer{background:var(--green-dark);color:#f0dcc7;padding:40px 0 20px;font-size:14px;}
-  .footer-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:20px;}
-  footer h4{color:#fff;font-size:15px;margin-bottom:8px;font-family:Georgia,serif;}
-  .footer-links{display:flex;gap:18px;}
-  .footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:16px;text-align:center;font-size:12.5px;color:#c9a689;}
+/* pratinhos (fotos das receitas e da semana) */
+.rb .dish{width:78vw;max-width:320px;flex:none;scroll-snap-align:start;background:#fff;border:1px solid #e5e7eb;border-radius:20px;overflow:hidden;
+  box-shadow:0 8px 24px rgba(31,41,55,.08);display:flex;flex-direction:column}
+@media(min-width:640px){.rb .dish{width:40%}}
+@media(min-width:1024px){.rb .dish{width:30%}}
+.rb .dish img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.rb .dish.tall img{aspect-ratio:3/4}
+.rb .dish .db{padding:12px 14px 16px;display:flex;flex-direction:column;gap:6px}
+.rb .dish .age{align-self:flex-start;font-size:10.5px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;color:#fff;background:var(--laranja);padding:3px 9px;border-radius:999px}
+.rb .dish h4{font-size:16px;font-weight:900;line-height:1.25}
+.rb .dish p{font-size:13px;color:var(--cinza-c);line-height:1.5}
+.rb .dish .ing{display:flex;flex-wrap:wrap;gap:5px}
+.rb .dish .ing span{font-size:11.5px;font-weight:700;color:var(--verde-d);background:rgba(0,200,83,.1);padding:3px 8px;border-radius:999px}
+.rb .dish q{font-size:12.5px;font-style:italic;color:var(--cinza);line-height:1.5}
+.rb .sub-h{margin:36px 0 14px;text-align:center;font-size:20px;font-weight:900;text-transform:uppercase;line-height:1.2}
 
-  /* CHEF */
-  .chef{background:linear-gradient(180deg,var(--cream) 0%,var(--green-light) 100%);}
-  .chef-box{display:grid;grid-template-columns:300px 1fr;gap:44px;align-items:center;max-width:980px;margin:0 auto;background:#fff;border:2px solid #f1d9c2;border-top:6px solid var(--terracota);border-radius:22px;padding:44px 48px;box-shadow:0 20px 50px rgba(92,58,23,.14);}
-  .chef-foto{position:relative;}
-  .chef-foto img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:50%;border:6px solid #fff;box-shadow:0 0 0 3px var(--gold),0 18px 40px rgba(92,58,23,.25);}
-  .chef-foto .assinatura{position:absolute;left:50%;bottom:-14px;transform:translateX(-50%);white-space:nowrap;background:var(--green-dark);color:#fff;font-weight:800;font-size:13px;letter-spacing:.04em;padding:7px 16px;border-radius:30px;box-shadow:0 6px 14px rgba(0,0,0,.18);}
-  .chef h2{font-size:30px;color:var(--green-dark);margin:6px 0 14px;}
-  .chef h2 span{color:var(--terracota);}
-  .chef p{font-size:16px;line-height:1.65;color:#4a3a2c;margin-top:10px;}
-  .chef .proposito{margin-top:18px;padding:14px 18px;background:var(--green-light);border-left:4px solid var(--terracota);border-radius:10px;font-family:'Fraunces',Georgia,serif;font-size:18px;font-weight:700;color:var(--green-dark);}
-  .chef .assina{margin-top:14px;font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:20px;color:var(--green);}
+/* duas ofertas */
+.rb .plans{display:grid;grid-template-columns:1fr;gap:28px;max-width:860px;margin:0 auto;align-items:start}
+@media(min-width:760px){.rb .plans{grid-template-columns:1fr 1fr}}
+.rb .it.off{color:#9ca3af}
+.rb .cta.ghost{background:#fff;color:var(--texto);border:2px solid #d1d5db;box-shadow:none;animation:none}
+.rb .cta.ghost:hover{border-color:var(--verde);transform:none}
+.rb .oferta-entrada{width:100%;max-width:640px;height:auto;margin:0 auto 36px;filter:drop-shadow(0 18px 30px rgba(0,0,0,.12))}
+/* páginas do guia: tamanho de página inteira */
+.rb .slide.page{align-self:flex-start}
+.rb .slide.page img{border-radius:14px}
+/* destaque do kit completo + capas */
+.rb .plan.featured{box-shadow:0 30px 60px -18px rgba(0,200,83,.4);background:linear-gradient(#fff,#F6FFF8)}
+@media(min-width:760px){.rb .plan.featured{transform:scale(1.04)}}
+.rb .covers{display:flex;justify-content:center;align-items:flex-end;margin:12px auto 4px;padding:0 6px}
+.rb .covers img{height:78px;width:auto;margin:0 -10px;filter:drop-shadow(0 6px 8px rgba(0,0,0,.18))}
+.rb .covers img.main{height:104px;position:relative;z-index:2;margin:0 -4px}
+.rb .covers.small img{height:72px;margin:0 -6px}
+.rb .covers.small img.main{height:92px}
+.rb .economia{text-align:center;font-size:13px;font-weight:800;color:var(--verde-d);margin:-6px 0 12px}
+.rb .plan.plain .cta.ghost{border-color:#d1d5db;color:#4b5563}
+.rb .zap{display:inline-block;margin-top:12px;background:#E7F9EE;border:1.5px solid rgba(0,200,83,.35);color:#0B7A3B;font-size:13px;font-weight:800;border-radius:999px;padding:8px 16px;line-height:1.35}
+@media(min-width:640px){.rb .zap{font-size:15px}}
 
-  @media(max-width:880px){
-    section{padding:44px 0;}
-    .hero{
-      background:
-        linear-gradient(180deg, rgba(30,14,9,.35) 0%, rgba(35,16,10,.75) 38%, rgba(40,18,10,.95) 60%, rgba(40,18,10,.97) 100%),
-        url('assets/18-hero-bg-marmitas-mesa-m.webp?v=2') right 55% / cover no-repeat,
-        linear-gradient(160deg,var(--green-dark) 0%, var(--green) 55%, #a8432b 100%);
-    }
-    .hero-inner{grid-template-columns:1fr;text-align:center;}
-    .hero p.sub{margin:16px auto 0;}
-    .chef-box{grid-template-columns:1fr;gap:34px;text-align:center;padding:30px 18px 26px;border-radius:18px;}
-    .chef-foto{max-width:230px;margin:0 auto;}
-    .chef h2{font-size:25px;}
-    .chef p{font-size:15px;text-align:left;}
-    .chef .proposito{font-size:16px;text-align:left;}
-    .hero-inner{display:flex;flex-direction:column;gap:0;}
-    .hero-text{display:contents;}
-    .hero h1{order:1;}
-    .hero p.sub{order:2;}
-    .hero-image{order:3;margin-top:16px;}
-    .hero-cta{order:4;margin-top:16px;}
-    .hero-badges{order:5;}
-    .hero-image img{max-width:420px;width:100%;}
-    .hero-image::before{width:260px;height:260px;}
-    .hero-badges{justify-content:center;}
-    .price-box{width:100%;max-width:320px;}
-    .hero-price{margin:0 auto 14px;}
-    .problem-grid{grid-template-columns:1fr;gap:24px;}
-    .problem-image{order:-1;}
-    .why-grid{grid-template-columns:1fr;padding:24px;gap:50px;}
-    .why-images{padding-bottom:10px;}
-    .guia-track{margin:0 -24px;padding:6px 24px 16px;}
-    .guia-track img{flex-basis:70vw;width:70vw;max-width:300px;}
-    .why-images img.book{height:220px;}
-    .why-images img.chef{width:150px;height:105px;right:0;bottom:-30px;}
-    .why-list{grid-template-columns:1fr;}
-    .recipe-grid{grid-template-columns:repeat(2,1fr);gap:14px;}
-    .freeze{padding:28px 20px;}
-    .freeze-steps{grid-template-columns:repeat(2,1fr);}
-    .bonus{padding:36px 20px;}
-    .bonus-grid > .bonus-card{grid-template-columns:80px 1fr;column-gap:12px;padding:12px;}
-    .bonus-card .bonus-img-frame{width:80px;}
-    .bonus-card h4{font-size:14px;}
-    .plans-grid{grid-template-columns:1fr;}
-    .prefer-arrow{transform:rotate(90deg);animation:arrow-bounce-y 1.4s ease-in-out infinite;}
-    @keyframes arrow-bounce-y{0%,100%{transform:rotate(90deg) translateX(0);}50%{transform:rotate(90deg) translateX(6px);}}
-    .testi-grid{grid-template-columns:1fr;}
-    .stats-strip{margin-top:-24px;gap:8px 4px;padding:16px 8px;}
-    .stat{padding:2px 8px;flex:1 1 30%;}
-    .stat .icon{font-size:16px;margin-bottom:2px;}
-    .stat .num{font-size:17px;}
-    .stat .label{font-size:10px;letter-spacing:.2px;}
-    .stat-divider{display:none;}
-    .stat-extra{display:none;}
-    .hero h1{font-size:29px;}
-    .final-cta{padding:32px 22px;}
-    .footer-grid{flex-direction:column;text-align:center;}
-    .footer-links{justify-content:center;}
-    .guarantee{padding:24px 0;}
-    .guarantee-box{flex-direction:column;text-align:center;padding:26px 22px;gap:16px;}
-    .bonus{
-      background:
-        radial-gradient(ellipse 60% 50% at 15% 0%, rgba(224,168,58,.2), transparent 60%),
-        radial-gradient(ellipse 55% 45% at 100% 100%, rgba(224,112,58,.25), transparent 60%),
-        linear-gradient(160deg, rgba(30,55,26,.72) 0%, rgba(74,44,17,.72) 100%),
-        url('assets/bonus-bg.webp?v=2') center / cover no-repeat;
-    }
-  }
+/* bônus extra (BLW e SOS Desengasgo) */
+.rb .bonus.extra{border:2px solid var(--verde);background:linear-gradient(#fff,#F6FFF8)}
+.rb .bonus.extra .tag{background:var(--verde)}
+/* Quem sou eu */
+.rb .chef-sec{padding:56px 16px;background:linear-gradient(to bottom,#FFFDF9,#FFF9F2)}
+.rb .chef-box{display:grid;grid-template-columns:1fr;gap:24px;align-items:center;background:#fff;border-radius:28px;padding:24px 20px;
+  box-shadow:0 20px 50px -20px rgba(0,0,0,.25);border:1px solid #f3f4f6}
+@media(min-width:880px){.rb .chef-box{grid-template-columns:300px 1fr;gap:40px;padding:40px}}
+.rb .chef-foto{position:relative;max-width:240px;margin:0 auto}
+@media(min-width:880px){.rb .chef-foto{max-width:300px}}
+.rb .chef-foto img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%;border:6px solid #fff;box-shadow:0 0 0 3px var(--verde),0 18px 34px rgba(0,0,0,.2)}
+.rb .chef-foto .assinatura{position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);white-space:nowrap;background:var(--laranja);color:#fff;
+  font-size:12px;font-weight:800;padding:6px 14px;border-radius:999px;box-shadow:0 6px 14px rgba(0,0,0,.25)}
+.rb .chef-box .eyebrow{display:inline-block;font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--verde);margin-bottom:6px}
+.rb .chef-box h2{font-size:26px;font-weight:900;line-height:1.15;color:var(--laranja);margin-bottom:14px}
+.rb .chef-box h2 span{color:var(--verde)}
+@media(min-width:640px){.rb .chef-box h2{font-size:34px}}
+.rb .chef-box p{font-size:15px;line-height:1.7;color:var(--texto);margin-bottom:12px}
+.rb .chef-box p b{color:var(--laranja)}
+.rb .chef-box .proposito{margin:16px 0 10px;padding:14px 16px;border-left:4px solid var(--verde);background:#F0FBF5;border-radius:0 14px 14px 0;
+  font-weight:800;color:var(--laranja);font-size:15px;line-height:1.5}
+.rb .chef-box .assina{font-family:"Brush Script MT","Segoe Script",cursive;font-size:30px;color:var(--laranja);margin-top:6px}
 
-  @media(max-width:480px){
-    .wrap{padding:0 16px;}
-    .topbar{font-size:11px;padding:7px 8px;}
-    section{padding:34px 0;}
-    .hero{padding:36px 0 30px;}
-    .hero-image img{max-width:320px;border-width:2px;border-radius:14px;}
-    .hero-image::before{width:260px;height:190px;}
-    .hero h1{font-size:26px;}
-    .hero p.sub{font-size:14.5px;}
-    .price-new{font-size:28px;}
-    .hero-badges{gap:12px 16px;font-size:12.5px;}
-    .stat .num{font-size:21px;}
-    .stat{padding:8px 10px;}
-    .marquee-track span{margin:0 14px;}
-    .problem h2,.why-header h2,.recipes-header h2,.plans-header h2,.testi-header h2,.faq h2{font-size:22px;}
-    .urgency{padding:20px;text-align:center;justify-content:center;}
-    .recipe-grid{grid-template-columns:1fr;}
-    .freeze-steps{grid-template-columns:1fr;}
-    .plan-card{padding:22px;}
-    .final-cta h3{font-size:20px;}
-    .btn{padding:14px 22px;font-size:14px;}
-    .guarantee-box{padding:22px 16px;}
-    .guarantee-seal{width:80px;height:80px;}
-    .guarantee-seal .num{font-size:22px;}
-    .guarantee-box h3{font-size:17px;}
-    .guarantee-box p{font-size:14.5px;}
-  }
+@media(max-width:560px){.rb .chef-box{padding:22px 18px}}
+
+/* +250 Almoços: capas das receitas em vídeo e prints */
+.rb img{height:auto}
+.rb .slide.aula img{aspect-ratio:3/4;object-fit:cover;border-radius:16px}
+.rb .slide.page img{box-shadow:0 8px 22px rgba(0,0,0,.12)}
+
 </style>
 
 <!-- Meta Pixel Code -->
@@ -762,662 +441,400 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 <!-- TikTok Pixel Code End -->
 </head>
 <body>
+<div class="rb">
+<div class="topbar">Esta promoção acaba hoje - <span id="deadline-date">--/--</span></div>
 
-<div class="topbar">🔥 Esta promoção acaba hoje - <b id="deadline-date">--/--</b></div>
-
-<!-- HERO -->
 <header class="hero">
-  <div class="wrap hero-inner">
-    <div class="hero-text">
-      <h1>+250 Almoços Fitness <span>Práticos e Econômicos</span></h1>
-      <p class="sub"><b>Seu Guia Completo para Secar Comendo Comida de Verdade, Sem Abrir Mão do Sabor!</b><br>Mais de 250 almoços práticos, baratos e que funcionam de verdade — prontos em até 15 minutos e com ingredientes que você tem em casa.</p>
-
-      <div class="hero-cta">
-        <a href="#oferta-completa" class="btn btn-terracota">QUERO OS +250 ALMOÇOS FITNESS →</a>
-      </div>
-
-      <div class="hero-badges">
-        <span>✅ Acesso Imediato</span>
-        <span>🔒 Compra 100% Segura</span>
-        <span>🛡️ 15 Dias de Garantia</span>
-      </div>
+  <div class="w4">
+    <h1>+250 Almoços Fitness práticos e econômicos</h1>
+    <h2>Seu guia completo para secar comendo comida de verdade, sem abrir mão do sabor!</h2>
+    <p class="desc">Mais de <b>250 almoços práticos, baratos e que funcionam de verdade</b>, prontos em até 15 minutos e com ingredientes que você tem em casa.</p>
+    <div class="entrada">
+      <img src="assets/mockup-250-livro-celular.webp" srcset="assets/mockup-250-livro-celular-m.webp 720w, assets/mockup-250-livro-celular.webp 1100w" sizes="(max-width:880px) 100vw, 896px" width="1100" height="733" alt="Guia +250 Almoços Fitness no livro e no celular" fetchpriority="high" decoding="async">
     </div>
-
-    <div class="hero-image">
-      <img width="1100" height="575" src="assets/hero-chef-catarina-250.webp" srcset="assets/hero-chef-catarina-250-m.webp 640w, assets/hero-chef-catarina-250.webp 1100w" sizes="(max-width:880px) 92vw, 520px" alt="Chef Catarina Moretti segurando o guia +250 Almoços Fitness" fetchpriority="high">
+    <div style="margin-top:16px;margin-bottom:12px">
+      <a href="#ofertas" class="cta grad"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>Quero os +250 almoços</a>
+    </div>
+    <p class="zap">📲 Receba direto em seu WhatsApp</p>
+    <div class="trust">
+      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Acesso imediato</span>
+      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg> Compra 100% segura</span>
+      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg> 15 dias de garantia</span>
     </div>
   </div>
-
-
 </header>
 
-<div class="marquee-bar">
-  <div class="marquee-track">
-    <span>PRONTAS EM ATÉ 30 MIN</span><span>SUCULENTAS E TEMPERADINHAS</span><span>+250 ALMOÇOS DIFERENTES</span><span>INGREDIENTES BARATOS</span>
-    <span>PRONTAS EM ATÉ 30 MIN</span><span>SUCULENTAS E TEMPERADINHAS</span><span>+250 ALMOÇOS DIFERENTES</span><span>INGREDIENTES BARATOS</span>
-    <span>PRONTAS EM ATÉ 30 MIN</span><span>SUCULENTAS E TEMPERADINHAS</span><span>+250 ALMOÇOS DIFERENTES</span><span>INGREDIENTES BARATOS</span>
-    <span>PRONTAS EM ATÉ 30 MIN</span><span>SUCULENTAS E TEMPERADINHAS</span><span>+250 ALMOÇOS DIFERENTES</span><span>INGREDIENTES BARATOS</span>
-  </div>
-</div>
-
-<!-- PROBLEM -->
-<section class="problem">
-  <div class="wrap">
-    <h2>BENEFÍCIOS DO PRODUTO: <span>TUDO O QUE VOCÊ RECEBE</span></h2>
-    <p class="lead">Mais de 250 opções para nunca mais repetir frango com batata doce — e emagrecer sem passar fome.</p>
-
-    <div class="problem-grid">
-      <div class="problem-list">
-        <div class="problem-item">🍲 <div><b>+250 almoços sem cair na repetição</b></div></div>
-        <div class="problem-item">⏱️ <div><b>Receitas rápidas para a sua rotina</b></div></div>
-        <div class="problem-item">🛒 <div><b>Ingredientes baratos e acessíveis</b></div></div>
-        <div class="problem-item">📖 <div><b>Passo a passo simples e ilustrado</b></div></div>
-        <div class="problem-item">🔥 <div><b>Calorias calculadas por porção</b></div></div>
-        <div class="problem-item">❄️ <div><b>Dá pra fazer marmita e congelar</b></div></div>
-        <div class="problem-item">👨‍👩‍👧 <div><b>Opções para toda a família</b></div></div>
-        <div class="problem-item">📱 <div><b>Acesso no celular ou impresso</b></div></div>
-      </div>
-      <div class="problem-image">
-        <img width="1100" height="733" src="assets/mockup-250-livro-celular.webp" srcset="assets/mockup-250-livro-celular-m.webp 720w, assets/mockup-250-livro-celular.webp 1100w" sizes="(max-width:880px) 100vw, 530px" alt="Guia +250 Almoços Fitness no livro e no celular" loading="lazy" decoding="async">
-      </div>
+<section class="sec-alt">
+  <div class="w5">
+    <div class="head">
+      <h2>Benefícios do <span class="tv">produto:</span></h2>
+      <p>Mais de 250 opções para nunca mais repetir frango com batata-doce, e emagrecer <b>sem passar fome</b>.</p>
+      <div class="bar"></div>
     </div>
-
-    <div class="problem-cta">
-      <a href="#oferta-completa" class="btn">SIM! QUERO MEUS ALMOÇOS FITNESS HOJE →</a>
+    <div class="tiles t4">
+      <div class="tile"><span class="ic">🍲</span><p>+250 almoços sem cair na repetição</p></div>
+      <div class="tile"><span class="ic">⏱️</span><p>Receitas rápidas para a sua rotina</p></div>
+      <div class="tile"><span class="ic">🛒</span><p>Ingredientes baratos e acessíveis</p></div>
+      <div class="tile"><span class="ic">📖</span><p>Passo a passo simples e ilustrado</p></div>
+      <div class="tile"><span class="ic">🔥</span><p>Calorias calculadas por porção</p></div>
+      <div class="tile"><span class="ic">❄️</span><p>Dá pra fazer marmita e congelar</p></div>
+      <div class="tile"><span class="ic">👨‍👩‍👧</span><p>Opções para toda a família</p></div>
+      <div class="tile"><span class="ic">📱</span><p>Acesso no celular ou impresso</p></div>
     </div>
   </div>
 </section>
 
-<!-- URGENCY -->
-<section style="padding-top:0;">
-  <div class="wrap">
-    <div class="urgency">
-      <div class="icon">⚠️</div>
-      <div>
-        <h3>ATENÇÃO! ESTA PROMOÇÃO ACABA HOJE</h3>
-        <p>Depois da meia-noite o preço volta para R$ 97,00. Garanta o seu agora.</p>
-      </div>
+<section class="sec" id="receitas" style="background:var(--cinza-bg);border-top:1px solid #f3f4f6;padding-left:0;padding-right:0">
+  <div class="w5" style="padding:0 12px">
+    <div class="head">
+      <h2>Olha só por dentro do guia<br><span class="tv">o que espera por você 👇</span></h2>
+      <p>Páginas reais do guia: foto, ingredientes com quantidades certinhas e modo de preparo passo a passo.</p>
+      <div class="bar"></div>
+    </div>
+    <div class="scroller">
+      <div class="slide page"><img src="assets/receita-guia-37-m.webp" srcset="assets/receita-guia-37-m.webp 360w, assets/receita-guia-37.webp 600w" sizes="(max-width:640px) 80vw, 320px" width="600" height="850" alt="Página do guia: Strogonoff de Frango Fit" loading="lazy" decoding="async"><p class="cap">Strogonoff de Frango Fit</p></div>
+      <div class="slide page"><img src="assets/receita-guia-40-m.webp" srcset="assets/receita-guia-40-m.webp 360w, assets/receita-guia-40.webp 600w" sizes="(max-width:640px) 80vw, 320px" width="600" height="850" alt="Página do guia: Frango à Parmegiana de Forno" loading="lazy" decoding="async"><p class="cap">Frango à Parmegiana de Forno</p></div>
+      <div class="slide page"><img src="assets/receita-guia-42-m.webp" srcset="assets/receita-guia-42-m.webp 360w, assets/receita-guia-42.webp 600w" sizes="(max-width:640px) 80vw, 320px" width="600" height="850" alt="Página do guia: Escondidinho de Frango com Purê de Abóbora" loading="lazy" decoding="async"><p class="cap">Escondidinho de Frango com Purê de Abóbora</p></div>
+      <div class="slide page"><img src="assets/receita-guia-145-m.webp" srcset="assets/receita-guia-145-m.webp 360w, assets/receita-guia-145.webp 600w" sizes="(max-width:640px) 80vw, 320px" width="600" height="850" alt="Página do guia: Lasanha de Berinjela à Bolonhesa" loading="lazy" decoding="async"><p class="cap">Lasanha de Berinjela à Bolonhesa</p></div>
+      <div class="slide page"><img src="assets/receita-guia-71-m.webp" srcset="assets/receita-guia-71-m.webp 360w, assets/receita-guia-71.webp 600w" sizes="(max-width:640px) 80vw, 320px" width="600" height="850" alt="Página do guia: Feijoada Leve" loading="lazy" decoding="async"><p class="cap">Feijoada Leve</p></div>
+      <div class="slide page"><img src="assets/receita-guia-63-m.webp" srcset="assets/receita-guia-63-m.webp 360w, assets/receita-guia-63.webp 600w" sizes="(max-width:640px) 80vw, 320px" width="600" height="850" alt="Página do guia: Carne de Panela com Couve e Farofa" loading="lazy" decoding="async"><p class="cap">Carne de Panela com Couve e Farofa</p></div>
+      <div class="slide page"><img src="assets/receita-guia-133-m.webp" srcset="assets/receita-guia-133-m.webp 360w, assets/receita-guia-133.webp 600w" sizes="(max-width:640px) 80vw, 320px" width="600" height="850" alt="Página do guia: Yakisoba Fit de Frango e Legumes" loading="lazy" decoding="async"><p class="cap">Yakisoba Fit de Frango e Legumes</p></div>
+      <div class="slide page"><img src="assets/receita-guia-103-m.webp" srcset="assets/receita-guia-103-m.webp 360w, assets/receita-guia-103.webp 600w" sizes="(max-width:640px) 80vw, 320px" width="600" height="850" alt="Página do guia: Galinhada Fit com Açafrão" loading="lazy" decoding="async"><p class="cap">Galinhada Fit com Açafrão</p></div>
+      <div class="slide page"><img src="assets/receita-guia-61-m.webp" srcset="assets/receita-guia-61-m.webp 360w, assets/receita-guia-61.webp 600w" sizes="(max-width:640px) 80vw, 320px" width="600" height="850" alt="Página do guia: Bife Acebolado com Tomate" loading="lazy" decoding="async"><p class="cap">Bife Acebolado com Tomate</p></div>
+    </div>
+    <div class="swipe" aria-hidden="true">Arraste para ver mais ›</div>
+    <div style="margin-top:24px;text-align:center">
+      <a href="#ofertas" class="cta"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>Quero os +250 almoços</a>
     </div>
   </div>
 </section>
 
-<!-- WHY -->
-<section class="why">
-  <div class="wrap">
-    <div class="why-header">
-      <span class="eyebrow">Guia completo 🍱</span>
-      <h2>VEJA ALGUMAS DAS RECEITAS QUE VOCÊ VAI RECEBER</h2>
+<section class="sec" id="videoaulas" style="background:#fff;padding-left:0;padding-right:0">
+  <div class="w5" style="padding:0 12px">
+    <div class="head">
+      <h2>+90 receitas em vídeo <span class="tl">passo a passo</span></h2>
+      <p>Além do livro, você ganha uma área de membros com +90 receitas em vídeo: veja cada etapa sendo feita e cozinhe junto, no seu tempo, direto do celular.</p>
+      <div class="bar"></div>
     </div>
-    <div class="why-grid">
-      <div class="why-images guia-car">
-        <div class="guia-track" id="guia-track">
-          <img width="600" height="850" src="assets/receita-guia-37-m.webp" srcset="assets/receita-guia-37-m.webp 360w, assets/receita-guia-37.webp 600w" sizes="(max-width:880px) 70vw, 250px" data-full="assets/receita-guia-37.webp" alt="Página do guia: Strogonoff de Frango Fit" loading="lazy" decoding="async">
-          <img width="600" height="850" src="assets/receita-guia-40-m.webp" srcset="assets/receita-guia-40-m.webp 360w, assets/receita-guia-40.webp 600w" sizes="(max-width:880px) 70vw, 250px" data-full="assets/receita-guia-40.webp" alt="Página do guia: Frango à Parmegiana de Forno" loading="lazy" decoding="async">
-          <img width="600" height="850" src="assets/receita-guia-42-m.webp" srcset="assets/receita-guia-42-m.webp 360w, assets/receita-guia-42.webp 600w" sizes="(max-width:880px) 70vw, 250px" data-full="assets/receita-guia-42.webp" alt="Página do guia: Escondidinho de Frango com Purê de Abóbora" loading="lazy" decoding="async">
-          <img width="600" height="850" src="assets/receita-guia-145-m.webp" srcset="assets/receita-guia-145-m.webp 360w, assets/receita-guia-145.webp 600w" sizes="(max-width:880px) 70vw, 250px" data-full="assets/receita-guia-145.webp" alt="Página do guia: Lasanha de Berinjela à Bolonhesa" loading="lazy" decoding="async">
-          <img width="600" height="850" src="assets/receita-guia-71-m.webp" srcset="assets/receita-guia-71-m.webp 360w, assets/receita-guia-71.webp 600w" sizes="(max-width:880px) 70vw, 250px" data-full="assets/receita-guia-71.webp" alt="Página do guia: Feijoada Leve" loading="lazy" decoding="async">
-          <img width="600" height="850" src="assets/receita-guia-63-m.webp" srcset="assets/receita-guia-63-m.webp 360w, assets/receita-guia-63.webp 600w" sizes="(max-width:880px) 70vw, 250px" data-full="assets/receita-guia-63.webp" alt="Página do guia: Carne de Panela com Couve e Farofa" loading="lazy" decoding="async">
-          <img width="600" height="850" src="assets/receita-guia-133-m.webp" srcset="assets/receita-guia-133-m.webp 360w, assets/receita-guia-133.webp 600w" sizes="(max-width:880px) 70vw, 250px" data-full="assets/receita-guia-133.webp" alt="Página do guia: Yakisoba Fit de Frango e Legumes" loading="lazy" decoding="async">
-          <img width="600" height="850" src="assets/receita-guia-103-m.webp" srcset="assets/receita-guia-103-m.webp 360w, assets/receita-guia-103.webp 600w" sizes="(max-width:880px) 70vw, 250px" data-full="assets/receita-guia-103.webp" alt="Página do guia: Galinhada Fit com Açafrão" loading="lazy" decoding="async">
-          <img width="600" height="850" src="assets/receita-guia-61-m.webp" srcset="assets/receita-guia-61-m.webp 360w, assets/receita-guia-61.webp 600w" sizes="(max-width:880px) 70vw, 250px" data-full="assets/receita-guia-61.webp" alt="Página do guia: Bife Acebolado com Tomate" loading="lazy" decoding="async">
-        </div>
-        <div class="guia-nav">
-          <button type="button" class="guia-btn" id="guia-prev" aria-label="Página anterior">‹</button>
-          <span class="guia-count"><b id="guia-n">1</b> / 9 · 📖 toque para ampliar</span>
-          <button type="button" class="guia-btn" id="guia-next" aria-label="Próxima página">›</button>
-        </div>
-      </div>
+    <div class="scroller">
+      <div class="slide sm aula"><img src="assets/aula-secar.webp" width="480" height="640" alt="Receitas em vídeo: Para Secar a Barriga" loading="lazy" decoding="async"><p class="cap">Para Secar a Barriga · 8 receitas</p></div>
+      <div class="slide sm aula"><img src="assets/aula-dia_v2.webp" width="480" height="640" alt="Receitas em vídeo: Saudáveis do Dia a Dia" loading="lazy" decoding="async"><p class="cap">Saudáveis do Dia a Dia · 30 receitas</p></div>
+      <div class="slide sm aula"><img src="assets/aula-funcionais.webp" width="480" height="640" alt="Receitas em vídeo: Saudáveis e Funcionais" loading="lazy" decoding="async"><p class="cap">Saudáveis e Funcionais · 30 receitas</p></div>
+      <div class="slide sm aula"><img src="assets/aula-paes.webp" width="480" height="640" alt="Receitas em vídeo: Pães Caseiros" loading="lazy" decoding="async"><p class="cap">Pães Caseiros · 10 receitas</p></div>
+      <div class="slide sm aula"><img src="assets/aula-bolos.webp" width="480" height="640" alt="Receitas em vídeo: Bolos e Doces Fit" loading="lazy" decoding="async"><p class="cap">Bolos e Doces Fit · 18 receitas</p></div>
     </div>
+    <div class="swipe" aria-hidden="true">Arraste para ver mais ›</div>
   </div>
 </section>
 
-<!-- VIDEOAULAS -->
-<section class="aulas" id="videoaulas">
-  <div class="wrap">
-    <h2>+90 <em>RECEITAS EM VÍDEO</em> PASSO A PASSO NA ÁREA DE MEMBROS</h2>
-    <p class="aulas-lead">Além do livro, você ganha uma área de membros com +90 receitas em vídeo: veja cada etapa sendo feita e cozinhe junto, no seu tempo, direto do celular.</p>
-    <div class="aulas-track">
-      <div class="aula"><img src="assets/aula-secar.webp" width="480" height="640" alt="Receitas em vídeo: Para Secar a Barriga" loading="lazy" decoding="async"><i></i><b>Para Secar a Barriga<small>8 receitas</small></b></div>
-      <div class="aula"><img src="assets/aula-dia_v2.webp" width="480" height="640" alt="Receitas em vídeo: Saudáveis do Dia a Dia" loading="lazy" decoding="async"><i></i><b>Saudáveis do Dia a Dia<small>30 receitas</small></b></div>
-      <div class="aula"><img src="assets/aula-funcionais.webp" width="480" height="640" alt="Receitas em vídeo: Saudáveis e Funcionais" loading="lazy" decoding="async"><i></i><b>Saudáveis e Funcionais<small>30 receitas</small></b></div>
-      <div class="aula"><img src="assets/aula-paes.webp" width="480" height="640" alt="Receitas em vídeo: Pães Caseiros" loading="lazy" decoding="async"><i></i><b>Pães Caseiros<small>10 receitas</small></b></div>
-      <div class="aula"><img src="assets/aula-bolos.webp" width="480" height="640" alt="Receitas em vídeo: Bolos e Doces Fit" loading="lazy" decoding="async"><i></i><b>Bolos e Doces Fit<small>18 receitas</small></b></div>
+<section class="sec" style="background:var(--bg);padding-top:48px;padding-bottom:48px">
+  <div class="w5">
+    <div class="head">
+      <h2>Você leva <span class="tl">5 bônus</span> exclusivos!</h2>
+      <p>Garantindo hoje, você recebe todos estes materiais de apoio sem pagar nada a mais</p>
+      <div class="bar"></div>
     </div>
-    <div class="aulas-nums">
-      <div>+90<span>receitas em vídeo</span></div>
-      <div>5<span>categorias</span></div>
-      <div>24h<span>no celular</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- BONUS -->
-<section class="bonus-section">
-  <div class="wrap">
-    <div class="bonus">
-      <div class="bonus-header">
-        <span class="eyebrow">Oferta Limitada 🎁</span>
-        <h2>VOCÊ LEVA 5 BÔNUS EXCLUSIVOS!</h2>
-        <p>Adquira hoje e garanta esses materiais de apoio essenciais sem pagar nada a mais</p>
+    <div class="cards c2">
+      <div class="bonus">
+        <div class="tag">Bônus #1</div>
+        <div class="cover"><img src="assets/bonus250-lanches-m.webp?v=2" alt="Guia de Lanches Saudáveis e Econômicos" loading="lazy" decoding="async"></div>
+        <div><h4>Guia de Lanches Saudáveis e Econômicos</h4><p class="bd">15 opções gostosas, prontas em 5 minutos, para os intervalos do dia.</p><div class="bp"><s>R$ 47,00</s><span class="free">✓ Grátis hoje</span></div></div>
       </div>
-      <div class="bonus-grid">
-        <div class="bonus-card">
-          <div class="bonus-img-frame">
-            <span class="bonus-free-tag">🎁 GRÁTIS</span>
-            <img width="560" height="742" src="assets/bonus250-lanches.webp?v=2" srcset="assets/bonus250-lanches-m.webp?v=2 380w, assets/bonus250-lanches.webp?v=2 560w" sizes="92px" alt="Guia de Lanches Saudáveis e Econômicos" loading="lazy" decoding="async">
-          </div>
-          <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:var(--gold);text-transform:uppercase;margin-bottom:4px;">Bônus 1</div>
-          <h4>Guia de Lanches Saudáveis e Econômicos</h4>
-          <p style="font-size:12.5px;color:#f0dcc7;margin-bottom:8px;">15 opções gostosas, prontas em 5 minutos, para os intervalos do dia</p>
-          <div class="bonus-price"><span class="old">R$ 47,00</span> <span class="new">✓ Grátis hoje</span></div>
-        </div>
-        <div class="bonus-card">
-          <div class="bonus-img-frame">
-            <span class="bonus-free-tag">🎁 GRÁTIS</span>
-            <img width="560" height="742" src="assets/bonus250-planner.webp?v=2" srcset="assets/bonus250-planner-m.webp?v=2 380w, assets/bonus250-planner.webp?v=2 560w" sizes="92px" alt="Planner Semanal Imprimível" loading="lazy" decoding="async">
-          </div>
-          <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:var(--gold);text-transform:uppercase;margin-bottom:4px;">Bônus 2</div>
-          <h4>Planner Semanal Imprimível</h4>
-          <p style="font-size:12.5px;color:#f0dcc7;margin-bottom:8px;">Prepare tudo de uma vez e não pense em comida o resto dos dias</p>
-          <div class="bonus-price"><span class="old">R$ 37,00</span> <span class="new">✓ Grátis hoje</span></div>
-        </div>
-        <div class="bonus-card">
-          <div class="bonus-img-frame">
-            <span class="bonus-free-tag">🎁 GRÁTIS</span>
-            <img width="560" height="742" src="assets/bonus250-substituicoes.webp?v=2" srcset="assets/bonus250-substituicoes-m.webp?v=2 380w, assets/bonus250-substituicoes.webp?v=2 560w" sizes="92px" alt="Lista Inteligente de Substituições" loading="lazy" decoding="async">
-          </div>
-          <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:var(--gold);text-transform:uppercase;margin-bottom:4px;">Bônus 3</div>
-          <h4>Lista Inteligente de Substituições</h4>
-          <p style="font-size:12.5px;color:#f0dcc7;margin-bottom:8px;">Troque qualquer ingrediente sem perder o sabor nem o resultado</p>
-          <div class="bonus-price"><span class="old">R$ 29,00</span> <span class="new">✓ Grátis hoje</span></div>
-        </div>
-        <div class="bonus-card">
-          <div class="bonus-img-frame">
-            <span class="bonus-free-tag">🎁 GRÁTIS</span>
-            <img width="560" height="742" src="assets/bonus250-chas.webp?v=2" srcset="assets/bonus250-chas-m.webp?v=2 380w, assets/bonus250-chas.webp?v=2 560w" sizes="92px" alt="Guia de Chás Anti-Inflamatórios" loading="lazy" decoding="async">
-          </div>
-          <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:var(--gold);text-transform:uppercase;margin-bottom:4px;">Bônus 4</div>
-          <h4>Guia de Chás Anti-Inflamatórios</h4>
-          <p style="font-size:12.5px;color:#f0dcc7;margin-bottom:8px;">Bebidas para desinchar, acelerar o metabolismo e limpar o organismo</p>
-          <div class="bonus-price"><span class="old">R$ 27,00</span> <span class="new">✓ Grátis hoje</span></div>
-        </div>
-        <div class="bonus-card">
-          <div class="bonus-img-frame">
-            <span class="bonus-free-tag">🎁 GRÁTIS</span>
-            <img width="560" height="742" src="assets/bonus250-jantares.webp?v=2" srcset="assets/bonus250-jantares-m.webp?v=2 380w, assets/bonus250-jantares.webp?v=2 560w" sizes="92px" alt="Guia de Jantares Leves para Desinchar Dormindo" loading="lazy" decoding="async">
-          </div>
-          <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:var(--gold);text-transform:uppercase;margin-bottom:4px;">Bônus 5</div>
-          <h4>Guia de Jantares Leves para Desinchar Dormindo</h4>
-          <p style="font-size:12.5px;color:#f0dcc7;margin-bottom:8px;">Receitas leves para o jantar que ajudam você a acordar mais leve</p>
-          <div class="bonus-price"><span class="old">R$ 25,00</span> <span class="new">✓ Grátis hoje</span></div>
-        </div>
+      <div class="bonus">
+        <div class="tag">Bônus #2</div>
+        <div class="cover"><img src="assets/bonus250-planner-m.webp?v=2" alt="Planner Semanal Imprimível" loading="lazy" decoding="async"></div>
+        <div><h4>Planner Semanal Imprimível</h4><p class="bd">Prepare tudo de uma vez e não pense em comida o resto dos dias.</p><div class="bp"><s>R$ 37,00</s><span class="free">✓ Grátis hoje</span></div></div>
       </div>
-      <p class="bonus-hint">👉 Arraste para o lado e veja todos os bônus</p>
-      <div class="bonus-total">
-        <div class="label">Valor total dos bônus</div>
-        <div class="value"><span class="old">R$ 165,00</span> → <span class="new">Hoje é GRÁTIS</span></div>
-        <div class="sub">Tudo incluso no Plano Completo</div>
+      <div class="bonus">
+        <div class="tag">Bônus #3</div>
+        <div class="cover"><img src="assets/bonus250-substituicoes-m.webp?v=2" alt="Lista Inteligente de Substituições" loading="lazy" decoding="async"></div>
+        <div><h4>Lista Inteligente de Substituições</h4><p class="bd">Troque qualquer ingrediente sem perder o sabor nem o resultado.</p><div class="bp"><s>R$ 29,00</s><span class="free">✓ Grátis hoje</span></div></div>
+      </div>
+      <div class="bonus">
+        <div class="tag">Bônus #4</div>
+        <div class="cover"><img src="assets/bonus250-chas-m.webp?v=2" alt="Guia de Chás Anti-Inflamatórios" loading="lazy" decoding="async"></div>
+        <div><h4>Guia de Chás Anti-Inflamatórios</h4><p class="bd">Bebidas para desinchar, acelerar o metabolismo e limpar o organismo.</p><div class="bp"><s>R$ 27,00</s><span class="free">✓ Grátis hoje</span></div></div>
+      </div>
+      <div class="bonus">
+        <div class="tag">Bônus #5</div>
+        <div class="cover"><img src="assets/bonus250-jantares-m.webp?v=2" alt="Guia de Jantares Leves para Desinchar Dormindo" loading="lazy" decoding="async"></div>
+        <div><h4>Guia de Jantares Leves para Desinchar Dormindo</h4><p class="bd">Receitas leves para o jantar que ajudam você a acordar mais leve.</p><div class="bp"><s>R$ 25,00</s><span class="free">✓ Grátis hoje</span></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="testi">
-  <div class="wrap">
-    <div class="testi-header">
-      <h2>QUEM JÁ PREPAROU, APROVOU!</h2>
-      <p>3.180+ pessoas já transformaram sua rotina na cozinha. Veja o que algumas alunas estão preparando com as receitas do guia.</p>
+<section class="sec" id="depoimentos" style="background:#fff;padding-left:0;padding-right:0">
+  <div class="w5" style="padding:0 12px">
+    <div class="head">
+      <h2>Quem já preparou, <span class="tv">aprovou!</span></h2>
+      <p>3.180+ pessoas já transformaram a rotina na cozinha. Veja o que algumas alunas estão preparando com as receitas do guia.</p>
+      <div class="bar"></div>
     </div>
-    <div class="rating-row">
-      <div class="rating-score">4.9</div>
-      <div><div class="rating-stars">★★★★★</div><div class="rating-count">2.640 avaliações</div></div>
+    <div class="scroller">
+      <div class="slide sm"><img src="img/prints250/print-6-m.webp" alt="Print de conversa no WhatsApp com aluna mostrando o almoço que preparou com o guia" loading="lazy" decoding="async"></div>
+      <div class="slide sm"><img src="img/prints250/print-7-m.webp" alt="Print de conversa no WhatsApp com aluna mostrando o almoço que preparou com o guia" loading="lazy" decoding="async"></div>
+      <div class="slide sm"><img src="img/prints250/print-8-m.webp" alt="Print de conversa no WhatsApp com aluna mostrando o almoço que preparou com o guia" loading="lazy" decoding="async"></div>
+      <div class="slide sm"><img src="img/prints250/print-1-m.webp" alt="Print de conversa no WhatsApp com aluna mostrando o almoço que preparou com o guia" loading="lazy" decoding="async"></div>
+      <div class="slide sm"><img src="img/prints250/print-2-m.webp" alt="Print de conversa no WhatsApp com aluna mostrando o almoço que preparou com o guia" loading="lazy" decoding="async"></div>
+      <div class="slide sm"><img src="img/prints250/print-3-m.webp" alt="Print de conversa no WhatsApp com aluna mostrando o almoço que preparou com o guia" loading="lazy" decoding="async"></div>
+      <div class="slide sm"><img src="img/prints250/print-4-m.webp" alt="Print de conversa no WhatsApp com aluna mostrando o almoço que preparou com o guia" loading="lazy" decoding="async"></div>
+      <div class="slide sm"><img src="img/prints250/print-5-m.webp" alt="Print de conversa no WhatsApp com aluna mostrando o almoço que preparou com o guia" loading="lazy" decoding="async"></div>
+      <div class="slide sm"><img src="img/prints250/print-9-m.webp" alt="Print de conversa no WhatsApp com aluna mostrando o almoço que preparou com o guia" loading="lazy" decoding="async"></div>
+      <div class="slide sm"><img src="img/prints250/print-10-m.webp" alt="Print de conversa no WhatsApp com aluna mostrando o almoço que preparou com o guia" loading="lazy" decoding="async"></div>
     </div>
-
-    <div class="testi-shots">
-      <img width="620" height="930" src="img/prints250/print-6.webp" srcset="img/prints250/print-6-m.webp 420w, img/prints250/print-6.webp 620w" sizes="(max-width:700px) 78vw, 300px" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com aluna mostrando o almoço que preparou com o guia">
-      <img width="620" height="930" src="img/prints250/print-7.webp" srcset="img/prints250/print-7-m.webp 420w, img/prints250/print-7.webp 620w" sizes="(max-width:700px) 78vw, 300px" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com aluna mostrando o almoço que preparou com o guia">
-      <img width="620" height="1107" src="img/prints250/print-8.webp" srcset="img/prints250/print-8-m.webp 420w, img/prints250/print-8.webp 620w" sizes="(max-width:700px) 78vw, 300px" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com aluna mostrando o almoço que preparou com o guia">
-      <img width="620" height="930" src="img/prints250/print-1.webp" srcset="img/prints250/print-1-m.webp 420w, img/prints250/print-1.webp 620w" sizes="(max-width:700px) 78vw, 300px" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com aluna mostrando o almoço que preparou com o guia">
-      <img width="620" height="930" src="img/prints250/print-2.webp" srcset="img/prints250/print-2-m.webp 420w, img/prints250/print-2.webp 620w" sizes="(max-width:700px) 78vw, 300px" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com aluna mostrando o almoço que preparou com o guia">
-      <img width="620" height="930" src="img/prints250/print-3.webp" srcset="img/prints250/print-3-m.webp 420w, img/prints250/print-3.webp 620w" sizes="(max-width:700px) 78vw, 300px" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com aluna mostrando o almoço que preparou com o guia">
-      <img width="620" height="930" src="img/prints250/print-4.webp" srcset="img/prints250/print-4-m.webp 420w, img/prints250/print-4.webp 620w" sizes="(max-width:700px) 78vw, 300px" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com aluna mostrando o almoço que preparou com o guia">
-      <img width="620" height="930" src="img/prints250/print-5.webp" srcset="img/prints250/print-5-m.webp 420w, img/prints250/print-5.webp 620w" sizes="(max-width:700px) 78vw, 300px" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com aluna mostrando o almoço que preparou com o guia">
-      <img width="620" height="1102" src="img/prints250/print-9.webp" srcset="img/prints250/print-9-m.webp 420w, img/prints250/print-9.webp 620w" sizes="(max-width:700px) 78vw, 300px" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com aluna mostrando o almoço que preparou com o guia">
-      <img width="520" height="780" src="img/prints250/print-10.webp" srcset="img/prints250/print-10-m.webp 420w, img/prints250/print-10.webp 620w" sizes="(max-width:700px) 78vw, 300px" loading="lazy" decoding="async" alt="Print de conversa no WhatsApp com aluna mostrando o almoço que preparou com o guia">
+    <div class="swipe" aria-hidden="true">Arraste para o lado ›</div>
+    <div style="margin-top:24px;text-align:center">
+      <a href="#ofertas" class="cta grad"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>Quero os +250 almoços</a>
     </div>
-    <p class="testi-hint">👉 Arraste para o lado e veja mais</p>
-
-    <div class="testi-cta"><a href="#oferta-completa" class="btn">QUERO OS +250 ALMOÇOS →</a></div>
   </div>
 </section>
 
-<!-- PLANS -->
-<section class="plans" id="ofertas">
-  <div class="wrap">
-    <div class="plans-header">
-      <h2>ESCOLHA SEU PLANO</h2>
+<section class="pricing" id="ofertas">
+  <div class="w5">
+    <div class="head">
+      <h2>Escolha a sua <span class="tv">oferta</span></h2>
       <p>Selecione o plano ideal para a sua rotina e comece a sua transformação alimentar hoje mesmo</p>
+      <div class="bar g"></div>
     </div>
-
-    <div class="plans-grid">
-      <div class="plan-card">
-        <img width="800" height="853" src="assets/plano-basico-250.webp?v=3" srcset="assets/plano-basico-250-m.webp?v=3 480w, assets/plano-basico-250.webp?v=3 800w" sizes="(max-width:880px) 300px, 260px" alt="Plano Básico - guia +250 Almoços Fitness" loading="lazy" decoding="async">
-        <h3>OFERTA BÁSICA</h3>
-        <div class="plan-type">+250 Almoços Fitness</div>
-        <div class="plan-price">
-          <span class="old">De R$ 97,00</span><span class="off-badge">-81%</span>
-          <div class="new new-small">R$ 18,00</div>
-          <div class="inst">Pagamento Único</div>
+    <img class="oferta-entrada" style="max-width:520px" src="assets/plano-completo-250.webp" srcset="assets/plano-completo-250-m.webp 520w, assets/plano-completo-250.webp 900w" sizes="(max-width:700px) 100vw, 520px" width="900" height="868" alt="+250 Almoços Fitness + 5 bônus" loading="lazy" decoding="async">
+    <div class="plans">
+      <div class="plan featured" id="oferta-completa">
+        <div class="ribbon">⭐ Mais recomendado</div>
+        <div style="text-align:center;margin-top:8px">
+          <span class="pill">Super oferta</span>
+          <h4>+250 Almoços + 5 bônus</h4>
         </div>
-        <ul class="plan-features">
-          <li>✅ Livro Digital +250 Almoços Fitness</li>
-          <li>✅ Acesso Vitalício ao Material</li>
-          <li>✅ Entrega Imediata no E-mail + WhatsApp</li>
-          <li class="x">❌ +90 Receitas em Vídeo</li>
-          <li class="x">❌ 5 Bônus Exclusivos</li>
-        </ul>
-        <a href="#" id="btn-oferta-basica" class="btn btn-wide">COMPRAR AGORA →</a>
-        <p class="plan-hint">🔒 Compra Segura · ✅ Acesso Imediato</p>
-        <p class="plan-hint" style="color:var(--terracota);">🔥 98% das pessoas preferem a Oferta Completa</p>
-        <div class="prefer-arrow" aria-hidden="true">➜</div>
+        <div class="covers">
+          <img class="main" src="assets/plano-basico-250-m.webp" alt="Livro +250 Almoços Fitness" loading="lazy" decoding="async">
+          <img src="assets/bonus250-lanches-m.webp?v=2" alt="Guia de Lanches Saudáveis e Econômicos" loading="lazy" decoding="async">
+          <img src="assets/bonus250-planner-m.webp?v=2" alt="Planner Semanal Imprimível" loading="lazy" decoding="async">
+          <img src="assets/bonus250-substituicoes-m.webp?v=2" alt="Lista Inteligente de Substituições" loading="lazy" decoding="async">
+          <img src="assets/bonus250-chas-m.webp?v=2" alt="Guia de Chás Anti-Inflamatórios" loading="lazy" decoding="async">
+          <img src="assets/bonus250-jantares-m.webp?v=2" alt="Guia de Jantares Leves para Desinchar Dormindo" loading="lazy" decoding="async">
+        </div>
+        <div class="items">
+          <div class="it"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> 🔥 Livro digital +250 Almoços Fitness</div>
+          <div class="it"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> 🎬 +90 receitas em vídeo na área de membros</div>
+          <div class="it"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Acesso vitalício</div>
+          <div class="it"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Entrega imediata no WhatsApp + e-mail</div>
+          <div class="it gift"><span>🎁</span> Guia de Lanches Saudáveis e Econômicos</div>
+          <div class="it gift"><span>🎁</span> Planner Semanal Imprimível</div>
+          <div class="it gift"><span>🎁</span> Lista Inteligente de Substituições</div>
+          <div class="it gift"><span>🎁</span> Guia de Chás Anti-Inflamatórios</div>
+          <div class="it gift"><span>🎁</span> Guia de Jantares Leves para Desinchar Dormindo</div>
+        </div>
+        <div class="pp">
+          <p class="l1"><s>De R$ 314,50</s> <span>• Pagamento único</span></p>
+          <p class="val">R$ 27,00</p>
+          <p class="par">sem mensalidade</p>
+        </div>
+        <p class="economia">Os vídeos e os 5 bônus saem por só R$ 9,00 a mais</p>
+        <a href="https://pay.kirvano.com/9082d7c0-b319-43f7-9ce6-427c23712f2d" class="cta full"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>Quero o kit completo</a>
+        <div class="mini-trust">
+          <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Compra segura</span>
+          <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Acesso imediato</span>
+          <span>📲 No WhatsApp</span>
+        </div>
+        <p class="vagas">Restam <span id="vagas">30</span> vagas nesta condição</p>
       </div>
-
-      <div class="plan-card popular" id="oferta-completa">
-        <span class="plan-badge">MAIS RECOMENDADO ✨</span>
-        <img width="900" height="868" src="assets/plano-completo-250.webp" srcset="assets/plano-completo-250-m.webp 520w, assets/plano-completo-250.webp 900w" sizes="(max-width:880px) 300px, 260px" alt="Plano Completo - +250 Almoços Fitness + 5 bônus" loading="lazy" decoding="async">
-        <h3>SUPER OFERTA</h3>
-        <div class="plan-type">+250 Almoços Fitness COMPLETO</div>
-        <div class="plan-price">
-          <span class="old">De R$ 314,50</span><span class="off-badge">-91%</span>
-          <div class="new">R$ 27,00</div>
-          <div class="inst">Pagamento Único</div>
+      <div class="plan plain">
+        <div style="text-align:center">
+          <span class="pill gray">Oferta básica</span>
+          <h4>Somente o livro</h4>
         </div>
-        <ul class="plan-features">
-          <li>✅ Livro Digital +250 Almoços Fitness</li>
-          <li>✅ Acesso Vitalício ao Material</li>
-          <li>✅ Entrega Imediata no E-mail + WhatsApp</li>
-          <li>✅ Suporte Prioritário VIP</li>
-          <li><b>🎬 +90 Receitas em Vídeo na Área de Membros</b></li>
-          <li><b>🎁 Bônus 1 - Guia de Lanches Saudáveis e Econômicos</b></li>
-          <li><b>🎁 Bônus 2 - Planner Semanal Imprimível</b></li>
-          <li><b>🎁 Bônus 3 - Lista Inteligente de Substituições</b></li>
-          <li><b>🎁 Bônus 4 - Guia de Chás Anti-Inflamatórios</b></li>
-          <li><b>🎁 Bônus 5 - Guia de Jantares Leves para Desinchar Dormindo</b></li>
-        </ul>
-        <a href="https://pay.kirvano.com/9082d7c0-b319-43f7-9ce6-427c23712f2d" class="btn btn-wide btn-terracota btn-pulse">COMPRAR AGORA →</a>
-        <p class="plan-hint">🔒 Compra Segura · ✅ Acesso Imediato</p>
+        <div class="covers small">
+          <img class="main" src="assets/plano-basico-250-m.webp" alt="Livro +250 Almoços Fitness" loading="lazy" decoding="async">
+        </div>
+        <div class="items">
+          <div class="it"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Livro digital +250 Almoços Fitness</div>
+          <div class="it"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Entrega imediata no WhatsApp + e-mail</div>
+          <div class="it"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> 15 dias de garantia</div>
+          <div class="it off">✕ Sem as +90 receitas em vídeo e sem os 5 bônus</div>
+        </div>
+        <div class="pp">
+          <p class="l1"><span>Pagamento único</span></p>
+          <p class="val" style="color:var(--texto)">R$ 18,00</p>
+        </div>
+        <button type="button" class="cta full ghost" id="btn-oferta-basica">Quero somente o livro</button>
       </div>
     </div>
-
-    <p class="center" style="margin-top:22px;color:var(--muted);font-size:14px;">🛡️ Seu risco é zero — se em 15 dias não amar as receitas, devolvemos cada centavo.</p>
   </div>
 </section>
 
-<!-- UPSELL POPUP -->
-<div id="upsell-overlay" style="display:none;position:fixed;inset:0;background:rgba(30,14,9,.72);z-index:999;align-items:center;justify-content:center;padding:16px;">
-  <div style="background:#fff;border-radius:20px;max-width:420px;width:100%;padding:32px 26px;position:relative;text-align:center;box-shadow:0 30px 70px rgba(0,0,0,.4);">
-    <button id="upsell-close" aria-label="Fechar" style="position:absolute;top:12px;right:14px;background:none;border:none;font-size:20px;color:var(--muted);cursor:pointer;line-height:1;">✕</button>
-    <span class="eyebrow" style="background:var(--terracota);">ESPERA! OFERTA ÚNICA 🎁</span>
-    <h3 style="font-family:'Fraunces',Georgia,serif;font-size:22px;color:var(--green-dark);margin-top:12px;">Antes de continuar por R$ 18,00...</h3>
-    <p style="font-size:14.5px;color:var(--muted);margin-top:10px;">Por apenas <b style="color:var(--green-dark);">mais R$ 4,90</b>, leve o <b>Plano Completo com os 5 Bônus Exclusivos</b> (valor R$ 165,00) por só:</p>
-    <div class="plan-price" style="margin-top:14px;">
-      <span class="old">De R$ 27,00</span><span class="off-badge">OFERTA ÚNICA</span>
-      <div class="new">R$ 22,90</div>
-      <div class="inst">só nesta página, agora</div>
+<section class="sec" style="background:var(--cinza-bg);padding-top:64px;padding-bottom:64px">
+  <div class="w4">
+    <div class="head">
+      <h2>Ainda está <span class="tl">em dúvida?</span></h2>
+      <div class="bar"></div>
     </div>
-    <a href="https://pay.kirvano.com/4fa174f3-e2c5-4060-a55f-a770ad32004d" class="btn btn-wide btn-terracota" style="margin-top:16px;">SIM! QUERO O COMPLETO POR R$ 22,90 →</a>
-    <a href="https://pay.kirvano.com/072e1934-eb9c-48ab-b790-3714cd0fd0d0" id="upsell-decline" style="display:block;margin-top:14px;font-size:13px;color:var(--muted);text-decoration:underline;">Não, quero continuar só com o guia por R$ 18,00</a>
+    <div class="cards c2">
+      <div class="card"><p class="q">“Eu não sei cozinhar...”</p><p class="cd" style="margin-top:0">Não tem problema. As receitas são <b>simples e explicadas passo a passo</b>, mesmo para quem não tem prática na cozinha.</p></div>
+      <div class="card"><p class="q">“Eu não tenho tempo...”</p><p class="cd" style="margin-top:0">Os almoços ficam prontos <b>em até 15 minutos</b>, e a maioria dá pra fazer em marmita e congelar para a semana.</p></div>
+      <div class="card"><p class="q">“Os ingredientes são caros...”</p><p class="cd" style="margin-top:0">Pelo contrário: são <b>ingredientes baratos</b>, que você encontra em qualquer mercado ou feira.</p></div>
+      <div class="card"><p class="q">“Comida fit é sem graça...”</p><p class="cd" style="margin-top:0">Aqui é <b>comida de verdade, temperadinha</b>, com calorias calculadas por porção, para você emagrecer sem sofrer.</p></div>
+    </div>
   </div>
-</div>
-
-<script>
-(function(){
-  var trigger=document.getElementById('btn-oferta-basica');
-  var overlay=document.getElementById('upsell-overlay');
-  var closeBtn=document.getElementById('upsell-close');
-  if(!trigger||!overlay)return;
-  trigger.addEventListener('click',function(e){
-    e.preventDefault();
-    overlay.style.display='flex';
-  });
-  closeBtn.addEventListener('click',function(){overlay.style.display='none';});
-  overlay.addEventListener('click',function(e){
-    if(e.target===overlay)overlay.style.display='none';
-  });
-})();
-</script>
-
-<!-- CHEF -->
-<section class="chef" id="chef">
-  <div class="wrap"><div class="chef-box">
-    <div class="chef-foto">
-      <img width="640" height="640" src="assets/chef-catarina.webp" srcset="assets/chef-catarina-m.webp 400w, assets/chef-catarina.webp 640w" sizes="(max-width:880px) 230px, 300px" alt="Chef Catarina Moretti" loading="lazy" decoding="async">
-      <span class="assinatura">👩‍🍳 Chef Catarina Moretti</span>
-    </div>
-    <div>
-      <span class="eyebrow">Quem sou eu</span>
-      <h2>Prazer, sou a <span>Chef Catarina Moretti</span></h2>
-      <p>Minha relação com a cozinha começou com aquilo que torna uma refeição especial: o cuidado em escolher os ingredientes, o aroma de uma comida sendo preparada e a alegria de reunir pessoas à mesa. Foi nesse universo de sabores e afeto que nasceu a vontade de transformar a culinária em parte da minha história.</p>
-      <p>Com o tempo, esse olhar passou a encontrar um novo propósito: levar o prazer de comer bem para a rotina de quem tem pouco tempo para cozinhar. Percebi que a correria do dia a dia muitas vezes transforma a alimentação em uma tarefa repetitiva, quando ela poderia ser um momento de cuidado e satisfação.</p>
-      <p>Foi dessa motivação que surgiu minha dedicação à cozinha prática e às marmitas. Minha proposta é unir receitas saborosas, ingredientes acessíveis e preparos que façam sentido na vida real, ajudando você a variar o cardápio e organizar as refeições com mais facilidade.</p>
-      <p>Aqui, compartilho essa forma de enxergar a cozinha: um espaço onde o planejamento facilita, a criatividade traz variedade e o sabor faz toda a diferença. Quero ajudar você a ganhar confiança para preparar suas próprias refeições e descobrir novas possibilidades com os ingredientes do dia a dia.</p>
-      <div class="proposito">Meu propósito é tornar a cozinha mais simples e cada refeição mais especial.</div>
-      <div class="assina">Chef Catarina Moretti</div>
-    </div>
-  </div></div>
 </section>
 
-<!-- GUARANTEE -->
-<section class="guarantee">
-  <div class="wrap">
-    <div class="guarantee-box">
-      <div class="guarantee-seal"><span class="num">15</span><span class="txt">DIAS DE<br>GARANTIA</span></div>
+<section class="guar">
+  <div class="w3">
+    <div class="shield"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div>
+    <h3>Garantia de satisfação total</h3>
+    <p style="font-weight:900;color:var(--ouro);text-transform:uppercase;font-size:18px">Seu risco é zero — 15 dias de garantia incondicional</p>
+    <p>Temos tanta confiança no material que te damos 15 dias completos para experimentar as receitas. Se você não gostar do sabor de algum prato, não achar o preparo simples ou se arrepender por qualquer motivo, basta nos enviar um e-mail para receber 100% do seu dinheiro de volta.</p>
+    <small>Sem perguntas · Sem enrolação · Sem burocracia</small>
+  </div>
+</section>
+
+<section class="pricing" style="border-top:0">
+  <div class="wmd">
+    <div class="head">
+      <h2>Você pode continuar <span class="tl">comendo frango com batata-doce todo dia...</span></h2>
+      <p>Ou pode ter <b>+250 almoços prontos</b> para variar a semana inteira.</p>
+      <div class="bar g"></div>
+    </div>
+    <div class="plan plain">
+      <div style="text-align:center"><span class="pill gray">Você recebe</span></div>
+      <div class="items">
+        <div class="it"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> +250 almoços fitness</div>
+        <div class="it"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Pratos com frango, carne, peixe e ovos</div>
+        <div class="it"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Prontos em até 15 minutos</div>
+        <div class="it"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Calorias calculadas por porção</div>
+        <div class="it"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Dá pra fazer marmita e congelar</div>
+        <div class="it"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> +90 receitas em vídeo</div>
+        <div class="it"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> 5 bônus exclusivos</div>
+      </div>
+      <div class="pp">
+        <p class="l1"><s>De R$ 314,50</s> <span>• Pagamento único</span></p>
+        <p class="val">R$ 27,00</p>
+        <p class="par">sem mensalidade</p>
+      </div>
+      <a href="https://pay.kirvano.com/9082d7c0-b319-43f7-9ce6-427c23712f2d" class="cta full"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>Quero os +250 almoços</a>
+      <p class="vagas">📲 Receba direto em seu WhatsApp</p>
+    </div>
+  </div>
+</section>
+
+<section class="chef-sec" id="chef">
+  <div class="w5">
+    <div class="chef-box">
+      <div class="chef-foto">
+        <img src="assets/chef-catarina.webp" srcset="assets/chef-catarina-m.webp 400w, assets/chef-catarina.webp 640w" sizes="(max-width:880px) 240px, 300px" width="640" height="640" alt="Chef Catarina Moretti" loading="lazy" decoding="async">
+        <span class="assinatura">👩‍🍳 Chef Catarina Moretti</span>
+      </div>
       <div>
-        <span class="eyebrow">Garantia de satisfação total</span>
-        <h3>🛡️ SEU RISCO É ZERO — 15 DIAS DE GARANTIA INCONDICIONAL</h3>
-        <p>Temos tanta convicção da qualidade do nosso material que te damos 15 dias completos para experimentar todas as receitas. Se você não gostar do sabor de algum prato, não achar simples o preparo ou se arrepender por qualquer motivo, basta nos enviar um e-mail para receber 100% de reembolso.</p>
-        <p style="margin-top:8px;font-weight:700;color:var(--green-dark);">Sem perguntas · Sem enrolação · Sem burocracia</p>
+        <span class="eyebrow">Quem sou eu</span>
+        <h2>Prazer, sou a <span>Chef Catarina Moretti</span></h2>
+        <p>Minha relação com a cozinha começou com aquilo que torna uma refeição especial: o cuidado em escolher os ingredientes, o aroma de uma comida sendo preparada e a alegria de reunir pessoas à mesa. Foi nesse universo de sabores e afeto que nasceu a vontade de transformar a culinária em parte da minha história.</p>
+        <p>Com o tempo, esse olhar passou a encontrar um novo propósito: levar o prazer de comer bem para a rotina de quem tem pouco tempo para cozinhar. Percebi que a correria do dia a dia muitas vezes transforma a alimentação em uma tarefa repetitiva, quando ela poderia ser um momento de cuidado e satisfação.</p>
+        <p>Foi dessa motivação que surgiu minha dedicação à cozinha prática e às marmitas. Minha proposta é unir receitas saborosas, ingredientes acessíveis e preparos que façam sentido na vida real, ajudando você a variar o cardápio e organizar as refeições com mais facilidade.</p>
+        <p>Aqui, compartilho essa forma de enxergar a cozinha: um espaço onde o planejamento facilita, a criatividade traz variedade e o sabor faz toda a diferença. Quero ajudar você a ganhar confiança para preparar suas próprias refeições e descobrir novas possibilidades com os ingredientes do dia a dia.</p>
+        <div class="proposito">Meu propósito é tornar a cozinha mais simples e cada refeição mais especial.</div>
+        <div class="assina">Chef Catarina Moretti</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="faq">
-  <div class="wrap">
-    <h2>PERGUNTAS FREQUENTES (FAQ)</h2>
-    <div class="faq-item"><h4>❓ Como vou receber o material?</h4><p>Você receberá o livro digital (e os 5 bônus exclusivos, na Super Oferta) no seu e-mail cadastrado e no seu WhatsApp imediatamente após a aprovação da sua compra. Compras via Pix ou Cartão são liberadas em segundos!</p></div>
-    <div class="faq-item"><h4>❓ Não sei cozinhar muito bem... esse livro digital serve para mim?</h4><p>Sim, com certeza! Todas as receitas possuem um passo a passo detalhado e simples, entre 15 e 30 minutos de preparo. O guia foi feito especialmente para facilitar o dia a dia de quem tem pouca ou nenhuma prática na cozinha.</p></div>
-    <div class="faq-item"><h4>❓ Posso acessar o conteúdo pelo celular?</h4><p>Com certeza! Todo o material é disponibilizado em formato PDF, otimizado para celulares, tablets, computadores ou até mesmo para impressão se você preferir um caderno físico.</p></div>
-    <div class="faq-item"><h4>❓ Dá para fazer as receitas em marmita?</h4><p>Sim! A maioria dos almoços pode ser preparada com antecedência e guardada em marmitas, pronta para esquentar na hora de comer.</p></div>
-    <div class="faq-item"><h4>❓ E se eu não gostar? Tem alguma garantia?</h4><p>Sim! Oferecemos uma garantia incondicional de 15 dias. Se por qualquer motivo você achar que o material não é para você, basta nos enviar um e-mail dentro desse prazo e devolveremos 100% do seu dinheiro, sem burocracia.</p></div>
-    <div class="faq-item"><h4>❓ Os ingredientes das receitas são caros?</h4><p>Não. Todas as receitas foram desenvolvidas com foco em economia e simplicidade, utilizando ingredientes básicos que você encontra facilmente em qualquer supermercado ou feira da sua cidade.</p></div>
-    <div class="faq-item"><h4>❓ O acesso tem validade?</h4><p>Não, o acesso é vitalício. Depois de confirmada a compra, o material é seu para sempre, sem mensalidade e sem prazo de expiração.</p></div>
+<section class="sec" id="faq" style="background:#fff;border-top:1px solid #f3f4f6;padding-top:64px;padding-bottom:64px">
+  <div class="w3">
+    <div class="head"><h2>Perguntas frequentes</h2><div class="bar g"></div></div>
+    <div class="faq">
+      <details><summary><span class="qi"><span style="font-size:18px">❓</span>Como vou receber o material?</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="ans">Você recebe o livro digital (e, no plano completo, as +90 receitas em vídeo e os 5 bônus) no seu e-mail e no seu WhatsApp assim que a compra é aprovada. No Pix ou no cartão, a liberação sai em segundos!</div></details>
+      <details><summary><span class="qi"><span style="font-size:18px">❓</span>Não sei cozinhar muito bem... serve para mim?</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="ans">Sim, com certeza! Todas as receitas têm passo a passo detalhado e simples. O guia foi feito para facilitar o dia a dia de quem tem pouca ou nenhuma prática na cozinha.</div></details>
+      <details><summary><span class="qi"><span style="font-size:18px">❓</span>Posso acessar pelo celular?</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="ans">Sim! O material é em PDF, otimizado para celular, tablet ou computador, e pode ser impresso se você preferir um caderno físico.</div></details>
+      <details><summary><span class="qi"><span style="font-size:18px">❓</span>Dá para fazer as receitas em marmita?</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="ans">Sim! A maioria dos almoços pode ser preparada com antecedência e guardada em marmitas, pronta para esquentar na hora de comer.</div></details>
+      <details><summary><span class="qi"><span style="font-size:18px">❓</span>Os ingredientes das receitas são caros?</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="ans">Não. As receitas foram feitas com foco em economia e simplicidade, com ingredientes básicos que você encontra em qualquer supermercado ou feira.</div></details>
+      <details><summary><span class="qi"><span style="font-size:18px">❓</span>O pagamento é único mesmo? O acesso tem validade?</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="ans">Sim, você paga uma vez só, sem mensalidade. O acesso é vitalício: o material é seu para sempre.</div></details>
+      <details><summary><span class="qi"><span style="font-size:18px">❓</span>E se eu não gostar? Tem garantia?</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="ans">Sim! Você tem 15 dias de garantia incondicional. Se achar que o material não é para você, basta enviar um e-mail dentro do prazo e devolvemos 100% do seu dinheiro, sem burocracia.</div></details>
+    </div>
   </div>
 </section>
 
-<!-- FINAL CTA -->
-<section>
-  <div class="wrap">
-    <div class="final-cta">
-      <h3>AINDA NÃO GARANTIU SUA OFERTA?</h3>
-      <p>Leve os +250 Almoços Fitness + 5 bônus exclusivos por apenas R$ 27,00 enquanto a promoção ainda está disponível.</p>
-      <a href="https://pay.kirvano.com/9082d7c0-b319-43f7-9ce6-427c23712f2d" class="btn btn-terracota">QUERO OS +250 ALMOÇOS FITNESS →</a>
-      <div class="final-badges">
-        <span>✅ Acesso Imediato</span>
-        <span>♾️ Acesso Vitalício</span>
-        <span>🔒 Compra Segura</span>
-        <span>🛡️ 15 Dias de Garantia</span>
-      </div>
-    </div>
+<section class="last">
+  <p style="font-size:14px;font-weight:800;color:var(--cinza);margin-bottom:8px">Ainda não garantiu sua oferta?</p>
+  <h2>Chega de frango com batata-doce todo dia.<br>Chega de dieta sem sabor.<br><span class="tv">Comece a secar comendo comida de verdade hoje.</span></h2>
+  <p style="margin-top:16px;font-size:14px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:var(--laranja)">🔥 +250 Almoços Fitness + 5 bônus</p>
+  <div class="price-box" style="margin-top:12px;margin-bottom:16px">
+    <span class="price-de">R$ 314,50</span>
+    <span class="price-big">R$ 27,00</span>
   </div>
+  <a href="https://pay.kirvano.com/9082d7c0-b319-43f7-9ce6-427c23712f2d" class="cta"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>Quero acessar agora</a>
+  <p style="font-size:14px;color:#6b7280;font-weight:500;margin-top:16px">📲 Receba direto em seu WhatsApp.</p>
 </section>
 
 <footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <h4>+250 Almoços Fitness</h4>
-        <p>Ajudamos você a emagrecer comendo bem, com almoços práticos, saborosos e econômicos.</p>
-      </div>
-      <div>
-        <h4>Links</h4>
-        <div class="footer-links"><a href="#">Privacidade</a><a href="#">Termos</a><a href="#">Suporte</a></div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      © <span id="footer-year">2026</span> +250 Almoços Fitness. Todos os direitos reservados.<br>
-      Este site não faz parte do Google ou Facebook. As informações disponibilizadas neste site não substituem o acompanhamento médico ou nutricional personalizado. Os resultados individuais podem variar.
-    </div>
-  </div>
+  <p class="brand">+250 Almoços Fitness</p>
+  <p class="disc">Este site não faz parte do Google ou Facebook. As informações deste site não substituem o acompanhamento médico ou nutricional personalizado. Os resultados individuais podem variar.</p>
+  <hr>
+  <p class="copy">© <span id="footer-year">2026</span> +250 Almoços Fitness · Todos os direitos reservados.</p>
 </footer>
 
-<div class="mobile-cta">
-  <a href="#oferta-completa" id="mobile-cta-link" class="btn btn-terracota btn-wide">QUERO MEUS ALMOÇOS →</a>
-</div>
-
-<style>
-  .mobile-cta{
-    display:none;position:fixed;left:0;right:0;bottom:0;z-index:50;
-    padding:10px 14px;background:#fff;box-shadow:0 -8px 24px rgba(0,0,0,.12);
-    transform:translateY(100%);transition:transform .25s ease;
-  }
-  .mobile-cta .btn{padding:14px 20px;font-size:14px;}
-  @media(max-width:640px){ .mobile-cta{display:block;} }
-  .mobile-cta.show{transform:translateY(0);}
-  body.mobile-cta-active{padding-bottom:70px;}
-</style>
-
-<script>
-  (function(){
-    var d = new Date();
-    var dd = String(d.getDate()).padStart(2,'0');
-    var mm = String(d.getMonth()+1).padStart(2,'0');
-    document.getElementById('deadline-date').textContent = dd + '/' + mm + '/' + d.getFullYear();
-    document.getElementById('footer-year').textContent = d.getFullYear();
-  })();
-
-  // O CTA fixo só aparece depois que o lead passa pela primeira seção (hero).
-  (function(){
-    var hero = document.querySelector('.hero');
-    var mobileCta = document.querySelector('.mobile-cta');
-    if(!hero || !mobileCta) return;
-
-    function toggleCta(){
-      var rect = hero.getBoundingClientRect();
-      var visible = rect.bottom <= 0;
-      mobileCta.classList.toggle('show', visible);
-      document.body.classList.toggle('mobile-cta-active', visible);
-    }
-    window.addEventListener('scroll', toggleCta, {passive:true});
-    toggleCta();
-  })();
-
-  // Depois que o lead rola a página e passa pela seção de ofertas (#ofertas),
-  // o CTA fixo (mobile-cta) passa a levar direto pro checkout, em vez de
-  // rolar de volta pra seção de ofertas.
-  (function(){
-    var ofertas = document.getElementById('ofertas');
-    var ctaLink = document.getElementById('mobile-cta-link');
-    if(!ofertas || !ctaLink) return;
-    var checkoutUrl = 'https://pay.kirvano.com/9082d7c0-b319-43f7-9ce6-427c23712f2d';
-    var switched = false;
-
-    function checkScroll(){
-      if(switched) return;
-      var rect = ofertas.getBoundingClientRect();
-      if(rect.bottom <= 0){
-        switched = true;
-        ctaLink.href = checkoutUrl;
-        ctaLink.textContent = 'QUERO POR R$ 27,00 →';
-      }
-    }
-    window.addEventListener('scroll', checkScroll, {passive:true});
-    checkScroll();
-  })();
-</script>
-
-<!-- Pop-up de venda concluída (topo) -->
-<div id="sale-popup" class="sale-popup">
-  <span class="sale-popup-icon">✅</span>
-  <p class="sale-popup-text">
-    <span id="sale-popup-name">Ana</span> de <span id="sale-popup-city">São Paulo/SP</span> comprou o <strong>Guia + Bônus</strong> · há <span id="sale-popup-ago">2</span> min
-  </p>
-</div>
-<style>
-  .sale-popup{
-    position:fixed;right:14px;top:14px;z-index:1000;
-    transform:translateY(-24px);
-    display:flex;align-items:center;gap:8px;
-    background:rgba(255,248,238,.97);border:1px solid rgba(224,112,58,.25);
-    border-radius:10px;padding:7px 12px 7px 8px;
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
-    width:220px;max-width:calc(100vw - 24px);
-    opacity:0;pointer-events:none;
-    transition:transform .4s ease,opacity .4s ease;
-  }
-  .sale-popup.show{transform:translateY(0);opacity:1;}
-  .sale-popup-icon{
-    flex-shrink:0;width:20px;height:20px;border-radius:50%;
-    background:rgba(224,112,58,.15);display:flex;align-items:center;justify-content:center;font-size:10.5px;
-  }
-  .sale-popup-text{font-size:11px;color:var(--text);line-height:1.25;}
-  .sale-popup-text strong{color:var(--terracota);}
-  @media(max-width:640px){ .sale-popup-text{font-size:10px;} }
-</style>
-<script>
-  (function(){
-    var cities = ["São Paulo/SP","Rio de Janeiro/RJ","Belo Horizonte/MG","Curitiba/PR","Salvador/BA","Porto Alegre/RS","Recife/PE","Fortaleza/CE","Brasília/DF","Florianópolis/SC","Campinas/SP","Goiânia/GO"];
-    var names = ["Ana","Larissa","Fernanda","Camila","Patrícia","Juliana","Marina","Isabela","Renata","Bruna","Carla","Débora"];
-    var popup = document.getElementById('sale-popup');
-    var nameEl = document.getElementById('sale-popup-name');
-    var cityEl = document.getElementById('sale-popup-city');
-    var agoEl = document.getElementById('sale-popup-ago');
-    if(!popup || !nameEl || !cityEl || !agoEl) return;
-    var idx = Math.floor(Math.random() * cities.length);
-
-    function show(){
-      idx = (idx + 1 + Math.floor(Math.random() * 3)) % cities.length;
-      nameEl.textContent = names[idx % names.length];
-      cityEl.textContent = cities[idx];
-      agoEl.textContent = Math.floor(Math.random() * 8) + 1;
-      popup.classList.add('show');
-      setTimeout(function(){ popup.classList.remove('show'); }, 5000);
-    }
-    setTimeout(show, 9000);
-    setInterval(show, 22000);
-  })();
-</script>
-
-<!-- Pop-up de saída R$22,90 -->
-<div id="exit-overlay" class="upsell-overlay">
-  <div class="upsell-box">
-    <button type="button" id="exit-close" class="upsell-close" aria-label="Fechar">✕</button>
-    <div class="upsell-badge">ESPERA! ÚLTIMA CHANCE</div>
-    <img class="upsell-img" width="900" height="868" src="assets/plano-completo-250.webp" srcset="assets/plano-completo-250-m.webp 520w, assets/plano-completo-250.webp 900w" sizes="(max-width:880px) 300px, 260px" alt="Plano Completo - +250 Almoços Fitness + 5 bônus" loading="lazy" decoding="async">
-    <h3>Não vá embora sem seu desconto extra</h3>
-    <p class="upsell-sub">Guia +250 Almoços Fitness + <b>todos os 5 bônus exclusivos</b> por um preço que não vai se repetir.</p>
-    <div class="upsell-price">
-      <span class="old">De R$ 314,50</span><span class="off-badge">-93%</span>
-      <div class="new">R$ 22,90</div>
-      <div class="inst inst-strong">à vista, oferta única</div>
-    </div>
-    <a href="https://pay.kirvano.com/4fa174f3-e2c5-4060-a55f-a770ad32004d" class="btn btn-wide btn-terracota">SIM, QUERO POR R$ 22,90 →</a>
-    <a href="#" id="exit-decline" class="upsell-decline">Não, obrigado(a)</a>
+<!-- Pop-up do plano básico (upgrade R$ 22,90) -->
+<div class="pop-overlay" id="upsell-overlay" style="display:none">
+  <div class="pop-box" role="dialog" aria-modal="true">
+    <button type="button" class="pop-close" aria-label="Fechar">✕</button>
+    <div class="pop-badge">✨ Oferta especial</div>
+    <img src="assets/plano-completo-250-m.webp" alt="Kit completo +250 Almoços Fitness" class="pop-img" loading="lazy" decoding="async">
+    <h3>Leve o kit completo por só mais R$ 4,90</h3>
+    <p class="pop-sub">Em vez de só o livro, garanta o <strong>kit completo</strong> com os +250 almoços, as +90 receitas em vídeo e todos os 5 bônus.</p>
+    <div class="pop-price"><b>R$ 22,90</b><small>OPÇÃO RECOMENDADA · PAGAMENTO ÚNICO</small></div>
+    <a href="https://pay.kirvano.com/4fa174f3-e2c5-4060-a55f-a770ad32004d" class="cta full">Sim, quero o kit completo</a>
+    <a href="https://pay.kirvano.com/072e1934-eb9c-48ab-b790-3714cd0fd0d0" class="pop-decline">Não, quero somente o livro — R$ 18,00</a>
+    <div class="pop-guar">🔒 Pagamento seguro · 🛡️ 15 dias de garantia</div>
   </div>
 </div>
 
-<style>
-  .upsell-overlay{
-    display:none;position:fixed;inset:0;z-index:999;background:rgba(30,20,10,.6);
-    padding:16px;align-items:center;justify-content:center;
-  }
-  .upsell-overlay.show{display:flex;}
-  .upsell-overlay.opening{pointer-events:none;}
-  .upsell-box{
-    position:relative;background:#fff8ee;border-radius:18px;max-width:380px;width:100%;
-    padding:24px 20px 20px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.3);
-    max-height:92vh;overflow-y:auto;
-  }
-  .upsell-close{
-    position:absolute;top:10px;right:10px;width:32px;height:32px;border-radius:50%;
-    background:#fff;border:1px solid #eee;font-size:16px;color:#666;cursor:pointer;
-  }
-  .upsell-badge{
-    display:inline-block;background:#e0703a;color:#fff;font-size:13.5px;font-weight:800;
-    padding:6px 14px;border-radius:20px;letter-spacing:.5px;margin-bottom:12px;
-  }
-  .upsell-img{width:100%;max-width:220px;height:auto;margin:0 auto 14px;display:block;filter:drop-shadow(0 8px 12px rgba(61,36,23,.22));}
-  .upsell-box h3{font-size:19px;color:var(--green-dark);margin-bottom:8px;line-height:1.25;}
-  .upsell-sub{font-size:15px;color:var(--muted);margin-bottom:14px;line-height:1.5;}
-  .upsell-price{margin-bottom:16px;}
-  .upsell-price .old{text-decoration:line-through;color:#999;font-size:14.5px;}
-  .upsell-price .off-badge{
-    display:inline-block;margin-left:6px;background:var(--terracota);color:#fff;
-    font-size:12px;font-weight:800;padding:2px 7px;border-radius:10px;vertical-align:middle;
-  }
-  .upsell-price .new{font-size:34px;font-weight:800;color:var(--terracota);}
-  .upsell-price .inst{font-size:13.5px;color:#999;}
-  .upsell-price .inst.inst-strong{font-size:17px;font-weight:800;color:var(--terracota);}
-  .upsell-decline{
-    display:block;margin-top:14px;font-size:14px;color:var(--muted);
-    text-decoration:underline;
-  }
-</style>
+<!-- Pop-up de saída R$ 22,90 -->
+<div class="pop-overlay" id="exit-overlay" style="display:none">
+  <div class="pop-box" role="dialog" aria-modal="true">
+    <button type="button" class="pop-close" aria-label="Fechar">✕</button>
+    <div class="pop-badge">Espera! Antes de sair...</div>
+    <img src="assets/plano-completo-250-m.webp" alt="Kit completo +250 Almoços Fitness" class="pop-img" loading="lazy" decoding="async">
+    <h3>Uma oferta só sua antes de ir</h3>
+    <p class="pop-sub">Liberamos um desconto exclusivo para você levar o kit completo: +250 almoços, +90 receitas em vídeo e os 5 bônus. Valor total <s>R$ 314,50</s>.</p>
+    <div class="pop-price">por apenas <b>R$ 22,90</b><small>À VISTA · VÁLIDO APENAS NESTA SESSÃO</small></div>
+    <a href="https://pay.kirvano.com/4fa174f3-e2c5-4060-a55f-a770ad32004d" class="cta full">Quero meu desconto</a>
+    <button type="button" class="pop-decline">Não, obrigado(a)</button>
+    <div class="pop-guar">🛡️ 15 dias de garantia — risco zero</div>
+  </div>
+</div>
+</div>
 
-<script>
-  (function(){
-    var overlay = document.getElementById('exit-overlay');
-    var closeBtn = document.getElementById('exit-close');
-    var declineBtn = document.getElementById('exit-decline');
-
-    // stage controla a tentativa de saída do lead:
-    // 0 = nada ainda -> primeira tentativa só é bloqueada (não mostra nada)
-    // 1 = já bloqueou uma vez -> segunda tentativa mostra o pop-up de R$22,90
-    var stage = 0;
-
-    function isOpen(){ return overlay.classList.contains('show'); }
-    // Bloqueia cliques por um instante ao abrir, pra evitar "clique fantasma"
-    // (delay de ~300ms do navegador mobile) caindo em cima do botão do pop-up.
-    function armOpening(el){
-      el.classList.add('opening');
-      setTimeout(function(){ el.classList.remove('opening'); }, 500);
-    }
-    function openOverlay(){
-      if(isOpen()) return;
-      overlay.classList.add('show');
-      armOpening(overlay);
-    }
-    function closeOverlay(){
-      overlay.classList.remove('show');
-    }
-
-    closeBtn.addEventListener('click', closeOverlay);
-    declineBtn.addEventListener('click', function(e){ e.preventDefault(); closeOverlay(); });
-    overlay.addEventListener('click', function(e){
-      if(e.target === overlay){ closeOverlay(); }
-    });
-
-    // Primeira tentativa de saída: só bloqueia (marca o estágio, não mostra nada).
-    // Segunda tentativa: mostra o pop-up de R$22,90.
-    function exitIntentTrigger(){
-      if(isOpen()) return;
-      if(stage === 0){ stage = 1; }
-      else if(stage === 1){ openOverlay(); }
-    }
-
-    // Exit intent - desktop (mouse saindo pelo topo da janela)
-    document.addEventListener('mouseleave', function(e){
-      if(e.clientY <= 0){ exitIntentTrigger(); }
-    });
-
-    // Exit intent - mobile (botão voltar do navegador)
-    // Obs: cliques em links "#âncora" também disparam popstate, então só reage
-    // quando o estado é o marcador que nós mesmos empilhamos (voltar de verdade).
-    history.pushState({exitIntent:true}, '');
-    window.addEventListener('popstate', function(e){
-      if(e.state && e.state.exitIntent && stage < 2){
-        exitIntentTrigger();
-        history.pushState({exitIntent:true}, '');
-      }
-    });
-  })();
-</script>
-
-<div class="guia-zoom" id="guia-zoom"><button type="button" aria-label="Fechar">✕</button><img alt=""></div>
 <script>
 (function(){
-  var t=document.getElementById('guia-track'); if(!t) return;
-  var imgs=t.querySelectorAll('img'), n=document.getElementById('guia-n');
-  function step(){ return imgs[0].getBoundingClientRect().width+14; }
-  document.getElementById('guia-prev').addEventListener('click',function(){ t.scrollBy({left:-step(),behavior:'smooth'}); });
-  document.getElementById('guia-next').addEventListener('click',function(){ t.scrollBy({left:step(),behavior:'smooth'}); });
-  t.addEventListener('scroll',function(){ n.textContent=Math.min(imgs.length,Math.round(t.scrollLeft/step())+1); },{passive:true});
-  var z=document.getElementById('guia-zoom'), zi=z.querySelector('img');
-  imgs.forEach(function(im){ im.addEventListener('click',function(){ zi.src=im.getAttribute('data-full'); zi.alt=im.alt; z.classList.add('show'); }); });
-  z.addEventListener('click',function(){ z.classList.remove('show'); });
+  var d=new Date();
+  document.getElementById('deadline-date').textContent=String(d.getDate()).padStart(2,'0')+'/'+String(d.getMonth()+1).padStart(2,'0')+'/'+d.getFullYear();
+  document.getElementById('footer-year').textContent=d.getFullYear();
+
+  // vagas caem ao longo do dia, nunca chegam a zero
+  var mins=d.getHours()*60+d.getMinutes();
+  document.getElementById('vagas').textContent=Math.max(3,Math.round(45-(mins/1440)*42));
+
+  function bindOverlay(ov){
+    function close(){ ov.style.display='none'; }
+    ov.addEventListener('click',function(e){ if(e.target===ov) close(); });
+    ov.querySelectorAll('.pop-close,button.pop-decline').forEach(function(b){ b.addEventListener('click',close); });
+    return {open:function(){ ov.style.display='flex'; }, isOpen:function(){ return ov.style.display==='flex'; }};
+  }
+  var upsell=bindOverlay(document.getElementById('upsell-overlay'));
+  document.getElementById('btn-oferta-basica').addEventListener('click',function(){ upsell.open(); });
+
+  // Pop-up de saída: 1ª tentativa só bloqueia, 2ª mostra a oferta de R$ 22,90 (mesma lógica da página anterior)
+  var exit=bindOverlay(document.getElementById('exit-overlay'));
+  var stage=0;
+  function exitIntent(){
+    if(exit.isOpen()) return;
+    if(stage===0){ stage=1; } else if(stage===1){ exit.open(); }
+  }
+  document.addEventListener('mouseleave',function(e){ if(e.clientY<=0) exitIntent(); });
+  history.pushState({exitIntent:true},'');
+  window.addEventListener('popstate',function(e){
+    if(e.state&&e.state.exitIntent&&stage<2){ exitIntent(); history.pushState({exitIntent:true},''); }
+  });
 })();
 </script>
+
 </body>
 </html>
